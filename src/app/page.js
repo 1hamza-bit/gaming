@@ -1,10 +1,15 @@
 import Image from 'next/image'
 import styles from './page.module.css'
-import Header from './Components/Header'
+// import Hero from './Components/Home'
+import { useClient } from "next/react-server-component";
 
 export default function Home() {
+  useClient(); // Marking the parent component as a Client Component
+
   return (
     <main className={styles.main}>
+      {/* <Hero /> */}
+
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -91,7 +96,6 @@ export default function Home() {
           </p>
         </a>
       </div>
-      <Header />
     </main>
   )
 }

@@ -1,5 +1,7 @@
+'use client'
 import Header from '../Header';
 import { Button, Grid, Typography } from '@mui/material';
+import Brands from '../Scroller';
 
 
 function Hero() {
@@ -18,6 +20,7 @@ function Hero() {
 
                 </Grid>
             </Grid>
+            <Brands />
         </>;
     }
 

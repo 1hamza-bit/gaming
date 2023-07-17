@@ -18,6 +18,12 @@ body{
   transition: background-color 0.3s ease;
 }
 
+.hamburger-icon:hover
+  .line{
+  background-color: #f70c0c;
+  
+}
+
 .open .line:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -34,3 +40,7 @@ body{
   margin: 7%;
 }
 
+.bgwhite{
+  background-color: white !important;
+  color: #000;
+}

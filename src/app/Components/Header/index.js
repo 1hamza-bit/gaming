@@ -2,9 +2,9 @@
 // import styles from "./index.module.scss"
 'use client'
 import styled from "@emotion/styled";
-import { AppBar, Box, Button, Drawer, Toolbar, Typography, makeStyles } from "@mui/material";
+import { AppBar, Box, Button, Drawer, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
 import { useState } from "react";
-
+import styles from './index.module.scss'
 
 function Header()  {
 const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +12,7 @@ const [isOpen, setIsOpen] = useState(false);
 
 
 const StyledDrawer = styled(Drawer)({
+    minWidth: 250,
     width: 240,
     flexShrink: 0,
   });
@@ -30,7 +31,7 @@ const toggleDrawer =() => {
  
         return         <>
                 <Box sx={{ flexGrow: 1 }}>
-                    <AppBar position="static" className="bgwhite">
+                    <AppBar position="static" className="bgwhite ztop">
                         <Toolbar>
                             <Button onClick={toggleDrawer}> 
                             <div className={`hamburger-icon ${isOpen ? 'open' : ''}`} >
@@ -39,12 +40,13 @@ const toggleDrawer =() => {
                                 <div className="line"></div>
                             </div>
                             </Button>
-                            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                            <Typography className="ml40p fantasy" variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                 News
                             </Typography>
                             <Button color="inherit">Login</Button>
                         </Toolbar>
                     </AppBar>
+                    
                     <StyledDrawer
         classes={{
           paper: StyledDrawerPaper,
@@ -52,11 +54,14 @@ const toggleDrawer =() => {
         anchor="left"
         open={isOpen}
         onClose={toggleDrawer}
+        className={`minw100p ${styles.drawer} ${isOpen ? '' : styles.closed}`}
       >
         <StyledDrawerContainer>
           <p>hamza</p>
         </StyledDrawerContainer>
+        
       </StyledDrawer>
+   
                 </Box>
 
               

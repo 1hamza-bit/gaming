@@ -33,13 +33,13 @@ const toggleDrawer =() => {
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar position="static" className="bgwhite ztop">
                         <Toolbar>
-                            <Button onClick={toggleDrawer}> 
+                            <button onClick={toggleDrawer}> 
                             <div className={`hamburger-icon ${isOpen ? 'open' : ''}`} >
                                 <div className="line"></div>
                                 <div className="line"></div>
                                 <div className="line"></div>
                             </div>
-                            </Button>
+                            </button>
                             <Typography className="ml40p fantasy" variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                 News
                             </Typography>

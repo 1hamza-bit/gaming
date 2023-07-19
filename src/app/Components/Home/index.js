@@ -3,13 +3,14 @@ import Header from '../Header';
 import { Button, Grid, Typography } from '@mui/material';
 import Brands from '../Scroller';
 import styles from './index.module.scss'
+import Footer from '../Footer';
 
 
 function Hero() {
   
         return <>
             <Header />
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className={styles.banner}>
                 <Grid item lg={5} md={6} sm={11} className= {`m7 ${styles.hero}`}>
                     <h1>Game Development and Design Service</h1>
                 <Typography > Mobstudios, is the leading service-based company for Game development, 
@@ -22,6 +23,9 @@ function Hero() {
                 </Grid>
             </Grid>
             <Brands />
+
+
+            <Footer />
         </>;
     }
 

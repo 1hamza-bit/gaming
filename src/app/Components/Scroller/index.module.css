@@ -33,7 +33,9 @@
   display: flex;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 19px rgba(142, 151, 158, .25);
+  box-shadow: 0 4px 19px rgba(142, 151, 158, .85);
+  min-width: 100px;
+  margin: 15px;
 }
 
 @keyframes scroll {

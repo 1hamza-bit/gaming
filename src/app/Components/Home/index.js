@@ -4,6 +4,7 @@ import { Button, Grid, Typography } from '@mui/material';
 import Brands from '../Scroller';
 import styles from './index.module.scss'
 import Footer from '../Footer';
+import TopAssets from '../TopAssets';
 
 
 function Hero() {
@@ -22,6 +23,7 @@ function Hero() {
 
                 </Grid>
             </Grid>
+            <TopAssets />
             <Brands />
 
 

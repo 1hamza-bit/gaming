@@ -33,7 +33,7 @@ const toggleDrawer =() => {
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar position="static" className="bgwhite ztop">
                         <Toolbar>
-                            <button onClick={toggleDrawer}> 
+                            <button onClick={toggleDrawer} className={styles.hambutton}> 
                             <div className={`hamburger-icon ${isOpen ? 'open' : ''}`} >
                                 <div className="line"></div>
                                 <div className="line"></div>

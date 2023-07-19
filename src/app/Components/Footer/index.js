@@ -2,12 +2,13 @@
 
 import { Grid, TextField } from "@mui/material";
 import { useState } from "react";
+import styles from "./index.module.scss"
 
 function Footer()  {
     const [isOpen, setisOpen] = useState(true);
      
             return         <>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className={styles.footer}>
             <Grid item lg={4} md={6} sm={11} className='m4'>
                     <h1>Mob Studios </h1>
                     <p>Develop and Design all types of games and art for your IOS and Android stores with all of the features involved

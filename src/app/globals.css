@@ -1,7 +1,27 @@
 body{
   margin: 0px;
 }
+.fantasy{
+  font-family: fantasy;
+}
+.ml40p{
+  margin-left: 40%;
+}
 
+.minw15p .MuiDrawer-paper{
+  min-width: 15% !important;
+  }
+
+  .minw100p .MuiDrawer-paper{
+    min-width: 100% !important;
+    }
+  
+
+.ztop{
+  z-index: 2000;
+  position: absolute;
+
+}
 .hamburger-icon {
   width: 30px;
   height: 20px;
@@ -15,8 +35,22 @@ body{
   width: 100%;
   height: 3px;
   background-color: #000;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.6s ease;
 }
+
+.hamburger-icon:hover
+  .line{
+  background-color: #f70c0c;
+  
+}
+.line:nth-child(1){
+  height: 4px;
+}
+.line:nth-child(3){
+  width: 101%;
+  height: 5px;
+}
+
 
 .open .line:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
@@ -34,3 +68,13 @@ body{
   margin: 7%;
 }
 
+.bgwhite{
+  background-color: white !important;
+  color: #000;
+}
+
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+
+  background-color: rgb(221 221 221 / 50%);
+ 
+}

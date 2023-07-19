@@ -1,0 +1,26 @@
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
+  .drawer {
+    animation: slideIn 1s forwards;
+    transition: transform 0.5s;
+  }
+  
+  .drawer.closed {
+    animation: slideOut 1s forwards;
+  }

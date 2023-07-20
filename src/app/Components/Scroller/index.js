@@ -16,10 +16,10 @@ const Brands = () => {
 
   return (
     <div className={styles.container}>
-      <h1>The <b>service</b> we are amazing with</h1>
+      <h1>The <b>services</b> we are amazing with</h1>
       <div className={styles.brands}>
         {extendedBrands.map((brand, index) => (
-          <div className={styles.brandItem} key={index}>{brand.icon}{brand.name}</div>
+          <div className={styles.brandItem} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
       </div>
     </div>

@@ -1,3 +1,8 @@
+.header{
+  position: fixed;
+  top: 0;
+}
+
 @keyframes slideIn {
     from {
       transform: translateX(-100%);
@@ -19,6 +24,7 @@
   .drawer {
     animation: slideIn 1s forwards;
     transition: transform 0.5s;
+
   }
   
   .drawer.closed {
@@ -26,4 +32,22 @@
   }
   .hambutton{
     border: 0px;
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .list{
+    width: 100%;
+    max-width: 360;
+    justify-content: center;
+    display: grid;
+    .item{
+      margin-bottom: 2%;
+      font-size: 20px;
+      color: #700303;
+    }
   }

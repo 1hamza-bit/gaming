@@ -1,8 +1,10 @@
 .cardslidercontainer {
-  width: 100%;
+  width: 95%;
   overflow-x: hidden;
   position: relative;
+  margin: 7% 2%;
 }
+
 
 .cardslider {
   display: flex;
@@ -10,14 +12,20 @@
 
 .card {
   flex: 0 0 auto;
-  margin-right: 20px;
+  margin-right: 5%;
 }
 
 .slidercontrols {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 10px;
+  justify-content: start;
+  margin-top: 3%;
+  button{
+    background-color: #980101;
+    color: white;
+    padding: 1%;
+    border-radius: 100vw;
+  }
 }
 
 .sliderthumb {

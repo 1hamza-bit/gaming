@@ -2,7 +2,7 @@
 // import styles from "./index.module.scss"
 'use client'
 import styled from "@emotion/styled";
-import { AppBar, Box, Button, Drawer, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
+import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemText, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
 import { useState } from "react";
 import styles from './index.module.scss'
 
@@ -13,7 +13,7 @@ const [isOpen, setIsOpen] = useState(false);
 
 const StyledDrawer = styled(Drawer)({
     minWidth: 250,
-    width: 240,
+    width: 340,
     flexShrink: 0,
   });
   
@@ -31,11 +31,11 @@ const toggleDrawer =() => {
  
         return         <>
                 <Box sx={{ flexGrow: 1 }}>
-                    <AppBar position="static" className="bgwhite ztop">
+                    <AppBar position="static" className={`bgwhite ztop ${styles.header}`}>
                         <Toolbar>
                             <button onClick={toggleDrawer} className={styles.hambutton}> 
-                            <div className={`hamburger-icon ${isOpen ? 'open' : ''}`} >
-                                <div className="line"></div>
+                            <div className={`hamburger-icon ${isOpen ? 'open redline' : ''}`} >
+                                <div className="line "></div>
                                 <div className="line"></div>
                                 <div className="line"></div>
                             </div>
@@ -58,6 +58,22 @@ const toggleDrawer =() => {
       >
         <StyledDrawerContainer>
           <p>hamza</p>
+          <Container className={styles.container}>
+      <List className={styles.list}>
+        <ListItem className={styles.item}>
+          <ListItemText primary="Item 1" />
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemText primary="Item 2" />
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemText primary="Item 3" />
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemText primary="Item 4" />
+        </ListItem>
+      </List>
+    </Container>
         </StyledDrawerContainer>
         
       </StyledDrawer>

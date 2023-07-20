@@ -16,8 +16,8 @@ and lunch it in the real world and make your games with your full control, custo
 
 </p>
 
-<h3>Sign up to our newletter</h3>
-<TextField />
+<h3 className="mt15">Sign up to our newletter</h3>
+<TextField variant="standard" fullWidth/>
 <h4>2023 Mob Studios, Inc</h4>
 
                 </Grid>

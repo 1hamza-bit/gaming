@@ -1,4 +1,30 @@
 .footer{
-    background-color: rgb(225, 225, 225);
+h1{
+    color: rgb(170, 16, 34);
+    font-family: fantasy;
+    font-size: 40px;
+}
+
+input {
+    height: 4vw;
+    color: #fff;
+    letter-spacing: 1px;
+    text-indent: 1vw;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+    border-radius: 100vw;
+    margin-bottom: 0;
+    padding: 0.5vw;
+    font-family: Montserrat, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    overflow: hidden;
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline{
+    background-color: transparent;
+    border-width: 0px ;
+}
     
 }

@@ -1,10 +1,15 @@
 import styles from './index.module.css';
+import ExtensionTwoToneIcon from '@mui/icons-material/ExtensionTwoTone';
+import SportsEsportsTwoToneIcon from '@mui/icons-material/SportsEsportsTwoTone';
 
 const Brands = () => {
   // Simulated list of brands
   const allBrands = [
-    'Brand 1', 'Brand 2', 'Brand 3', 'Brand 4', 'Brand 5', 'Brand 6', 'Brand 7', 'Brand 8', 'Brand 9', 'Brand 10',
-    'Brand 11', 'Brand 12', 'Brand 13', 'Brand 14', 'Brand 15', 'Brand 16', 'Brand 17', 'Brand 18', 'Brand 19', 'Brand 20'
+   {icon: <ExtensionTwoToneIcon color="primary" />, name:  "Game Art"}, {icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "AAA"}, 
+   {icon: <ExtensionTwoToneIcon />, name: "Game development"}, {icon: <ExtensionTwoToneIcon />, name: "3D Modelling"},
+   {icon: <ExtensionTwoToneIcon />, name: "3D Animations"}, {icon: <ExtensionTwoToneIcon />, name: "Mobile Games"}, 
+   {icon: <ExtensionTwoToneIcon />, name: "Game Props"}, {icon: <ExtensionTwoToneIcon />, name: "Multiplayer Games"}, 
+   {icon: <ExtensionTwoToneIcon />, name: "Game Shaders"}, {icon: <ExtensionTwoToneIcon />, name: "Teaser Trailer"}
   ];
 
   const extendedBrands = [...allBrands, ...allBrands, ...allBrands]; // Duplicating the brands
@@ -14,7 +19,7 @@ const Brands = () => {
       <h1>The <b>service</b> we are amazing with</h1>
       <div className={styles.brands}>
         {extendedBrands.map((brand, index) => (
-          <div className={styles.brandItem} key={index}>{brand}</div>
+          <div className={styles.brandItem} key={index}>{brand.icon}{brand.name}</div>
         ))}
       </div>
     </div>

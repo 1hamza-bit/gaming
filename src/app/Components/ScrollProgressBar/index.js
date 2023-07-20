@@ -1,3 +1,7 @@
+'use client'
+
+import { LinearProgress } from "@mui/material";
+
 const { useEffect, useState } = require("react");
 
 
@@ -29,3 +33,4 @@ const ScrollProgressBar = () => {
     
   };
   
+  export default ScrollProgressBar;

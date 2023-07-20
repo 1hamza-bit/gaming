@@ -88,14 +88,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .m7{
-  margin: 7%;
+  margin: 7% !important;
 }
 
 .m4{
-  margin: 4%;
+  margin: 4% !important;
 }
 .m2{
-  margin: 2%;
+  margin: 2% !important;
 }
 
 .bgwhite{

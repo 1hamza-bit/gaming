@@ -22,27 +22,13 @@ const ScrollProgressBar = () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
-
-    const colorPrimary = '#980101'; // Primary color
-  const colorSecondary = '#fff'; // Secondary color
-
   
     return <>
       <LinearProgress
         variant="determinate"
         value={scrollPercent}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 9999,
-          // Customize the colors using CSS
-          background: colorSecondary,
-          '& .MuiLinearProgress-bar': {
-            background: colorPrimary,
-          },
-        }}
+        style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999 }}
+        
       />
       </>
     

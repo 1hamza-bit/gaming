@@ -118,6 +118,8 @@ body::-webkit-scrollbar-thumb:hover {
 .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
 
   background-color: rgb(221 221 221 / 50%);
+
+  width: 100vw;
  
 }
 

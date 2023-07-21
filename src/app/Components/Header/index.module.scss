@@ -32,22 +32,46 @@
   }
   .hambutton{
     border: 0px;
+    background-color: transparent;
   }
 
   .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
   }
   .list{
     width: 100%;
     max-width: 360;
     justify-content: center;
     display: grid;
+   
     .item{
-      margin-bottom: 2%;
+      margin-bottom: 4%;
       font-size: 20px;
+      transition: transform ease 300ms;
+      cursor: pointer;
+
+      .icon{
+        min-width: 35px !important;
+      }
+      span{
+        font-size: 22px;
+        font-family: fantasy;
+        color: #545252;
+      }
+     
+    }
+    .item:hover  {
       color: #700303;
+      transform: translate(5px, 0px);
+      .icon{
+      color: #700303;
+
+      }
+      span{
+      color: #700303;
+      }
     }
   }

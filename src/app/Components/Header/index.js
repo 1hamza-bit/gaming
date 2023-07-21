@@ -2,7 +2,7 @@
 // import styles from "./index.module.scss"
 'use client'
 import styled from "@emotion/styled";
-import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
+import { AppBar, Backdrop, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
 import { useState } from "react";
 import styles from './index.module.scss'
 import HomeIcon from '@mui/icons-material/Home';
@@ -28,6 +28,12 @@ const StyledDrawer = styled(Drawer)({
   const StyledDrawerContainer = styled('div')({
     overflow: 'auto',
   });
+
+  const backdropStyle = {
+    background:" rgb(221 221 221 / 50%)",
+
+    width: "100vw !important"
+  };
 
 const toggleDrawer =() => {
     setIsOpen(!isOpen)
@@ -91,6 +97,7 @@ const toggleDrawer =() => {
       </List>
     </Container>
         </StyledDrawerContainer>
+        <Backdrop open={isOpen}  style={backdropStyle} />
         
       </StyledDrawer>
    

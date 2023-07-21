@@ -5,7 +5,8 @@ import Brands from '../Scroller';
 import styles from './index.module.scss'
 import Footer from '../Footer';
 import TopAssets from '../TopAssets';
-
+import Image from 'next/image';
+import robot from "../../../../assets/hero.png"
 
 function Hero() {
   
@@ -20,7 +21,10 @@ function Hero() {
                     <Button className={styles.button2}>About Us</Button> 
                 </Grid>
                 <Grid item lg={6} md={6} sm={11}>
-
+                    <Image
+                    src={robot}
+                    className={styles.imageContainer}
+                    />
                 </Grid>
             </Grid>
             <TopAssets />

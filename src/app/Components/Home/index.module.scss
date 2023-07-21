@@ -47,3 +47,17 @@
    color: black;
 }
 
+.imageContainer {
+    position: relative;
+    animation: floatLeftRight 5s linear infinite; /* Customize the animation duration and timing here */
+  }
+  
+  @keyframes floatLeftRight {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(100px); /* Customize the distance the image travels */
+    }
+  }
+

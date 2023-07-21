@@ -3,6 +3,10 @@
 import { Grid, TextField } from "@mui/material";
 import { useState } from "react";
 import styles from "./index.module.scss"
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import discord from '../../../../assets/discord.png';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 
 function Footer()  {
     const [isOpen, setisOpen] = useState(true);
@@ -23,10 +27,53 @@ and lunch it in the real world and make your games with your full control, custo
                 </Grid>
                     
                 <Grid item lg={3} md={6} sm={11} className='m2'>
+                <List className={styles.list}>
+      <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="About" />
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <WorkIcon />
+          </ListItemIcon>
+          <ListItemText primary="Portfolio" />
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <ContactMailIcon />
+          </ListItemIcon>
+          <ListItemText primary="Contact" />
+        </ListItem>
+      </List>
                     
                 </Grid>
                 <Grid item lg={3} md={6} sm={11} className='m2'>
-
+                <List className={styles.list}>
+      <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <YouTubeIcon />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <Image  src={discord} />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <LinkedInIcon />
+          </ListItemIcon>
+        </ListItem>
+      
+      </List>
                         
                     
                     </Grid>

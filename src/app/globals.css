@@ -49,7 +49,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .ztop{
   z-index: 1201;
-  position: absolute;
+  position: absolute !important;
 
 }
 .hamburger-icon {
@@ -112,25 +112,25 @@ body::-webkit-scrollbar-thumb:hover {
 
 .bgwhite{
   background-color: white !important;
-  color: #000;
+  color: #000 !important;
 }
 
 .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
 
   background-color: rgb(221 221 221 / 50%);
 
-  width: 100vw;
+  width: 100vw !important;
  
 }
 
 .MuiLinearProgress-root{
-  background-color: white;
+  background-color: white !important;
 }
 
-.css-5xe99f-MuiLinearProgress-bar1{
+.MuiLinearProgress-bar1{
   background-color: #980101 !important;
 }
 
 .maincolor{
-  background-color: #980101;
+  background-color: #980101 !important;
 }

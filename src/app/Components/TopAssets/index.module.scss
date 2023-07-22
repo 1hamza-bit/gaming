@@ -1,38 +1,58 @@
-.cardslidercontainer {
-  width: 95%;
-  overflow-x: hidden;
-  position: relative;
-  margin: 7% 2%;
+/* components/CardSliderEmbla.module.css */
+
+.sliderContainer {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-
-.cardslider {
+.cardsContainer {
   display: flex;
+  gap: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cardsInnerContainer {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  scroll-behavior: smooth;
 }
 
 .card {
   flex: 0 0 auto;
-  margin-right: 5%;
+  width: 300px; /* Adjust the card width as needed */
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.slidercontrols {
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.controls {
   display: flex;
-  align-items: center;
-  justify-content: start;
-  margin-top: 3%;
-  button{
-    background-color: #980101;
-    color: white;
-    padding: 1%;
-    border-radius: 100vw;
+  justify-content: space-between;
+  margin-top: 8px;
+  button {
+    padding: 8px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:focus {
+    outline: none;
   }
 }
 
-.sliderthumb {
-  width: 10px;
-  height: 10px;
-  background-color: gray;
-  border-radius: 50%;
-  margin: 0 10px;
-  cursor: pointer;
-}
+

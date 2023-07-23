@@ -1,55 +1,48 @@
-import React, { useRef } from 'react';
-import styles from "./index.module.scss"
+import React, { useEffect, useState } from 'react';
+import  {useEmblaCarousel}  from 'embla-carousel-react';
+import styles from './index.module.scss'; // Import CSS module for styling
 
-const TopAssets = () => {
-  const sliderRef = useRef(null);
+const TopAssets = ({ items }) => {
+  const [viewportRef, embla] = useEmblaCarousel();
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const cards = [
-    { id: 1, title: 'Card 1', image: 'path/to/image1.jpg' },
-    { id: 2, title: 'Card 2', image: 'path/to/image2.jpg' },
-    { id: 3, title: 'Card 3', image: 'path/to/image3.jpg' },
-    { id: 1, title: 'Card 1', image: 'path/to/image1.jpg' },
-    { id: 2, title: 'Card 2', image: 'path/to/image2.jpg' },
-    { id: 3, title: 'Card 3', image: 'path/to/image3.jpg' },{ id: 1, title: 'Card 1', image: 'path/to/image1.jpg' },
-    { id: 2, title: 'Card 2', image: 'path/to/image2.jpg' },
-    { id: 3, title: 'Card 3', image: 'path/to/image3.jpg' },{ id: 1, title: 'Card 1', image: 'path/to/image1.jpg' },
-    { id: 2, title: 'Card 2', image: 'path/to/image2.jpg' },
-    { id: 3, title: 'Card 3', image: 'path/to/image3.jpg' },{ id: 1, title: 'Card 1', image: 'path/to/image1.jpg' },
-    { id: 2, title: 'Card 2', image: 'path/to/image2.jpg' },
-    { id: 3, title: 'Card 3', image: 'path/to/image3.jpg' },{ id: 1, title: 'Card 1', image: 'path/to/image1.jpg' },
-    { id: 2, title: 'Card 2', image: 'path/to/image2.jpg' },
-    { id: 3, title: 'Card 3', image: 'path/to/image3.jpg' },{ id: 1, title: 'Card 1', image: 'path/to/image1.jpg' },
-    { id: 2, title: 'Card 2', image: 'path/to/image2.jpg' },
-    { id: 3, title: 'Card 3', image: 'path/to/image3.jpg' },{ id: 1, title: 'Card 1', image: 'path/to/image1.jpg' },
-    { id: 2, title: 'Card 2', image: 'path/to/image2.jpg' },
-    { id: 3, title: 'Card 3', image: 'path/to/image3.jpg' },{ id: 1, title: 'Card 1', image: 'path/to/image1.jpg' },
-    { id: 2, title: 'Card 2', image: 'path/to/image2.jpg' },
-    { id: 3, title: 'Card 3', image: 'path/to/image3.jpg' },
-    // Add more cards as needed
-  ];
-
-  const handleScrollLeft = () => {
-    sliderRef.current.scrollLeft -= sliderRef.current.offsetWidth;
+  const scrollPrev = () => {
+    if (embla) {
+      debugger
+      embla.scrollPrev();
+    }
   };
 
-  const handleScrollRight = () => {
-    sliderRef.current.scrollLeft += sliderRef.current.offsetWidth;
-    console.log(sliderRef.current.offsetWidth)
+  const scrollNext = () => {
+    if (embla) {
+      embla.scrollNext();
+    }
   };
+
+  useEffect(() => {
+    if (embla) {
+      embla.on('select', () => {
+        setSelectedIndex(embla.selectedScrollSnap());
+      });
+    }
+  }, [embla]);
+
   return (
-    <div className={styles.cardslidercontainer}>
-      <div className={styles.cardslider} ref={sliderRef}>
-        {cards.map((card) => (
-          <div key={card.id} className={styles.card}>
-            <img src={card.image} alt={card.title} />
-            <h3>{card.title}</h3>
-          </div>
-        ))}
+    <div className={styles.sliderContainer}>
+      <div className={styles.cardsContainer} ref={viewportRef}>
+        <div className={styles.cardsInnerContainer}>
+          {items.map((item, index) => (
+            <div key={index} className={styles.card}>
+              {/* Add your card content here */}
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className={styles.slidercontrols}>
-        <button onClick={handleScrollLeft}>Left</button>
-        <div className={styles.sliderthumb} />
-        <button onClick={handleScrollRight}>Right</button>
+      <div className={styles.controls}>
+        <button onClick={scrollPrev}>&lt;</button>
+        <button onClick={scrollNext}>&gt;</button>
       </div>
     </div>
   );

@@ -32,7 +32,7 @@ and lunch it in the real world and make your games with your full control, custo
                 </Grid>
                     
                 <Grid item lg={3} md={6} sm={11} className='m2'>
-                <List className={styles.list}>
+                {/* <List className={styles.list}>
       <ListItem className={styles.item}>
           <ListItemIcon className={styles.icon}>
             <HomeIcon />
@@ -57,11 +57,11 @@ and lunch it in the real world and make your games with your full control, custo
           </ListItemIcon>
           <ListItemText primary="Contact" />
         </ListItem>
-      </List>
+      </List> */}
                     
                 </Grid>
                 <Grid item lg={3} md={6} sm={11} className='m2'>
-                <List className={styles.list}>
+                {/* <List className={styles.list}>
       <ListItem className={styles.item}>
           <ListItemIcon className={styles.icon}>
             <YouTubeIcon />
@@ -78,7 +78,7 @@ and lunch it in the real world and make your games with your full control, custo
           </ListItemIcon>
         </ListItem>
       
-      </List>
+      </List> */}
                         
                     
                     </Grid>

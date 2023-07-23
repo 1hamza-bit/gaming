@@ -9,6 +9,45 @@ import Image from 'next/image';
 import robot from "../../../../assets/hero.png"
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
+const items = [
+    {
+      title: 'Item 1',
+      description: 'Description for Item 1',
+    },
+    {
+      title: 'Item 2',
+      description: 'Description for Item 2',
+    },
+    {
+      title: 'Item 3',
+      description: 'Description for Item 3',
+    },
+    {
+        title: 'Item 1',
+        description: 'Description for Item 1',
+      },
+      {
+        title: 'Item 2',
+        description: 'Description for Item 2',
+      },
+      {
+        title: 'Item 3',
+        description: 'Description for Item 3',
+      },  {
+        title: 'Item 1',
+        description: 'Description for Item 1',
+      },
+      {
+        title: 'Item 2',
+        description: 'Description for Item 2',
+      },
+      {
+        title: 'Item 3',
+        description: 'Description for Item 3',
+      },
+    // Add more items as needed
+  ];
+
 function Hero() {
   
         return <>
@@ -29,7 +68,7 @@ function Hero() {
                     />
                 </Grid>
             </Grid>
-            <TopAssets />
+            <TopAssets items={items} />
             <Brands />
 
 

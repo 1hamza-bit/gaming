@@ -1,6 +1,7 @@
 import styles from './index.module.css';
 import ExtensionTwoToneIcon from '@mui/icons-material/ExtensionTwoTone';
 import SportsEsportsTwoToneIcon from '@mui/icons-material/SportsEsportsTwoTone';
+import { Typography } from '@mui/material';
 
 const Brands = () => {
   // Simulated list of brands
@@ -22,6 +23,16 @@ const Brands = () => {
           <div className={styles.brandItem} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
       </div>
+      <h1>Testimonials</h1>
+
+          <Box>
+
+            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
+
+          </Box>
+
+       
+
     </div>
   );
 };

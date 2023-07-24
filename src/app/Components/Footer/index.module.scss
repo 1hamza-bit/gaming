@@ -20,11 +20,47 @@ input {
     font-weight: 600;
     line-height: 1.2;
     overflow: hidden;
+  transition: color 200ms;
+
+}
+.input:hover{
+    border: 2px solid aqua;
+}
+.MuiInputBase-root-MuiOutlinedInput-root{
+    border-radius: 100vw !important;
 }
 
-.Mui-focused .MuiOutlinedInput-notchedOutline{
-    background-color: transparent;
-    border-width: 0px ;
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: transparent !important; /* Change the border color when focused */
+  }
+  
+  /* Styles for the focused state of the label */
+  .MuiTextField-root .MuiInputLabel-root.Mui-focused {
+    color: blue; /* Change the label color when focused */
+  }
+  
+  .Mui-focused .MuiInputLabel-outlined {
+    color: blue; /* Change the label color when focused */
+  }
+.menu
+{
+    margin-top: 5% !important ;
+}
+
+.listmenu{
+    display: flex;
+   
+
+    li{
+        padding: 1%;
+    }
+    li:hover{
+        color: aqua;
+        cursor: pointer;
+    }
+    .icon{
+        color: aqua;
+    }
 }
     
 }

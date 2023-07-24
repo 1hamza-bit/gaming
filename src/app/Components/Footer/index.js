@@ -26,42 +26,41 @@ and lunch it in the real world and make your games with your full control, custo
 </p>
 
 <h3 className="mt15">Sign up to our newletter</h3>
-<TextField variant="standard" fullWidth/>
+    
+<TextField style={{borderRadius: "100vw"}} variant="outlined" fullWidth/>
 <h4>2023 Mob Studios, Inc</h4>
 
                 </Grid>
                     
-                <Grid item lg={3} md={6} sm={11} className='m2'>
-                {/* <List className={styles.list}>
+                <Grid item lg={3} md={6} sm={11} className={ `m2 ${styles.menu}`}>
+                <List className={styles.listmenu}>
       <ListItem className={styles.item}>
-          <ListItemIcon className={styles.icon}>
-            <HomeIcon />
-          </ListItemIcon>
+          
           <ListItemText primary="Home" />
         </ListItem>
         <ListItem className={styles.item}>
-          <ListItemIcon className={styles.icon}>
-            <InfoIcon />
-          </ListItemIcon>
+         
           <ListItemText primary="About" />
         </ListItem>
+      
+      </List>
+
+      <List className={styles.listmenu}>
+          
+          
         <ListItem className={styles.item}>
-          <ListItemIcon className={styles.icon}>
-            <WorkIcon />
-          </ListItemIcon>
+          
           <ListItemText primary="Portfolio" />
         </ListItem>
         <ListItem className={styles.item}>
-          <ListItemIcon className={styles.icon}>
-            <ContactMailIcon />
-          </ListItemIcon>
+          
           <ListItemText primary="Contact" />
         </ListItem>
-      </List> */}
+      </List>
                     
                 </Grid>
-                <Grid item lg={3} md={6} sm={11} className='m2'>
-                {/* <List className={styles.list}>
+                <Grid item lg={2} md={6} sm={11} className={ `m2 ${styles.menu}`}>
+                <List className={styles.listmenu}>
       <ListItem className={styles.item}>
           <ListItemIcon className={styles.icon}>
             <YouTubeIcon />
@@ -69,7 +68,7 @@ and lunch it in the real world and make your games with your full control, custo
         </ListItem>
         <ListItem className={styles.item}>
           <ListItemIcon className={styles.icon}>
-            <Image  src={discord} />
+            <Image height={25}  width={25} src={discord} />
           </ListItemIcon>
         </ListItem>
         <ListItem className={styles.item}>
@@ -78,7 +77,7 @@ and lunch it in the real world and make your games with your full control, custo
           </ListItemIcon>
         </ListItem>
       
-      </List> */}
+      </List>
                         
                     
                     </Grid>

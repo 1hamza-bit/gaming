@@ -1,34 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import  {useEmblaCarousel}  from 'embla-carousel-react';
 import styles from './index.module.scss'; // Import CSS module for styling
+import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 
 const TopAssets = ({ items }) => {
-  const [viewportRef, embla] = useEmblaCarousel();
+  const [viewportRef, emblaRef] = useEmblaCarousel({ loop: false }, [Autoplay()]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollPrev = () => {
-    if (embla) {
+    if (emblaRef) {
       debugger
-      embla.scrollPrev();
+      emblaRef.scrollPrev();
     }
   };
 
   const scrollNext = () => {
-    if (embla) {
-      embla.scrollNext();
+    if (emblaRef) {
+      emblaRef.scrollNext();
     }
   };
 
   useEffect(() => {
-    if (embla) {
-      embla.on('select', () => {
-        setSelectedIndex(embla.selectedScrollSnap());
+    if (emblaRef) {
+      emblaRef.on('select', () => {
+        setSelectedIndex(emblaRef.selectedScrollSnap());
       });
     }
-  }, [embla]);
+  }, [emblaRef]);
 
   return (
     <div className={styles.sliderContainer}>
+     
       <div className={styles.cardsContainer} ref={viewportRef}>
         <div className={styles.cardsInnerContainer}>
           {items.map((item, index) => (

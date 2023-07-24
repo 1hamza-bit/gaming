@@ -1,5 +1,4 @@
 .container {
-  height: 300px;
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: rgb(240, 240, 240);
@@ -51,4 +50,22 @@
   100% {
     transform: translateX(calc(-150px * 20));
   }
+}
+
+.testimonial {
+  /* height: 100%; */
+  perspective: 1200px;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw 2.5vw;
+  transition: all .2s cubic-bezier(.25, .46, .45, .94);
+  box-shadow: 0 4px 19px rgba(142, 151, 158, .25);
+
+}
+.bottomsection{
+  flex-direction: column;
+  align-items: flex-end;
+  display: flex;
 }

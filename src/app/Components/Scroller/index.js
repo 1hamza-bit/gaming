@@ -1,7 +1,7 @@
 import styles from './index.module.css';
 import ExtensionTwoToneIcon from '@mui/icons-material/ExtensionTwoTone';
 import SportsEsportsTwoToneIcon from '@mui/icons-material/SportsEsportsTwoTone';
-import { Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 
 const Brands = () => {
   // Simulated list of brands
@@ -24,12 +24,23 @@ const Brands = () => {
         ))}
       </div>
       <h1>Testimonials</h1>
-
-          <Box>
+          <Grid container spacing={2}>
+            <Grid item lg={4} md={6} sm={11}>
+          <Box className={`m2 ${styles.testimonial}`}>
 
             <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
 
+            <div className={styles.bottomsection}> 
+            <h3>Name...</h3>
+            <p>Name...</p>
+            <p>Name...</p>
+
+
+            </div>
+
           </Box>
+          </Grid>
+          </Grid>
 
        
 

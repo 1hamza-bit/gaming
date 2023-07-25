@@ -6,15 +6,15 @@ h1{
 }
 
 input {
-    height: 4vw;
+    // height: 4vw;
     color: #fff;
     letter-spacing: 1px;
     text-indent: 1vw;
     background-color: rgba(0, 0, 0, 0);
-    border: 2px solid #fff;
-    border-radius: 100vw;
+    // border: 2px solid #fff;
+    // border-radius: 100vw;
     margin-bottom: 0;
-    padding: 0.5vw;
+    // padding: 0.5vw;
     font-family: Montserrat, sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -26,12 +26,30 @@ input {
 .input:hover{
     border: 2px solid aqua;
 }
-.MuiInputBase-root-MuiOutlinedInput-root{
+
+.inputbutton{
+    background-color: rgba(151, 151, 151, 0.5);
+    // padding: 5%;
+    min-width: 133px;
+    min-height: 38px;
+    border-radius: 100vw;
+//   transition: color 200ms;
+  transition: height 2.5s ease;
+
+}
+.inputbutton:hover{
+    background-color: rgba(137, 186, 199, 0.5);
+    min-width: 143px;
+
+
+}
+.MuiOutlinedInput{
     border-radius: 100vw !important;
+   
 }
 
-.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: transparent !important; /* Change the border color when focused */
+.Mui-focused  {
+    border-color: red !important; /* Change the border color when focused */
   }
   
   /* Styles for the focused state of the label */

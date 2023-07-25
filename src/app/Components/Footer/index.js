@@ -27,9 +27,10 @@ and lunch it in the real world and make your games with your full control, custo
 
 <h3 className="mt15">Sign up to our newletter</h3>
     
-<TextField style={{borderRadius: "100vw"}} variant="outlined"    InputProps={{
+<TextField variant="outlined"    InputProps={{
+    style: {borderRadius: "100vw !important", borderColor: "white !important"},
                     endAdornment: <InputAdornment position="end">
-                      <Button>Go </Button>
+                      <Button className={styles.inputbutton}>Go </Button>
                     </InputAdornment>,
                   }} fullWidth/>
 <h4>2023 Mob Studios, Inc</h4>

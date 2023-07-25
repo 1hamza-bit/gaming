@@ -38,7 +38,7 @@ body::-webkit-scrollbar-thumb:hover {
   font-family: fantasy;
 }
 .ml40p{
-  margin-left: 40%;
+  margin-left: 40% !important;
 }
 .mt15{
   margin-top: 10%;

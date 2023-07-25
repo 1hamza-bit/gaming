@@ -31,6 +31,24 @@ function About() {
             
             </Grid>
             <Grid item lg={6} md={6} sm={11}>
+            <List className={styles.listmenu}>
+      <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <YouTubeIcon />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <Image height={25}  width={25} src={discord} />
+          </ListItemIcon>
+        </ListItem>
+        <ListItem className={styles.item}>
+          <ListItemIcon className={styles.icon}>
+            <LinkedInIcon />
+          </ListItemIcon>
+        </ListItem>
+      
+      </List>
             </Grid>
         </Grid>
 

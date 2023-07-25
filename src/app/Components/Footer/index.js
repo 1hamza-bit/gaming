@@ -1,6 +1,6 @@
 'use client'
 
-import { Grid, TextField } from "@mui/material";
+import { Grid, InputAdornment, TextField } from "@mui/material";
 import { useState } from "react";
 import styles from "./index.module.scss"
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -27,7 +27,11 @@ and lunch it in the real world and make your games with your full control, custo
 
 <h3 className="mt15">Sign up to our newletter</h3>
     
-<TextField style={{borderRadius: "100vw"}} variant="outlined" fullWidth/>
+<TextField style={{borderRadius: "100vw"}} variant="outlined"    InputProps={{
+                    endAdornment: <InputAdornment position="end">
+                      <Button>Go </Button>
+                    </InputAdornment>,
+                  }} fullWidth/>
 <h4>2023 Mob Studios, Inc</h4>
 
                 </Grid>

@@ -64,7 +64,7 @@ function Hero() {
                     <Image
                     src={robot}
                     className={styles.imageContainer}
-                    width={700}
+                    // width={700}
                     />
                 </Grid>
             </Grid>

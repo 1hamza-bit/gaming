@@ -63,20 +63,20 @@
 .imageContainer {
     position: relative;
     animation: floatLeftRight 5s linear infinite; /* Customize the animation duration and timing here */
-    .image {
+  
         object-fit: contain;
-        width: 700 !important;
+        width: 700px !important;
         position: relative !important;
         height: unset !important;
-      }
+   
   }
 
-  @media screen and (min-width:600) {
+  @media screen and (max-width:600) {
     .imageContainer {
-        .image {
-            width: 400 !important;
+        
+            width: 400px !important;
             
-          }
+          
       }
   }
   

@@ -1,4 +1,7 @@
+import { Grid } from '@mui/material';
 import React, { useState } from 'react';
+import styles from './index.module.scss'
+import styled, { keyframes } from 'styled-components';
 
 const products = [
   { id: 1, name: 'Product 1' },
@@ -9,8 +12,35 @@ const products = [
   // Add more product objects here
 ];
 
+const slideFromRight = keyframes`
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
+
+const slideFromLeft = keyframes`
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+`;
+
+const GridContainer = styled.div`
+  display: flex;
+  /* Add your grid styling here */
+`;
+
+const ProductItem = styled.div`
+  animation: ${(props) => (props.slide ? slideFromRight : 'none')} 0.5s;
+`;
 const TopAssets = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const [slideDirection, setSlideDirection] = useState(null);
 
   const handleNextClick = () => {
     // Calculate the index for the next set of products
@@ -19,6 +49,8 @@ const TopAssets = () => {
     // Ensure the next index is within bounds
     if (nextIndex <= products.length - 4) {
       setStartIndex(nextIndex);
+      setSlideDirection('right');
+      setTimeout(() => setSlideDirection(null), 500); // Reset slide direction after 500ms
     }
   };
 
@@ -29,18 +61,25 @@ const TopAssets = () => {
     // Ensure the previous index is within bounds
     if (prevIndex >= 0) {
       setStartIndex(prevIndex);
+      setSlideDirection('left');
+      setTimeout(() => setSlideDirection(null), 500); // Reset slide direction after 500ms
     }
   };
-
+ 
   return (
     <div>
-      <div className="grid-container">
-        {products.slice(startIndex, startIndex + 4).map((product) => (
-          <div key={product.id} className="product-item">
+      <GridContainer slideDirection={slideDirection}>
+
+      <Grid container spacing={1} className={styles.topp}>
+        {products.slice(startIndex, startIndex + 4).map((product,index) => (
+          <Grid lg={3} md={4} sm={1} className="product-item">
+             <ProductItem key={product.id} slide={index === 3 && startIndex > 0}>
             <p>{product.name}</p>
-          </div>
+          </ProductItem>
+          </Grid>
         ))}
-      </div>
+      </Grid>
+      </GridContainer>
       <button onClick={handlePrevClick} disabled={startIndex === 0}>
         Previous
       </button>

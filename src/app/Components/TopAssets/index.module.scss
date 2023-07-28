@@ -1,58 +1,39 @@
-/* components/CardSliderEmbla.module.css */
+.carouselContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-.sliderContainer {
+.carousel {
+  display: flex;
+  overflow: hidden;
   width: 80%;
   margin: 0 auto;
-  overflow: hidden;
-}
-
-.cardsContainer {
-  display: flex;
-  gap: 16px;
-  overflow: hidden;
   position: relative;
 }
 
-.cardsInnerContainer {
-  display: flex;
-  gap: 16px;
-  position: relative;
-  scroll-behavior: smooth;
+.carouselSlide {
+  flex: 0 0 25%; /* Show 4 products at a time (25% width each) */
+  transition: transform 0.3s ease-in-out;
 }
 
-.card {
-  flex: 0 0 auto;
-  width: 300px; /* Adjust the card width as needed */
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+.carouselSlide img {
+  width: 100%;
+  height: auto;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+.active {
+  transform: translateX(-100%);
 }
 
-.controls {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 8px;
-  button {
-    padding: 8px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:focus {
-    outline: none;
-  }
-}
+// button {
+//   padding: 8px 16px;
+//   margin: 8px;
+//   font-size: 16px;
+//   cursor: pointer;
+// }
 
-
+// button:hover {
+//   background-color: #f0f0f0;
+// }

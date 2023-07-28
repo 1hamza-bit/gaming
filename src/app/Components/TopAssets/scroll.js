@@ -1,3 +1,5 @@
+import { Highlight } from "@mui/icons-material";
+
 const { Carousel } = require("@trendyol-js/react-carousel")
 
 

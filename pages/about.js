@@ -1,7 +1,8 @@
 import Image from 'next/image'
 
-import ScrollProgressBar from './Components/ScrollProgressBar'
-import About from './app/Components/About'
+// import ScrollProgressBar from '../src/app/Components/ScrollProgressBar'
+import ScrollProgressBar from '../Components/ScrollProgressBar'
+import Abouts from '../Components/About'
 // import Hero from './Components/Home'
 
 
@@ -11,7 +12,7 @@ export default function About() {
   return (
     <>  
     <ScrollProgressBar />
-      <About />
+      <Abouts />
       </>
 
   )

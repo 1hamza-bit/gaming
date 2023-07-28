@@ -9,10 +9,19 @@ import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
 import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
+import { useRouter } from "next/router";
 
 function Header()  {
 const [isOpen, setIsOpen] = useState(false);
+const router = useRouter();
 
+const handleHomeClick = () => {
+  router.push('/');
+};
+
+const handleAboutClick = () => {
+  router.push('/about');
+};
 
 
 const StyledDrawer = styled(Drawer)({
@@ -64,13 +73,13 @@ const toggleDrawer =() => {
           <p>hamza</p>
           <Container className={styles.container}>
       <List className={styles.list}>
-      <ListItem className={styles.item}>
+      <ListItem className={styles.item} onClick={handleHomeClick}>
           <ListItemIcon className={styles.icon}>
             <HomeIcon />
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem className={styles.item}>
+        <ListItem className={styles.item}  onClick={handleAboutClick}>
           <ListItemIcon className={styles.icon}>
             <InfoIcon />
           </ListItemIcon>

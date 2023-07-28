@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.0",
+    "@next/font": "^13.4.12",
     "@trendyol-js/react-carousel": "^3.0.2",
     "embla-carousel": "^8.0.0-rc11",
     "embla-carousel-autoplay": "^8.0.0-rc11",

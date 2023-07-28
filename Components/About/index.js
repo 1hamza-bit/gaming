@@ -1,10 +1,14 @@
 'use client'
 import Header from '../Header';
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Grid, List, ListItem, ListItemText, Typography } from '@mui/material';
 import styles from './index.module.scss'
+import { useState } from 'react';
+import Image from 'next/image';
+import robot from "../../assets/hero.png"
+import Footer from '../Footer';
 
 
-function About() {
+function Abouts() {
   const [selected, setSelected] = useState("Mobile Game Development");
 
 
@@ -79,4 +83,4 @@ function About() {
 }
 
 
-export default About;
+export default Abouts;

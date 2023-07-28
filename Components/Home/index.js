@@ -6,7 +6,7 @@ import styles from './index.module.scss'
 import Footer from '../Footer';
 import TopAssets from '../TopAssets';
 import Image from 'next/image';
-import robot from "../../../../assets/hero.png"
+import robot from "../../assets/hero.png"
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 const items = [

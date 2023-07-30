@@ -1,7 +1,5 @@
-import { Grid } from '@mui/material';
-import React, { useState } from 'react';
-import styles from './index.module.scss'
-import styled, { keyframes } from 'styled-components';
+import React, { useRef } from 'react';
+import { Grid, Button } from '@mui/material';
 
 const products = [
   { id: 1, name: 'Product 1' },
@@ -9,73 +7,42 @@ const products = [
   { id: 3, name: 'Product 3' },
   { id: 4, name: 'Product 4' },
   { id: 5, name: 'Product 5' },
+  { id: 6, name: 'Product 6' },
+  { id: 7, name: 'Product 7' },
   // Add more product objects here
 ];
 
-const SliderContainer = styled.div`
-  width: 100%; /* Set a fixed width for the container */
-  overflow: hidden; /* Hide overflow to show only 4 products */
-  position: relative;
-`;
-
-const GridContainer = styled.div`
-  display: flex;
-  /* Add your grid styling here */
-  transition: transform 0.5s ease;
-  transform: translateX(-${(props) => props.startIndex * 25}%); /* Adjust the translation */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: ${(props) => 100 * (props.totalProducts + 1)}%; /* 1 extra width to accommodate the 5th product */
-`;
-
-
 const TopAssets = () => {
-  const [startIndex, setStartIndex] = useState(0);
-  const [slideDirection, setSlideDirection] = useState(null);
+  const sliderRef = useRef(null);
 
   const handleNextClick = () => {
-    // Calculate the index for the next set of products
-    const nextIndex = startIndex + 1;
-
-    // Ensure the next index is within bounds
-    if (nextIndex <= products.length - 3) {
-      setStartIndex(nextIndex);
-    }
+    sliderRef.current.scrollLeft += sliderRef.current.offsetWidth;
   };
 
   const handlePrevClick = () => {
-    // Calculate the index for the previous set of products
-    const prevIndex = startIndex - 1;
-
-    // Ensure the previous index is within bounds
-    if (prevIndex >= 0) {
-      setStartIndex(prevIndex);
-    }
+    sliderRef.current.scrollLeft -= sliderRef.current.offsetWidth;
   };
- 
-  return (
-    <div>
-      <SliderContainer>
-      <GridContainer startIndex={startIndex}>
 
-      <Grid container spacing={1} className={styles.topp}>
-        {products.map((product,index) => (
-          <Grid lg={3} md={4} sm={1} key={product.id} className="product-item">
-            <p>{product.name}</p>
-         
+  return (
+    <div style={{ overflow: 'hidden' }}>
+      <Grid container ref={sliderRef}>
+        {products.map((product) => (
+          <Grid key={product.id} item xs={3} style={{ flex: '0 0 25%' }}>
+            <div className="product-item">
+              <p>{product.name}</p>
+            </div>
           </Grid>
         ))}
-        
       </Grid>
-      </GridContainer>
-      </SliderContainer>
-      <button onClick={handlePrevClick} disabled={startIndex === 0}>
+      <Button onClick={handlePrevClick} disabled={sliderRef.current?.scrollLeft === 0}>
         Previous
-      </button>
-      <button onClick={handleNextClick} disabled={startIndex >= products.length - 4}>
+      </Button>
+      <Button
+        onClick={handleNextClick}
+        disabled={sliderRef.current?.scrollLeft >= sliderRef.current?.scrollWidth - sliderRef.current?.offsetWidth}
+      >
         Next
-      </button>
+      </Button>
     </div>
   );
 };

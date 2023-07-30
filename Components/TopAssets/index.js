@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
 import { Grid, Button } from '@mui/material';
+import Image from 'next/image';
+import robot from "../../assets/hero.png"
+import styles from "./index.module.scss"
 
 const products = [
   { id: 1, name: 'Product 1' },
@@ -14,26 +17,38 @@ const products = [
 
 const TopAssets = () => {
   const sliderRef = useRef(null);
+  const itemsInView = 4;
 
   const handleNextClick = () => {
-    sliderRef.current.scrollLeft += sliderRef.current.offsetWidth;
+    const scrollAmount = 100 * itemsInView;
+    sliderRef.current.scrollLeft += scrollAmount;
   };
 
   const handlePrevClick = () => {
-    sliderRef.current.scrollLeft -= sliderRef.current.offsetWidth;
+    const scrollAmount = 100 * itemsInView;
+    sliderRef.current.scrollLeft -= scrollAmount;
   };
 
   return (
-    <div style={{ overflow: 'hidden' }}>
-      <Grid container ref={sliderRef}>
+      <div style={{ overflow: 'hidden' }} className={styles.topp}>
+      <div
+        ref={sliderRef}
+        style={{ display: 'flex', overflowX: 'scroll', scrollBehavior: 'smooth', width: '100%', whiteSpace: 'nowrap', scrollbarWidth: 'none', /* Hide scrollbar for Firefox */
+        msOverflowStyle: 'none', }}
+      >
         {products.map((product) => (
-          <Grid key={product.id} item xs={3} style={{ flex: '0 0 25%' }}>
+          <div key={product.id} style={{ flex: '0 0 25%', padding: '8px' }}>
             <div className="product-item">
               <p>{product.name}</p>
+              <Image
+                    src={robot}
+                    // className={styles.imageContainer}
+                    width={300}
+                    />
             </div>
-          </Grid>
+          </div>
         ))}
-      </Grid>
+      </div>
       <Button onClick={handlePrevClick} disabled={sliderRef.current?.scrollLeft === 0}>
         Previous
       </Button>

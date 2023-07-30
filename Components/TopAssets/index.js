@@ -12,32 +12,24 @@ const products = [
   // Add more product objects here
 ];
 
-const slideFromRight = keyframes`
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`;
-
-const slideFromLeft = keyframes`
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+const SliderContainer = styled.div`
+  width: 100%; /* Set a fixed width for the container */
+  overflow: hidden; /* Hide overflow to show only 4 products */
+  position: relative;
 `;
 
 const GridContainer = styled.div`
   display: flex;
   /* Add your grid styling here */
+  transition: transform 0.5s ease;
+  transform: translateX(-${(props) => props.startIndex * 25}%); /* Adjust the translation */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: ${(props) => 100 * (props.totalProducts + 1)}%; /* 1 extra width to accommodate the 5th product */
 `;
 
-const ProductItem = styled.div`
-  animation: ${(props) => (props.slide ? slideFromRight : 'none')} 0.5s;
-`;
+
 const TopAssets = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [slideDirection, setSlideDirection] = useState(null);
@@ -47,10 +39,8 @@ const TopAssets = () => {
     const nextIndex = startIndex + 1;
 
     // Ensure the next index is within bounds
-    if (nextIndex <= products.length - 4) {
+    if (nextIndex <= products.length - 3) {
       setStartIndex(nextIndex);
-      setSlideDirection('right');
-      setTimeout(() => setSlideDirection(null), 500); // Reset slide direction after 500ms
     }
   };
 
@@ -61,25 +51,25 @@ const TopAssets = () => {
     // Ensure the previous index is within bounds
     if (prevIndex >= 0) {
       setStartIndex(prevIndex);
-      setSlideDirection('left');
-      setTimeout(() => setSlideDirection(null), 500); // Reset slide direction after 500ms
     }
   };
  
   return (
     <div>
-      <GridContainer slideDirection={slideDirection}>
+      <SliderContainer>
+      <GridContainer startIndex={startIndex}>
 
       <Grid container spacing={1} className={styles.topp}>
-        {products.slice(startIndex, startIndex + 4).map((product,index) => (
-          <Grid lg={3} md={4} sm={1} className="product-item">
-             <ProductItem key={product.id} slide={index === 3 && startIndex > 0}>
+        {products.map((product,index) => (
+          <Grid lg={3} md={4} sm={1} key={product.id} className="product-item">
             <p>{product.name}</p>
-          </ProductItem>
+         
           </Grid>
         ))}
+        
       </Grid>
       </GridContainer>
+      </SliderContainer>
       <button onClick={handlePrevClick} disabled={startIndex === 0}>
         Previous
       </button>

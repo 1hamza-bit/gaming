@@ -1,18 +1,27 @@
 'use client'
 import Header from '../Header';
-import { Button, Grid, List, ListItem, ListItemText, Typography } from '@mui/material';
+import { Button, Grid, List, ListItem, ListItemText, Typography, makeStyles } from '@mui/material';
 import styles from './index.module.scss'
 import { useState } from 'react';
 import Image from 'next/image';
 import robot from "../../assets/hero.png"
 import Footer from '../Footer';
+import styled from '@emotion/styled';
 
 
+const StyledListItemText = (props) => (
+  <ListItemText
+    style={{
+      fontSize: "26px"
+    }}
+  />
+);
 function Abouts() {
   const [selected, setSelected] = useState("Mobile Game Development");
 
-  const handleUpdate =(event) => {
-    setSelected(event.target.value)
+  const handleUpdate = (value) => {
+    debugger
+    setSelected(value)
   }
 
   return <>
@@ -65,18 +74,24 @@ function Abouts() {
       </Grid>
       <Grid item lg={6} md={6} sm={11}>
         <List className={styles.listmenu}>
-          <ListItem className={styles.item} value={"Mobile Game Development"} onClick={handleUpdate} >
+          <ListItem className={styles.item} value={"Mobile Game Development"} onClick={() => handleUpdate("Mobile Game Development")} >
 
-            <ListItemText  primary="Mobile Game Development" />
+            <ListItemText  primary="Mobile Game Development"  style={{
+      fontSize: "26px !important"
+    }} />
           </ListItem>
-          <ListItem className={styles.item} value={"Freelance Services"}  onClick={handleUpdate}>
+          <ListItem className={styles.item} value={"Freelance Services"}  onClick={() => handleUpdate("Freelance Services")}>
 
-            <ListItemText  primary="Freelance Services" />
+            <ListItemText  primary="Freelance Services"  style={{
+      fontSize: "26px"
+    }} />
           </ListItem>
 
-          <ListItem className={styles.item} value={"Unity Assets"}  onClick={handleUpdate}>
+          <ListItem className={styles.item} value={"Unity Assets"}  onClick={() => handleUpdate("Unity Assets")}>
 
-            <ListItemText  primary="Unity Assets" />
+            <ListItemText   primary="Unity Assets"   style={{
+      fontSize: "26px"
+    }}/>
           </ListItem>
 
         </List>

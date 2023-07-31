@@ -63,7 +63,9 @@
 
 
   .listmenu{
-    .item{
-        
-    }
+      .item {
+      cursor: pointer;
+      border-bottom: 1px solid rgb(105, 105, 105);
+      }
+    
   }

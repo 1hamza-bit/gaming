@@ -12,9 +12,24 @@ import InfoIcon from '@mui/icons-material/Info';
 import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 function Footer()  {
     const [isOpen, setisOpen] = useState(true);
+const router = useRouter();
+
+    const handleHomeClick = () => {
+      router.push('/');
+    };
+    
+    const handleAboutClick = () => {
+      router.push('/about');
+    };
+    
+    const handleContactClick = () => {
+      router.push('/contact');
+    };
+    
      
             return         <>
             <Grid container spacing={2} className={styles.footer}>
@@ -39,11 +54,11 @@ and lunch it in the real world and make your games with your full control, custo
                     
                 <Grid item lg={3} md={6} sm={11} className={ `m2 ${styles.menu}`}>
                 <List className={styles.listmenu}>
-      <ListItem className={styles.item}>
+      <ListItem className={styles.item}  onClick={handleHomeClick}>
           
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem className={styles.item}>
+        <ListItem className={styles.item} onClick={handleAboutClick}>
          
           <ListItemText primary="About" />
         </ListItem>
@@ -57,7 +72,7 @@ and lunch it in the real world and make your games with your full control, custo
           
           <ListItemText primary="Portfolio" />
         </ListItem>
-        <ListItem className={styles.item}>
+        <ListItem className={styles.item} onClick={handleContactClick}>
           
           <ListItemText primary="Contact" />
         </ListItem>

@@ -8,6 +8,9 @@ import TopAssets from '../TopAssets';
 import Image from 'next/image';
 import robot from "../../assets/hero.png"
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import dynamic from 'next/dynamic';
+
+const DynamicStyles = dynamic(() => import('./index.module.scss'), { ssr: false });
 
 const items = [
     {
@@ -73,6 +76,7 @@ function Hero() {
 
 
             <Footer />
+            {/* <DynamicStyles /> */}
         </>;
     }
 

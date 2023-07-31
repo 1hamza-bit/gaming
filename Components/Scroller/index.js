@@ -13,7 +13,18 @@ const Brands = () => {
    {icon: <ExtensionTwoToneIcon />, name: "Game Shaders"}, {icon: <ExtensionTwoToneIcon />, name: "Teaser Trailer"}
   ];
 
+  const allBrands2 = [
+    {icon: <ExtensionTwoToneIcon color="primary" />, name:  "Unity"}, {icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "Blender3D"}, 
+    {icon: <ExtensionTwoToneIcon />, name: "MAYA"}, {icon: <ExtensionTwoToneIcon />, name: "3D Max"},
+    {icon: <ExtensionTwoToneIcon />, name: "Substance Painter"}, {icon: <ExtensionTwoToneIcon />, name: "Mixamo "}, 
+    {icon: <ExtensionTwoToneIcon />, name: "Unreal"}, 
+   ];
+
+
+
   const extendedBrands = [...allBrands, ...allBrands, ...allBrands]; // Duplicating the brands
+  const extendedBrands2 = [...allBrands2, ...allBrands2, ...allBrands2]; // Duplicating the brands
+
 
   return (
     <div className={styles.container}>
@@ -41,6 +52,14 @@ const Brands = () => {
           </Box>
           </Grid>
           </Grid>
+          .
+          
+      <h1>Provide you when needed</h1>
+          <div className={styles.brands2}>
+        {extendedBrands2.map((brand, index) => (
+          <div className={styles.brandItem} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
+        ))}
+      </div>
 
        
 

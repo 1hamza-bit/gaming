@@ -68,14 +68,15 @@
         width: 700px !important;
         position: relative !important;
         height: unset !important;
-   
+    overflow: hidden;
   }
 
-  @media screen and (max-width:600) {
+  @media screen and (max-width:700px) {
     .imageContainer {
         
-            width: 400px !important;
+            width: 100% !important;
             
+    animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
           
       }
   }
@@ -86,6 +87,15 @@
     }
     50% {
       transform: translateX(100px); /* Customize the distance the image travels */
+    }
+  }
+
+  @keyframes floatLeftRightmb {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px); /* Customize the distance the image travels */
     }
   }
 

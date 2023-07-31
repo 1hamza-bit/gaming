@@ -23,6 +23,10 @@ const handleAboutClick = () => {
   router.push('/about');
 };
 
+const handleContactClick = () => {
+  router.push('/contact');
+};
+
 
 const StyledDrawer = styled(Drawer)({
     minWidth: 250,
@@ -91,7 +95,7 @@ const toggleDrawer =() => {
           </ListItemIcon>
           <ListItemText primary="Portfolio" />
         </ListItem>
-        <ListItem className={styles.item}>
+        <ListItem className={styles.item} onClick={handleContactClick}>
           <ListItemIcon className={styles.icon}>
             <ContactMailIcon />
           </ListItemIcon>

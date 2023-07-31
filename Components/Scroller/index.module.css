@@ -25,7 +25,14 @@
   display: flex;
   flex-wrap: nowrap;
   padding: 10px;
-  animation: scroll 20s linear infinite;
+  animation: scroll 50s linear infinite;
+}
+
+.brands2 {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px;
+  animation: scroll2 50s linear infinite;
 }
 
 .brandItem {
@@ -49,6 +56,15 @@
   }
   100% {
     transform: translateX(calc(-150px * 20));
+  }
+}
+
+@keyframes scroll2 {
+  0% {
+    transform: translateX(calc(-150px * 20));
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 

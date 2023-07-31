@@ -11,11 +11,14 @@ import Footer from '../Footer';
 function Abouts() {
   const [selected, setSelected] = useState("Mobile Game Development");
 
+  const handleUpdate =(event) => {
+    setSelected(event.target.value)
+  }
 
   return <>
     <Header />
     <Grid container spacing={2} className={styles.banner}>
-      <Grid item lg={5} md={6} sm={11} className={`m7 ${styles.hero}`}>
+      <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.hero}`}>
         <h1>About Mob studios</h1>
 
         <Typography >Mobstudios is a leading mobile game development and design company specializing in creating captivating and innovative gaming experiences
@@ -25,10 +28,11 @@ function Abouts() {
 
 
       </Grid>
-      <Grid item lg={6} md={6} sm={11}>
+      <Grid item lg={5} md={6} sm={11}>
         <Image
           src={robot}
           className={styles.imageContainer}
+          width={300}
         />
       </Grid>
     </Grid>
@@ -39,6 +43,8 @@ function Abouts() {
         <Image
           src={robot}
           className={styles.imageContainer}
+          width={300}
+
         />
         {selected === "Mobile Game Development" ?
           <p>At Mobstudios, we excel in developing a wide variety of mobile games across different genres, including action, adventure, puzzle, strategy, and more.
@@ -59,18 +65,18 @@ function Abouts() {
       </Grid>
       <Grid item lg={6} md={6} sm={11}>
         <List className={styles.listmenu}>
-          <ListItem className={styles.item}>
+          <ListItem className={styles.item} value={"Mobile Game Development"} onClick={handleUpdate} >
 
-            <ListItemText value={"Mobile Game Development"} primary="Mobile Game Development" />
+            <ListItemText  primary="Mobile Game Development" />
           </ListItem>
-          <ListItem className={styles.item}>
+          <ListItem className={styles.item} value={"Freelance Services"}  onClick={handleUpdate}>
 
-            <ListItemText value={"Freelance Services"} primary="Freelance Services" />
+            <ListItemText  primary="Freelance Services" />
           </ListItem>
 
-          <ListItem className={styles.item}>
+          <ListItem className={styles.item} value={"Unity Assets"}  onClick={handleUpdate}>
 
-            <ListItemText value={"Unity Assets"} primary="Unity Assets" />
+            <ListItemText  primary="Unity Assets" />
           </ListItem>
 
         </List>

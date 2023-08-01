@@ -52,6 +52,7 @@
 .imageContainer {
     position: relative;
     animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
+    transform: rotate(45deg);
   }
   
 

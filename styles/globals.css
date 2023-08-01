@@ -126,7 +126,7 @@ body::-webkit-scrollbar-thumb:hover {
   color: #000 !important;
 }
 
-.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+.MuiBackdrop-root {
 
   background-color: rgb(221 221 221 / 50%);
 
@@ -134,11 +134,24 @@ body::-webkit-scrollbar-thumb:hover {
  
 }
 
+/* .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+
+  background-color: rgb(221 221 221 / 50%);
+
+  width: 100vw !important;
+ 
+} */
+
 .MuiLinearProgress-root{
   background-color: white !important;
 }
 
-.css-5xe99f-MuiLinearProgress-bar1{
+.MuiLinearProgress-root span{
+  background-color: rgb(4, 249, 216) !important;
+
+}
+
+.MuiLinearProgress-bar1{
   background-color: rgb(4, 249, 216) !important;
 }
 
@@ -146,3 +159,14 @@ body::-webkit-scrollbar-thumb:hover {
         color: rgb(4, 249, 216) !important;
 }
 
+
+@media screen and (max-width:700px) {
+
+  
+    h1{
+      font-size: 44px !important;
+    }
+
+
+
+}

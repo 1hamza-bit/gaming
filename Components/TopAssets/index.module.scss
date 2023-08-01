@@ -41,28 +41,28 @@
 
 
 .prev{
-  background-color: aqua;
-  color: white;
-  border-radius: 10vw;
-  margin-left: 2%;
-  padding: 10px;
+  background-color: aqua !important;
+  color: white !important;
+  border-radius: 10vw !important;
+  margin-left: 2% !important;
+  padding: 10px !important;
 }
 .prev:hover{
-  transform: translate(1px, 1px);
-  background-color: rgb(4, 227, 227);
+  transform: translate(1px, 1px) !important;
+  background-color: rgb(4, 227, 227) !important;
 }
 
 .next{
-  background-color: aqua;
-  color: white;
-  border-radius: 10vw;
-  margin-left: 2%;
-  padding: 10px;
+  background-color: aqua !important;
+  color: white !important;
+  border-radius: 10vw !important;
+  margin-left: 2% !important;
+  padding: 10px !important;
 
 }
 
 .next:hover{
-  transform: translate(1px, 1px);
-  background-color: rgb(4, 227, 227);
+  transform: translate(1px, 1px) !important;
+  background-color: rgb(4, 227, 227) !important;
 
 }

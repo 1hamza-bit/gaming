@@ -89,3 +89,34 @@
       }
     
   }
+
+  @media screen and (max-width:700px) {
+
+    .banner2{
+      overflow: hidden;
+      margin-top: 2%;
+
+    }
+    .hero2{
+      width: 100%;
+      h1{
+        font-size: 44px;
+        
+    }
+    p{
+       font-size: 15px;
+        margin-bottom: 15px;
+        margin-left: 5%;
+    }
+    .button1, .button2{
+      font-size: 15px;
+    }
+    }
+    .imageContainer {
+        
+            width: 100% !important;
+            
+    animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
+          
+      }
+  }

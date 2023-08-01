@@ -20,14 +20,14 @@ function Abouts() {
   const [selected, setSelected] = useState("Mobile Game Development");
 
   const handleUpdate = (value) => {
-    debugger
+   
     setSelected(value)
   }
 
   return <>
     <Header />
-    <Grid container spacing={2} className={styles.banner}>
-      <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.hero}`}>
+    <Grid container spacing={2} className={styles.banner2}>
+      <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.hero2}`}>
         <h1>About Mob studios</h1>
 
         <Typography >Mobstudios is a leading mobile game development and design company specializing in creating captivating and innovative gaming experiences
@@ -47,9 +47,34 @@ function Abouts() {
     </Grid>
 
 
-    <Grid container spacing={1}>
+    <Grid container spacing={2} className={styles.services}>
       <Grid item lg={6} md={6} sm={11}>
-        <Image
+      <List className={styles.listmenu}>
+          <ListItem className={`${styles.item} ${selected === "Mobile Game Development"? 'maincolor' : ''}`}  onClick={() => handleUpdate("Mobile Game Development")} >
+
+            <ListItemText  primary="Mobile Game Development"  style={{
+      fontSize: "26px !important"
+    }} />
+          </ListItem>
+          <ListItem className={`${styles.item} ${selected === "Freelance Services" ? 'maincolor' : ''}`}     onClick={() => handleUpdate("Freelance Services")}>
+
+            <ListItemText  primary="Freelance Services"  style={{
+      fontSize: "26px"
+    }} />
+          </ListItem>
+
+          <ListItem  className={`${styles.item} ${selected === "Unity Assets" ? 'maincolor' : ''}`}   onClick={() => handleUpdate("Unity Assets")}>
+
+            <ListItemText   primary="Unity Assets"   style={{
+      fontSize: "26px"
+    }}/>
+          </ListItem>
+
+        </List>
+     
+      </Grid>
+      <Grid item lg={6} md={6} sm={11}>
+      <Image
           src={robot}
           className={styles.imageContainer}
           width={300}
@@ -71,30 +96,6 @@ function Abouts() {
               Our Unity assets are designed to accelerate development timelines and empower game developers to create immersive and visually stunning games with ease.
             </p>
         }
-      </Grid>
-      <Grid item lg={6} md={6} sm={11}>
-        <List className={styles.listmenu}>
-          <ListItem className={styles.item} value={"Mobile Game Development"} onClick={() => handleUpdate("Mobile Game Development")} >
-
-            <ListItemText  primary="Mobile Game Development"  style={{
-      fontSize: "26px !important"
-    }} />
-          </ListItem>
-          <ListItem className={styles.item} value={"Freelance Services"}  onClick={() => handleUpdate("Freelance Services")}>
-
-            <ListItemText  primary="Freelance Services"  style={{
-      fontSize: "26px"
-    }} />
-          </ListItem>
-
-          <ListItem className={styles.item} value={"Unity Assets"}  onClick={() => handleUpdate("Unity Assets")}>
-
-            <ListItemText   primary="Unity Assets"   style={{
-      fontSize: "26px"
-    }}/>
-          </ListItem>
-
-        </List>
       </Grid>
     </Grid>
 

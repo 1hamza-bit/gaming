@@ -1,8 +1,10 @@
-.hero{
+
+
+.hero2{
     h1{
         font-size: 74px;
         font-family: fantasy;
-        color: rgb(53, 53, 53);
+        color: rgb(221, 253, 245);
     }
     p{
        font-size: 20px;
@@ -39,33 +41,50 @@
     }
 }
 
-.banner{
-    border-bottom-right-radius: 6vw;
+.banner2{
+    // border-bottom-right-radius: 6vw;
 
-    border-bottom-left-radius: 6vw;
-    background-color: rgb(240, 240, 240);
-   color: black;
+    // border-bottom-left-radius: 6vw;
+    background-color: rgb(24, 23, 23);
+   color: rgb(255, 250, 250);
 }
 
 .imageContainer {
     position: relative;
-    animation: floatLeftRight 5s linear infinite; /* Customize the animation duration and timing here */
+    animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
   }
   
-  @keyframes floatLeftRight {
+
+
+  .services{
+    background-color: rgb(237, 244, 250);
+    color: black;
+  }
+
+  @keyframes floatLeftRightmb {
     0%, 100% {
       transform: translateX(0);
     }
     50% {
-      transform: translateX(100px); /* Customize the distance the image travels */
+      transform: translateX(10px); /* Customize the distance the image travels */
     }
   }
-
-
   .listmenu{
       .item {
-      cursor: pointer;
-      border-bottom: 1px solid rgb(105, 105, 105);
+        cursor: pointer;
+        border-bottom: 1px solid rgb(173 173 173);
+        padding: 2% 7%;
+        margin: 0% 2%;
+      }
+      .item:hover{
+            color: rgb(238, 102, 102);
+            span{
+    animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
+            }
+      }
+      span{
+        font-size: 26px !important;
+        font-family: fantasy;
       }
     
   }

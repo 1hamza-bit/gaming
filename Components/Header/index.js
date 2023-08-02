@@ -10,6 +10,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import { useRouter } from "next/router";
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 function Header()  {
 const [isOpen, setIsOpen] = useState(false);
@@ -57,10 +58,10 @@ const toggleDrawer =() => {
                                 <div className="line"></div>
                             </div>
                             </button>
-                            <Typography className="ml40p fantasy" variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                            <Typography className={`ml40p fantasy ${styles.logo}`} variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                 Mob Studios
                             </Typography>
-                            <Button color="inherit">Login</Button>
+                            <Button className={styles.button1}>Portfolio <ArrowOutwardIcon /></Button> 
                         </Toolbar>
                     </AppBar>
                     

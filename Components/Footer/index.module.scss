@@ -1,4 +1,10 @@
 .footer{
+
+    .MuiInputBase-root, .MuiTextField-root{
+        border-radius: 100vw !important;
+        border: 1px solid white !important;
+        border-color: white !important;
+    }
 h1{
     color: rgb(4, 249, 216);
     font-family: fantasy;
@@ -34,7 +40,8 @@ input {
     min-height: 38px;
     border-radius: 100vw;
 //   transition: color 200ms;
-  transition: height 2.5s ease;
+  transition: width 2.5s ease-in-out ;
+  color: white;
 
 }
 .inputbutton:hover{

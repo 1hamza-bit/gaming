@@ -4,7 +4,7 @@
 }
 .button1{
   border-radius: 100vw;
-  background-color: rgb(4, 249, 216);
+  background-color: rgb(249 194 4);
 //   background-color: rgb(139, 2, 2);
   color: black;
    padding: 8px 6%;
@@ -13,6 +13,18 @@
   margin-left: 5%;
   transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s cubic-bezier(.23, 1, .32, 1);
 
+}
+
+.logo{
+  justify-content: center;
+    display: flex;
+    margin: 2px 0%;
+    margin-left: 15%;
+}
+
+.logo:hover{
+  transform: translate(1px, 1px);
+  opacity: 0.8;
 }
 
 .button1:hover{
@@ -27,7 +39,7 @@ svg{
   
 
 }
-background-color: rgb(4, 249, 216);
+background-color: rgb(249 194 4);
 }
 
 @media screen and (max-width:700px) {
@@ -105,14 +117,14 @@ background-color: rgb(4, 249, 216);
      
     }
     .item:hover  {
-      color: rgb(4, 249, 216);
+      color: rgb(249 194 4);
       transform: translate(5px, 0px);
       .icon{
-      color: rgb(4, 249, 216);
+      color: rgb(249 194 4);
 
       }
       span{
-      color: rgb(4, 249, 216);
+      color: rgb(249 194 4);
       }
     }
   }

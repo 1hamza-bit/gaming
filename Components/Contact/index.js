@@ -26,6 +26,7 @@ function Contacts() {
 
       </Grid>
       <Grid item lg={5} md={6} sm={11}>
+        <div className={styles.div}>
         <Image
           src={letterclosed}
           className={styles.letter1}
@@ -36,6 +37,7 @@ function Contacts() {
           className={styles.letter2}
           width={200}
         />
+        </div>
       </Grid>
     </Grid>
 

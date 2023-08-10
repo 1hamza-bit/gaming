@@ -44,15 +44,23 @@
 
 .bannerc{
     background-color: rgb(24, 24, 24);
+    .div{
+        width: 30%;
+    /* justify-content: stretch; */
+    display: flex;
+    height: 50%;
+    margin-left: 80%;
+    margin-top: 50%;
+    }
  
     img{
         // background-image: ;
         color: transparent;
     display: flex;
     align-items: end;
-    margin-top: 39vh;
+    width: 100%;
     justify-content: flex-end;
-    margin-left: 60vh;
+ 
 
     }
     .letter1{
@@ -61,7 +69,7 @@
     .letter2{
         display: none;
     }
-    div:hover{
+    .div:hover{
         img{
             // animation: none;
             transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(5deg) skew(0deg, 0deg);

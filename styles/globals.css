@@ -26,12 +26,12 @@ body::-webkit-scrollbar-track {
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-  background: rgb(5, 226, 197); /* color of the scrollbar handle */
+  background: rgb(249 194 4); /* color of the scrollbar handle */
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
-  background: rgb(4, 249, 216); /* color of the scrollbar handle on hover */
+  background: rgb(249 194 4); /* color of the scrollbar handle on hover */
 }
 
 .fantasy{
@@ -82,12 +82,12 @@ body::-webkit-scrollbar-thumb:hover {
 
 .hamburger-icon:hover
   .line{
-  background-color: rgb(4, 249, 216) ;
+  background-color: rgb(249 194 4) ;
   
 }
 
 .redline .line{
-  background-color: rgb(4, 249, 216);
+  background-color: rgb(249 194 4);
 }
 .line:nth-child(1){
   height: 4px;
@@ -147,16 +147,16 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .MuiLinearProgress-root span{
-  background-color: rgb(4, 249, 216) !important;
+  background-color: rgb(249 194 4) !important;
 
 }
 
 .MuiLinearProgress-bar1{
-  background-color: rgb(4, 249, 216) !important;
+  background-color: rgb(249 194 4) !important;
 }
 
 .maincolor{
-        color: rgb(4, 249, 216) !important;
+        color: rgb(249 194 4) !important;
 }
 
 

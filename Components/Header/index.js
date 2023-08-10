@@ -11,6 +11,11 @@ import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import { useRouter } from "next/router";
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import logo from "../../assets/Logo.png"
+import logo3d from "../../assets/Logo.png"
+import Image from "next/image";
+
+
 
 function Header()  {
 const [isOpen, setIsOpen] = useState(false);
@@ -58,8 +63,12 @@ const toggleDrawer =() => {
                                 <div className="line"></div>
                             </div>
                             </button>
-                            <Typography className={`ml40p fantasy ${styles.logo}`} variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                                Mob Studios
+                            <Typography className={` fantasy ${styles.logo}`} variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                                {/* Mob Studios */}
+                                <Image 
+                                src={logo}
+                                width={70}
+                                />
                             </Typography>
                             <Button className={styles.button1}>Portfolio <ArrowOutwardIcon /></Button> 
                         </Toolbar>

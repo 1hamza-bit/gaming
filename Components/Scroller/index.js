@@ -35,8 +35,67 @@ const Brands = () => {
         ))}
       </div>
       <h1>Testimonials</h1>
-          <Grid container spacing={2}>
-            <Grid item lg={4} md={6} sm={11}>
+      <div className={styles.scrolltest}>
+          <Grid container spacing={2} className={styles.testimonials}>
+            <Grid item lg={4} md={6} sm={11} >
+          <Box className={`m2 ${styles.testimonial}`}>
+
+            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
+
+            <div className={styles.bottomsection}> 
+            <h3>Name...</h3>
+            <p>Name...</p>
+            <p>Name...</p>
+
+
+            </div>
+
+          </Box>
+          </Grid>
+          <Grid item lg={4} md={6} sm={11} >
+          <Box className={`m2 ${styles.testimonial}`}>
+
+            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
+
+            <div className={styles.bottomsection}> 
+            <h3>Name...</h3>
+            <p>Name...</p>
+            <p>Name...</p>
+
+
+            </div>
+
+          </Box>
+          </Grid> <Grid item lg={4} md={6} sm={11} >
+          <Box className={`m2 ${styles.testimonial}`} >
+
+            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
+
+            <div className={styles.bottomsection}> 
+            <h3>Name...</h3>
+            <p>Name...</p>
+            <p>Name...</p>
+
+
+            </div>
+
+          </Box>
+          </Grid> <Grid item lg={4} md={6} sm={11} >
+          <Box className={`m2 ${styles.testimonial}`}>
+
+            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
+
+            <div className={styles.bottomsection}> 
+            <h3>Name...</h3>
+            <p>Name...</p>
+            <p>Name...</p>
+
+
+            </div>
+
+          </Box>
+          </Grid>
+          <Grid item lg={4} md={6} sm={11} >
           <Box className={`m2 ${styles.testimonial}`}>
 
             <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
@@ -52,7 +111,8 @@ const Brands = () => {
           </Box>
           </Grid>
           </Grid>
-          .
+          </div>
+          
           
       <h1>Provide you when needed</h1>
           <div className={styles.brands2}>

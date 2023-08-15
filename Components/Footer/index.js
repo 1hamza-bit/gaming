@@ -14,6 +14,21 @@ import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+
+function CustomInput({ inputProps }) {
+  return (
+    <div className={styles.inputbox} style={{borderRadius: "100vw !important"}}>
+      <input  {...inputProps} />
+      {inputProps.button}
+    </div>
+  );
+}
+const customInputProps = {
+  type: 'text',
+  placeholder: 'Enter your text',
+  button: <button className={styles.inputbutton} onClick={() => alert('Button clicked')}>Click Me</button>,
+};
+
 function Footer()  {
     const [isOpen, setisOpen] = useState(true);
 const router = useRouter();
@@ -42,12 +57,13 @@ and lunch it in the real world and make your games with your full control, custo
 
 <h3 className="mt15">Sign up to our newletter</h3>
     
-<TextField variant="outlined"    InputProps={{
+{/* <TextField variant="outlined"    InputProps={{
     style: {borderRadius: "100vw !important", borderColor: "white !important"},
                     endAdornment: <InputAdornment position="end">
                       <Button className={styles.inputbutton}>Go </Button>
                     </InputAdornment>,
-                  }} fullWidth/>
+                  }} fullWidth/> */}
+                   <CustomInput inputProps={customInputProps} />
 <h4>2023 Mob Studios, Inc</h4>
 
                 </Grid>

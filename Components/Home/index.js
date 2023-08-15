@@ -10,6 +10,7 @@ import robot from "../../assets/hero.png"
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import dynamic from 'next/dynamic';
 import { Fade,Reveal } from 'react-reveal';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 const DynamicStyles = dynamic(() => import('./index.module.scss'), { ssr: false });
 
@@ -58,12 +59,13 @@ function Hero() {
             <Header />
             <Grid container spacing={0} className={styles.banner}>
 
-                <Grid item lg={4} md={6} sm={11} className= {`m7 ${styles.hero}`}>
+                <Grid item lg={5} md={6} sm={11} className= {`m7 ${styles.hero}`}>
                 <Fade left>  <h1>Game Development & Design Service</h1> </Fade>
                 <Typography > Mobstudios, is the leading service-based company for Game development, 
                     Assets Creation, Game Design, 3D Modeling, Shader development, and Many More, According to your Preference.</Typography>
                     <Button className={styles.button1}>Portfolio <ArrowOutwardIcon /></Button> 
                     <Button className={styles.button2}>About Us</Button> 
+
                 </Grid>
                 <Grid item lg={5} md={6} sm={11}>
                     <Image
@@ -72,6 +74,11 @@ function Hero() {
                     // width={700}
                     />
                 </Grid>
+                <Grid item lg={3} md={3} sm={3}>
+
+                <Button className={styles.down}><ArrowDownwardIcon className={styles.arrowdown} /> </Button>
+                </Grid>
+
             </Grid>
             <TopAssets items={items} />
             <Brands />

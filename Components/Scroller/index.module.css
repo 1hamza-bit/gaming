@@ -68,6 +68,16 @@
   }
 }
 
+.scrolltest{
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.testimonials{
+ display: flex;
+
+}
+
+ 
 .testimonial {
   /* height: 100%; */
   perspective: 1200px;
@@ -79,6 +89,8 @@
   transition: all .2s cubic-bezier(.25, .46, .45, .94);
   box-shadow: 0 4px 19px rgba(142, 151, 158, .25);
   border-top-right-radius: 6vw;
+  flex: 0 0 auto; /* Prevent items from growing/shrinking */
+  width: auto; /* Adjust the width as needed */
 
 }
 .bottomsection{

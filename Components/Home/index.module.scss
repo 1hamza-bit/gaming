@@ -1,6 +1,6 @@
 .hero{
     h1{
-        font-size: 74px;
+        font-size: 84px;
         font-family: fantasy;
         color: rgb(53, 53, 53);
     }
@@ -67,7 +67,7 @@
     animation: floatLeftRight 5s linear infinite; /* Customize the animation duration and timing here */
   
         object-fit: contain;
-        width: 700px !important;
+        width: 800px !important;
         position: relative !important;
         height: unset !important;
     overflow: hidden;
@@ -121,3 +121,54 @@
     }
   }
 
+
+  .arrowdown {
+    width: 39px;
+    height: 40px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    animation: scrollDown 4s infinite;
+  }
+  
+  .arrowdown::before {
+    content: "↓";
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+  }
+
+
+  
+  @keyframes scrollDown {
+    0%, 100% {
+      transform: translateY(-100%);
+    }
+    50% {
+      transform: translateY(120%);
+    }
+  }
+
+  .down{
+    background-color: rgb(249 194 4) !important;
+    color: black !important;
+    border-radius: 10vw !important;
+    margin-left: 20% !important;
+    padding: 10px !important;
+    overflow: hidden !important;
+    margin-top: -20% ;
+  }
+  
+  .down:hover{
+    transform: translate(1px, 1px) !important;
+    background-color: rgb(4, 227, 227) !important;
+    .arrowdown{
+      animation: none;
+    }
+  }
+
+  

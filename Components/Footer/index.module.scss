@@ -11,27 +11,46 @@ h1{
     font-size: 40px;
 }
 
-input {
-    // height: 4vw;
-    color: #fff;
-    letter-spacing: 1px;
-    text-indent: 1vw;
-    background-color: rgba(0, 0, 0, 0);
-    // border: 2px solid #fff;
-    // border-radius: 100vw;
-    margin-bottom: 0;
-    // padding: 0.5vw;
-    font-family: Montserrat, sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.2;
-    overflow: hidden;
-  transition: color 200ms;
+.inputbox{
+    border: 1px solid;
+    border-radius: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 4%;
+    border: 1px solid rgb(255, 255, 255);
+    transition: border-color 0.3s; /* Add a smooth transition effect */
+}
 
-}
-.input:hover{
-    border: 2px solid rgb(249 194 4);
-}
+input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    flex: 1;
+    color: aliceblue;
+
+  }
+  
+  /* Remove focus outline for accessibility */
+  input:focus {
+    outline: none;
+   
+  }
+  .inputbox:focus-within{
+    border-color: yellow;
+    border-image-slice: 1;
+    border-radius: 100vw !important;
+  }
+  
+  .inputbox:hover{
+    border: 2px solid yellow;
+    }
+  /* Remove hover effect */
+  input:hover {
+    border: none;
+   
+  }
 
 .inputbutton{
     background-color: rgba(151, 151, 151, 0.5);
@@ -50,23 +69,7 @@ input {
 
 
 }
-.MuiOutlinedInput{
-    border-radius: 100vw !important;
-   
-}
 
-.Mui-focused  {
-    border-color: red !important; /* Change the border color when focused */
-  }
-  
-  /* Styles for the focused state of the label */
-  .MuiTextField-root .MuiInputLabel-root.Mui-focused {
-    color: blue; /* Change the label color when focused */
-  }
-  
-  .Mui-focused .MuiInputLabel-outlined {
-    color: blue; /* Change the label color when focused */
-  }
 .menu
 {
     margin-top: 5% !important ;

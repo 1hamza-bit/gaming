@@ -5,7 +5,8 @@ import robot from "../../assets/hero.png"
 import styles from "./index.module.scss"
 import Draggable from 'react-draggable';
 import { Slide,Fade } from 'react-reveal';
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const products = [
   { id: 1, name: 'Product 1' },
@@ -52,7 +53,7 @@ const TopAssets = () => {
 
         {/* <Draggable axis="x" onDrag={handleDrag} onStop={handleDragStop}> */}
         <Fade>
-        <h1>Our <span>TOP PACKS</span></h1>
+        <h1>Our <span>TOP </span>packs</h1>
         </Fade>
       <div
         ref={sliderRef}
@@ -81,13 +82,13 @@ const TopAssets = () => {
         </Slide>
       </div>
       <Button className={styles.prev} onClick={handlePrevClick} disabled={sliderRef.current?.scrollLeft === 0}>
-        Previous
+        <ArrowBackIcon />
       </Button>
       <Button
         onClick={handleNextClick} className={styles.next}
         disabled={sliderRef.current?.scrollLeft >= sliderRef.current?.scrollWidth - sliderRef.current?.offsetWidth}
       >
-        Next
+        <ArrowForwardIcon />
       </Button>
       {/* </Draggable> */}
     </div>

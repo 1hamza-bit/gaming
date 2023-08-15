@@ -70,7 +70,7 @@ const toggleDrawer =() => {
                                 width={70}
                                 />
                             </Typography>
-                            <Button className={styles.button1}>Portfolio <ArrowOutwardIcon /></Button> 
+                            <Button className={styles.buttonp}>Portfolio <ArrowOutwardIcon /></Button> 
                         </Toolbar>
                     </AppBar>
                     

@@ -182,6 +182,6 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Apply the fade-in animation to an element */
 img {
-  opacity: 0; /* Make the element initially transparent */
+ 
   animation: fade-in 0s ease-in-out forwards; /* Apply the animation */
 }

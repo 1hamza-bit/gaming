@@ -28,7 +28,7 @@ function Abouts() {
     <Header />
     <Grid container spacing={2} className={styles.banner2}>
       <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.hero2}`}>
-        <h1>About Mob studios</h1>
+        <h1>About <span>Mob studios</span></h1>
 
         <Typography >Mobstudios is a leading mobile game development and design company specializing in creating captivating and innovative gaming experiences
           for mobile devices.With a team of talented developers, designers, and artists, we bring your game ideas to life and ensure a seamless and immersive
@@ -37,11 +37,11 @@ function Abouts() {
 
 
       </Grid>
-      <Grid item lg={5} md={6} sm={11}>
+      <Grid item lg={5} md={6} sm={11} style={{ justifyContent: "center !important", display: "flex !important"}}>
         <Image
           src={robot}
           className={styles.imageContainer}
-          width={300}
+          width={600}
         />
       </Grid>
     </Grid>

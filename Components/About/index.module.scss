@@ -5,6 +5,9 @@
         font-size: 74px;
         font-family: fantasy;
         color: rgb(221, 253, 245);
+        span{
+          color: rgb(238, 102, 102);
+        }
     }
     p{
        font-size: 20px;
@@ -53,6 +56,11 @@
     position: relative;
     animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
     transform: rotate(45deg);
+   
+  }
+  .imageContainer:hover{
+   transform:  translate(2px, 2px);
+  
   }
   
 

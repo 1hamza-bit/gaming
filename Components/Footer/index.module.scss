@@ -92,3 +92,44 @@ input {
 }
     
 }
+
+.footeranimate{
+
+  display: grid;
+  direction: rtl;
+  margin-top: -15%;
+  transition: transform 0.3s ease;
+  img{
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  img:nth-child(1){
+    width: 600px;
+    padding-right: 250px;
+    animation: scrollDown 4s infinite;
+  }
+  img:nth-child(2){
+    margin-top: -3%;
+    padding-right: 150px;
+  }
+
+}
+
+.footeranimate:hover{
+
+  img:nth-child(1){
+  transform: rotate(20deg); 
+}
+
+}
+
+
+@keyframes scrollDown {
+  0%, 100% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+}

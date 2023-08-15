@@ -13,6 +13,9 @@ import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Image from "next/image";
 import { useRouter } from "next/router";
+import footer2 from "../../assets/footer2.png"
+import footer1 from "../../assets/footer1.png"
+
 
 
 function CustomInput({ inputProps }) {
@@ -44,6 +47,35 @@ const router = useRouter();
     const handleContactClick = () => {
       router.push('/contact');
     };
+
+    const ImageHoverEffect = () => {
+      useEffect(() => {
+        const imageContainer = document.querySelector(".footeranimate");
+        const movableImages = document.querySelectorAll(".movable-image");
+    
+        imageContainer.addEventListener("mousemove", (event) => {
+          const containerRect = imageContainer.getBoundingClientRect();
+          const mouseX = event.clientX - containerRect.left;
+          const mouseY = event.clientY - containerRect.top;
+    
+          const centerX = containerRect.width / 2;
+          const centerY = containerRect.height / 2;
+    
+          movableImages.forEach((image) => {
+            const moveX = (mouseX - centerX) * 0.05;
+            const moveY = (mouseY - centerY) * 0.05;
+    
+            image.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          });
+        });
+    
+        imageContainer.addEventListener("mouseleave", () => {
+          movableImages.forEach((image) => {
+            image.style.transform = "translate(0, 0)";
+          });
+        });
+      }, []);
+    }
     
      
             return         <>
@@ -118,6 +150,19 @@ and lunch it in the real world and make your games with your full control, custo
                     
                     </Grid>
             </Grid>
+
+            <div className={styles.footeranimate}>
+              <Image 
+              src={footer2}
+              className="movable-image"
+              />
+              <Image
+              src={footer1}
+              className="movable-image"
+              
+              />
+
+            </div>
 
             </>
 }

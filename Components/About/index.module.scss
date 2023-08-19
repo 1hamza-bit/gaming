@@ -66,8 +66,39 @@
 
 
   .services{
-    background-color: rgb(237, 244, 250);
+   .left{
+    padding: 1% 5%;
+      .textbox{
+         background-color: white;
+         color: black;
+         padding: 2%;
+         border-radius: 1vw;
+         h3{color: rgb(50, 1, 1);}
+         opacity: 0;
+         transform: translateY(10px); /* Initial position */
+         transition: opacity 300ms ease 0s;
+    box-shadow: rgba(221, 221, 225, 0.1) 0px 4px 16px, rgba(226, 226, 235, 0.1) 0px 8px 24px, rgba(229, 229, 230, 0.1) 0px 16px 56px;
+      
+      }
+      .loaded {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+      }
+   }
+  
+  
+ 
+
+  }
+
+  .choose{
+    min-height: 500px;
+    border-radius: 6vw;
+    background-color: rgb(255, 255, 255);
     color: black;
+    box-shadow: rgba(221, 221, 225, 0.1) 0px 4px 16px, rgba(226, 226, 235, 0.1) 0px 8px 24px, rgba(229, 229, 230, 0.1) 0px 16px 56px;
+    margin-top: 2%;
+
   }
 
   @keyframes floatLeftRightmb {

@@ -15,7 +15,9 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import footer2 from "../../assets/footer2.png"
 import footer1 from "../../assets/footer1.png"
-
+import button1 from "../../assets/button1.png"
+import button2 from "../../assets/button2.png"
+import button3 from "../../assets/button3.png"
 
 
 function CustomInput({ inputProps }) {
@@ -79,6 +81,12 @@ const router = useRouter();
     
      
             return         <>
+
+            <Button className={styles.getintouch}>Get in touch 
+            <Image  src={button1} className={styles.img1}/>
+            <Image  src={button2} className={styles.img2}/>
+            <Image  src={button3} className={styles.img3}/>
+            </Button>
             <Grid container spacing={2} className={styles.footer}>
             <Grid item lg={4} md={6} sm={11} className='m4'>
                     <h1>Mob Studios </h1>

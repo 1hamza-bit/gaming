@@ -3,71 +3,80 @@
   src: url('./assets/fonts/arial.ttf') format('truetype');
 }  */
 
-body{
+body {
   margin: 0px;
   overflow-x: hidden;
   background-color: #2b2b2b;
   color: white;
+  scroll-behavior: smooth;
 
-  
 }
-div{
+
+div {
   transition: transform 200ms;
 
-  }
-  button{
-    transition: transform 200ms;
-  
-    }
+}
+
+button {
+  transition: transform 200ms;
+
+}
 
 body::-webkit-scrollbar {
-  width: 8px; /* width of the scrollbar */
+  width: 8px;
+  /* width of the scrollbar */
 }
 
 /* Track */
 body::-webkit-scrollbar-track {
-  background: #8b8b8b; /* color of the track */
+  background: #8b8b8b;
+  /* color of the track */
 }
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-  background: rgb(249 194 4); /* color of the scrollbar handle */
+  background: rgb(249 194 4);
+  /* color of the scrollbar handle */
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
-  background: rgb(249 194 4); /* color of the scrollbar handle on hover */
+  background: rgb(249 194 4);
+  /* color of the scrollbar handle on hover */
 }
 
-.fantasy{
+.fantasy {
   font-family: fantasy;
 }
-.ml40p{
+
+.ml40p {
   margin-left: 40% !important;
 }
-.mt15{
+
+.mt15 {
   margin-top: 10%;
 }
 
-.minw15p .MuiDrawer-paper{
+.minw15p .MuiDrawer-paper {
   min-width: 15% !important;
   height: 100vh !important;
   border-bottom-right-radius: 35vw;
-  }
+}
 
-  .minw100p .MuiDrawer-paper{
-    min-width: 100% !important;
-    height: 100vh !important;
-    border-bottom-right-radius: 5vw;
-    }
-  
+.minw100p .MuiDrawer-paper {
+  min-width: 100% !important;
+  height: 100vh !important;
+  border-bottom-right-radius: 5vw;
+}
 
-.ztop{
+
+.ztop {
   z-index: 1201;
   position: fixed !important;
-  top: 0 ;
+  top: 0;
 
 }
+
 .hamburger-icon {
   width: 30px;
   height: 20px;
@@ -85,19 +94,20 @@ body::-webkit-scrollbar-thumb:hover {
 
 }
 
-.hamburger-icon:hover
-  .line{
-  background-color: rgb(249 194 4) ;
-  
+.hamburger-icon:hover .line {
+  background-color: rgb(249 194 4);
+
 }
 
-.redline .line{
+.redline .line {
   background-color: rgb(249 194 4);
 }
-.line:nth-child(1){
+
+.line:nth-child(1) {
   height: 4px;
 }
-.line:nth-child(3){
+
+.line:nth-child(3) {
   width: 101%;
   height: 5px;
 }
@@ -115,18 +125,19 @@ body::-webkit-scrollbar-thumb:hover {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.m7{
+.m7 {
   margin: 7% !important;
 }
 
-.m4{
+.m4 {
   margin: 4% !important;
 }
-.m2{
+
+.m2 {
   margin: 2% !important;
 }
 
-.bgwhite{
+.bgwhite {
   background-color: white !important;
   color: #000 !important;
 }
@@ -136,7 +147,7 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgb(221 221 221 / 50%);
 
   width: 100vw !important;
- 
+
 }
 
 /* .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
@@ -147,30 +158,30 @@ body::-webkit-scrollbar-thumb:hover {
  
 } */
 
-.MuiLinearProgress-root{
+.MuiLinearProgress-root {
   background-color: white !important;
 }
 
-.MuiLinearProgress-root span{
+.MuiLinearProgress-root span {
   background-color: rgb(249 194 4) !important;
 
 }
 
-.MuiLinearProgress-bar1{
+.MuiLinearProgress-bar1 {
   background-color: rgb(249 194 4) !important;
 }
 
-.maincolor{
-        color: rgb(249 194 4) !important;
+.maincolor {
+  color: rgb(249 194 4) !important;
 }
 
 
 @media screen and (max-width:700px) {
 
-  
-    h1{
-      font-size: 44px !important;
-    }
+
+  h1 {
+    font-size: 44px !important;
+  }
 
 
 
@@ -178,15 +189,20 @@ body::-webkit-scrollbar-thumb:hover {
 
 @keyframes fade-in {
   from {
-    opacity: 0; /* Start with fully transparent */
+    opacity: 0;
+    /* Start with fully transparent */
   }
+
   to {
-    opacity: 1; /* End with fully opaque */
+    opacity: 1;
+    /* End with fully opaque */
   }
 }
 
 /* Apply the fade-in animation to an element */
 img {
- 
-  animation: fade-in 0s ease-in-out forwards; /* Apply the animation */
+
+  animation: fade-in 0s ease-in-out forwards;
+  /* Apply the animation */
 }
+

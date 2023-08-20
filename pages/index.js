@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 
 import { Grid } from '@mui/material'
 import Hero from '../Components/Home'
-
+// import LocomotiveScroll from 'locomotive-scroll';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,9 +17,14 @@ console.log('%c', `padding: ${50}px; background: url(data:image/png;base64,${bas
 
 export default function Home() {
 
+
   
   return (
-    <>
+    <div id="scroll-container"
+    data-scroll
+    data-scroll-speed="1"
+    data-scroll-direction="horizontal"
+  >
     
       <Head>
         <title>Create Next App</title>
@@ -34,6 +39,6 @@ export default function Home() {
 
      
     
-    </>
+    </div>
   )
 }

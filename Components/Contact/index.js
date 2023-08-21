@@ -19,10 +19,13 @@ function Contacts() {
     <Header />
     <Grid container spacing={2} className={styles.bannerc}>
       <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.heroc}`}>
-        <h1>Get in <span> Touch</span></h1>
+        <h1>Join the Team at  <span> Mobstudios</span>: Let's Create Mobile Gaming Magic Together!</h1>
 
-        <Typography >We're excited to collaborate with you and bring your game ideas to life. Getting in touch with us
-             is simple, and we're here to provide you with the best possible service.</Typography>
+        <Typography >Are you passionate about mobile game development and design?
+           Do you have the skills and creativity to bring extraordinary gaming experiences 
+           to life? Join the team at Mobstudios, a leading mobile game development and design company,
+            and become part of our dynamic and talented team. We are always on the lookout for exceptional
+             individuals who are eager to contribute their expertise and collaborate on exciting projects.</Typography>
 
       </Grid>
       <Grid item lg={5} md={6} sm={11}>
@@ -48,7 +51,6 @@ function Contacts() {
           src={robot}
           className={styles.imageContainer}
           width={300}
-
         />
          
    

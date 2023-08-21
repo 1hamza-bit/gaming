@@ -11,6 +11,7 @@ import Careers from '../Components/Careers'
 export default function Contact() {
   // useClient(); // Marking the parent component as a Client Component
 
+
   return (
     <>  
     <ScrollProgressBar />

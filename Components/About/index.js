@@ -23,22 +23,25 @@ function Abouts() {
   const [initialLoad, setInitialLoad] = useState(true);
   const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
   const [selectedItem, setSelectedItem] = useState(items[0]);
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Make a GET request using Axios
+    axios.get('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => {
+        // Save the response data in the state
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []); 
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
   };
 
-  useEffect(() => {
-    // Delay the initial load fade-in effect to ensure it is visible
-    // Set isVisible to false after 1000ms on initial load
-    const initialLoadTimeout = setTimeout(() => {
-      setIsVisible(false);
-    }, 1000);
-
-    return () => {
-      clearTimeout(initialLoadTimeout);
-    };
-  }, [isVisible]);
+  
 
   const handleUpdate = (value) => {
 

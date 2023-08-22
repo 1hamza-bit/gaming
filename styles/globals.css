@@ -31,10 +31,13 @@ div {
 
 }
 
-button {
-  transition: transform 200ms;
-
-}
+button{
+  transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s cubic-bezier(.23, 1, .32, 1);
+  
+      }
+      button:hover{
+          transform: translate(2px, 2px);
+      }
 
 body::-webkit-scrollbar {
   width: 8px;
@@ -219,3 +222,4 @@ img {
   animation: fade-in 0s ease-in-out forwards;
   /* Apply the animation */
 }
+

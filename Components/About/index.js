@@ -1,13 +1,14 @@
 'use client'
 import Header from '../Header';
-import { Button, Grid, List, ListItem, ListItemText, Typography, makeStyles } from '@mui/material';
+import { Button, Grid, List, ListItem, ListItemText,  Typography, makeStyles } from '@mui/material';
 import styles from './index.module.scss'
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import robot from "../../assets/hero.png"
 import Footer from '../Footer';
 import styled from '@emotion/styled';
-import { Fade, Zoom } from 'react-reveal';
+import { Fade, Flip, Reveal, Slide, Zoom } from 'react-reveal';
+import axios from 'axios';
 
 
 const StyledListItemText = (props) => (
@@ -83,7 +84,7 @@ function Abouts() {
         />
 
         {selected === "Mobile Game Development" ?
-
+        <Flip top>
           <div className={`${styles.textbox} ${selected === "Mobile Game Development" ? styles.loaded : ''}`}>
             <h3>{selected}</h3>
 
@@ -92,15 +93,18 @@ function Abouts() {
               Our team leverages the latest technologies and industry best practices to deliver high-quality, engaging games that captivate players and keep them coming back for more.
             </p>
           </div>
+          </Flip>
           : selected === "Freelance Services" ?
+          <Slide top>
 
             <div className={`${styles.textbox} ${selected === "Freelance Services" ? styles.loaded : ''}`}>
               <h3>{selected}</h3>
-
+              
               <p>In addition to our in-house game development projects, we offer freelance services to cater to specific client requirements.
                 Whether you need assistance with game design, programming, artwork, or sound effects, our team of experts is available to collaborate with you and provide tailored solutions to meet your project needs.
               </p>
             </div>
+            </Slide>
             :
             <Fade>
               <div className={styles.textbox}>

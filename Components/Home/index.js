@@ -11,6 +11,8 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import dynamic from 'next/dynamic';
 import { Fade,Reveal } from 'react-reveal';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const DynamicStyles = dynamic(() => import('./index.module.scss'), { ssr: false });
 

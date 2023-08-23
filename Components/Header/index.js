@@ -33,6 +33,14 @@ const handleContactClick = () => {
   router.push('/contact');
 };
 
+const handlePortfolioClick = () => {
+  router.push('/portfolio');
+};
+
+const handleCareerClick = () => {
+  router.push('/careers');
+};
+
 
 const StyledDrawer = styled(Drawer)({
     minWidth: 250,
@@ -99,7 +107,7 @@ const toggleDrawer =() => {
           </ListItemIcon>
           <ListItemText primary="About" />
         </ListItem>
-        <ListItem className={styles.item}>
+        <ListItem className={styles.item} onClick={handlePortfolioClick}>
           <ListItemIcon className={styles.icon}>
             <WorkIcon />
           </ListItemIcon>
@@ -110,6 +118,12 @@ const toggleDrawer =() => {
             <ContactMailIcon />
           </ListItemIcon>
           <ListItemText primary="Contact" />
+        </ListItem>
+        <ListItem className={styles.item} onClick={handleCareerClick}>
+          <ListItemIcon className={styles.icon}>
+            <ContactMailIcon />
+          </ListItemIcon>
+          <ListItemText primary="Career" />
         </ListItem>
       </List>
     </Container>

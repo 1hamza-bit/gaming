@@ -22,7 +22,7 @@ function Abouts() {
   const [selected, setSelected] = useState("Mobile Game Development");
   const [isVisible, setIsVisible] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
-  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
+  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5','Item 6' ];
   const [selectedItem, setSelectedItem] = useState(items[0]);
   const [data, setData] = useState(null);
 
@@ -154,7 +154,7 @@ function Abouts() {
       {/* Left Grid: Image description */}
       <Grid item xs={6} className={styles.chooseleft}>
           <div>
-            <h2>Why Choose <span>us</span> ?</h2>
+            <h1>Why Choose <span>us</span> ?</h1>
             <Typography variant="subtitle1">{selectedItem}</Typography>
             <p>dsljfksdjklfjdklsjfksdjklfjklsdjkljklfjsdkljfklsdjklfjsdkl
               jfkjsjklfjdklsjfksdjklfjklsdjkljklfjsdkljfklsdjklfjsdkljfkjsjklfjdklsjfksdjklfjklsdjkljklfjsdkljfklsdjklfjsdkljfkjsdklf</p>
@@ -163,18 +163,25 @@ function Abouts() {
 
       {/* Right Grid: List of items */}
       <Grid item xs={6}>
-        <List>
+          <Grid container spacing={3} className={styles.blockscontainer}>
+          <Grid item xs={6}>
+          <Grid container spacing={3}>
           {items.map((item, index) => (
-            <ListItem
+            <Grid item xs={4}>
+            <Button
               key={index}
               button
+              className={`${styles.block} ${selectedItem === item ? styles.selected : ''}`}
               selected={selectedItem === item}
               onClick={() => handleItemClick(item)}
             >
-              <ListItemText primary={item} />
-            </ListItem>
+             {item}
+            </Button>
+            </Grid>
           ))}
-        </List>
+          </Grid>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
 

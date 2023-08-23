@@ -159,3 +159,33 @@
           
       }
   }
+
+.chooseleft{
+  padding: 5%;
+  h1{
+    font-size: 50px;
+  }
+}
+
+  .blockscontainer{
+
+    justify-content: center;
+    margin-top: 50px;
+    .block{
+      background-color: rgb(252, 246, 207);
+      color: rgb(23, 27, 30);
+      padding: 10px 30px;
+      border-radius: 10px;
+      box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out ;
+    }
+    .block:hover{
+      background-color: rgb(91, 48, 3);
+      color: white;
+    }
+    .selected{
+      background-color: rgb(50, 27, 3);
+      color: white;
+    }
+}
+  

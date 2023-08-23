@@ -8,6 +8,7 @@ import robot from "../../assets/hero.png"
 import Footer from '../Footer';
 import styled from '@emotion/styled';
 import { Fade, Zoom } from 'react-reveal';
+import axios from 'axios';
 
 
 const StyledListItemText = (props) => (

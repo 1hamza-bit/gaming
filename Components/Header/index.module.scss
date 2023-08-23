@@ -4,15 +4,14 @@
 }
 .buttonp{
   border-radius: 100vw !important;
-  background-color: rgb(249 194 4) !important;
-//   background-color: rgb(139, 2, 2);
-  color: black !important;
+  background-color: rgb(65 63 59) !important;
+  color: white !important;
    padding: 8px 6%;
    margin-top: 10px;
   min-width: 20px;
   margin-left: 5%;
   transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s cubic-bezier(.23, 1, .32, 1);
-
+  box-shadow: rgba(221, 221, 225, 0.1) 0px 4px 16px, rgba(226, 226, 235, 0.1) 0px 8px 24px, rgba(229, 229, 230, 0.1) 0px 16px 56px;
 }
 
 .logo{

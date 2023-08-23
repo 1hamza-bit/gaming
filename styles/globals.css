@@ -33,7 +33,7 @@ div {
 
 button{
   transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s cubic-bezier(.23, 1, .32, 1);
-  font-family: 'Arialbold', sans-serif ;
+  font-family: 'Arialbold', sans-serif  !important;
   
       }
       button:hover{
@@ -222,5 +222,9 @@ img {
 
   animation: fade-in 0s ease-in-out forwards;
   /* Apply the animation */
+}
+
+.pl5p{
+  padding-left: 5%;
 }
 

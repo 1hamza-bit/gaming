@@ -7,7 +7,6 @@ import Image from 'next/image';
 import robot from "../../assets/hero.png"
 import Footer from '../Footer';
 import styled from '@emotion/styled';
-import { Fade, Zoom } from 'react-reveal';
 import axios from 'axios';
 
 
@@ -103,7 +102,6 @@ function Careers() {
               </p>
             </div>
             :
-            <Fade>
               <div className={styles.textbox}>
                 <h3>{selected}</h3>
 
@@ -112,7 +110,6 @@ function Careers() {
                   Our Unity assets are designed to accelerate development timelines and empower game developers to create immersive and visually stunning games with ease.
                 </p>
               </div>
-            </Fade>
         }
 
 

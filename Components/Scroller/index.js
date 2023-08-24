@@ -1,7 +1,25 @@
-import styles from './index.module.css';
+import styles from './index.module.scss';
 import ExtensionTwoToneIcon from '@mui/icons-material/ExtensionTwoTone';
 import SportsEsportsTwoToneIcon from '@mui/icons-material/SportsEsportsTwoTone';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+const products = [
+  { id: 1, name: 'Product 1' },
+  { id: 2, name: 'Product 2' },
+  { id: 3, name: 'Product 3' },
+  { id: 4, name: 'Product 4' },
+  { id: 5, name: 'Product 5' },
+  { id: 6, name: 'Product 6' },
+  { id: 7, name: 'Product 7' },
+  // Add more product objects here
+];
 
 const Brands = () => {
   // Simulated list of brands
@@ -20,6 +38,49 @@ const Brands = () => {
     {icon: <ExtensionTwoToneIcon />, name: "Unreal"}, 
    ];
 
+   const PrevArrow = (props) => (
+    <Button className={styles.prev} onClick={props.onClick} disabled={props.currentSlide === 0}>
+       <motion.div
+    className={`arrow-prev ${props.currentSlide === 0 ? 'disabled' : ''}`}
+    // onClick={props.onClick}
+    // whileHover={{ scale: 0.9 }} // Smaller scale on hover
+    // whileTap={{ scale: 0.9 }}   // Smaller scale while clicked
+  >
+      <ArrowBackIcon />
+      </motion.div>
+    </Button>
+  );
+
+  const NextArrow = (props) => (
+    <Button className={styles.next} onClick={props.onClick}
+      disabled={props.currentSlide === props.slideCount - props.slidesToShow}
+    >
+      <ArrowForwardIcon />
+    </Button>
+  );
+
+   const settings = {
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: false,
+    speed: 1000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+  };
 
 
   const extendedBrands = [...allBrands, ...allBrands, ...allBrands]; // Duplicating the brands
@@ -35,84 +96,28 @@ const Brands = () => {
         ))}
       </div>
       <h1>Testimonials</h1>
-      <div className={styles.scrolltest}>
-          <Grid container spacing={2} className={styles.testimonials}>
-            <Grid item lg={4} md={6} sm={11} >
-          <Box className={`m2 ${styles.testimonial}`}>
 
-            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
+      <Slider {...settings}>
+        {products.map((product, index) => (
+        
+        <Grid item lg={4} md={6} sm={11} >
+        <Box className={`m2 ${styles.testimonial}`}>
 
-            <div className={styles.bottomsection}> 
-            <h3>Name...</h3>
-            <p>Name...</p>
-            <p>Name...</p>
+          <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
 
-
-            </div>
-
-          </Box>
-          </Grid>
-          <Grid item lg={4} md={6} sm={11} >
-          <Box className={`m2 ${styles.testimonial}`}>
-
-            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
-
-            <div className={styles.bottomsection}> 
-            <h3>Name...</h3>
-            <p>Name...</p>
-            <p>Name...</p>
+          <div className={styles.bottomsection}> 
+          <h3>Name...</h3>
+          <p>Name...</p>
+          <p>Name...</p>
 
 
-            </div>
-
-          </Box>
-          </Grid> <Grid item lg={4} md={6} sm={11} >
-          <Box className={`m2 ${styles.testimonial}`} >
-
-            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
-
-            <div className={styles.bottomsection}> 
-            <h3>Name...</h3>
-            <p>Name...</p>
-            <p>Name...</p>
-
-
-            </div>
-
-          </Box>
-          </Grid> <Grid item lg={4} md={6} sm={11} >
-          <Box className={`m2 ${styles.testimonial}`}>
-
-            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
-
-            <div className={styles.bottomsection}> 
-            <h3>Name...</h3>
-            <p>Name...</p>
-            <p>Name...</p>
-
-
-            </div>
-
-          </Box>
-          </Grid>
-          <Grid item lg={4} md={6} sm={11} >
-          <Box className={`m2 ${styles.testimonial}`}>
-
-            <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
-
-            <div className={styles.bottomsection}> 
-            <h3>Name...</h3>
-            <p>Name...</p>
-            <p>Name...</p>
-
-
-            </div>
-
-          </Box>
-          </Grid>
-          </Grid>
           </div>
-          
+
+        </Box>
+        </Grid>
+        ))}
+      </Slider>
+      
           
       <h1>Provide you when needed</h1>
           <div className={styles.brands2}>

@@ -228,3 +228,40 @@ img {
   padding-left: 5%;
 }
 
+
+.arrow-prev,
+.arrow-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1; /* Ensure arrows are above the slider */
+}
+
+.arrow-prev {
+  left: 10px;
+}
+
+.arrow-prev,
+.arrow-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1; /* Ensure arrows are above the slider */
+}
+
+.arrow-prev {
+  left: 10px;
+}
+
+.arrow-next {
+  right: 10px;
+}
+
+
+
+
+

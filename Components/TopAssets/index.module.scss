@@ -55,6 +55,8 @@
   border-radius: 10vw !important;
   margin-left: 2% !important;
   padding: 10px !important;
+  position: absolute;
+    top: 92%;
 }
 .prev:hover{
   transform: translate(1px, 1px) !important;
@@ -67,6 +69,7 @@
   border-radius: 10vw !important;
   margin-left: 2% !important;
   padding: 10px !important;
+  left: 4%;
 
 }
 
@@ -75,3 +78,4 @@
   background-color: rgb(4, 227, 227) !important;
 
 }
+

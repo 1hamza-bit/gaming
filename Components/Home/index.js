@@ -61,6 +61,13 @@ function Hero() {
     visible: { opacity: 1, x: 0 },
   };
 
+ const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth' // You can change this to 'auto' or 'instant' for different scroll behavior
+    });
+  };
+
   useEffect(() => {
     // Make a GET request using Axios
     axios.get('https://jsonplaceholder.typicode.com/posts/1')
@@ -99,7 +106,7 @@ function Hero() {
       </Grid>
       <Grid item lg={3} md={3} sm={3}>
 
-        <Button className={styles.down}><ArrowDownwardIcon className={styles.arrowdown} /> </Button>
+        <Button onClick={scrollToBottom}className={styles.down}><ArrowDownwardIcon className={styles.arrowdown} /> </Button>
       </Grid>
 
     </Grid>

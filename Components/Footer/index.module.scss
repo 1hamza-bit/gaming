@@ -134,10 +134,15 @@ input {
   }
 }
 
+.bfcontainer{
+  width: 100vw;
+  justify-content: center;
+  display: flex;
+}
 
 .getintouch {
   z-index: 1000;
-  margin-left: 43%;
+  // margin-left: 43%;
   margin-top: -2%;
   background-color: yellow;
   padding: 20px 50px;
@@ -234,4 +239,47 @@ input {
     transform: translate3d(0px, 0px, 0px) scale3d(1.4, 1.4, 1) rotateX(5deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   }
 
+}
+
+
+@media screen and (max-width:500px) {
+
+  .footeranimate{
+
+    margin-top: -1% !important;
+    img{
+      width: 164px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    img:nth-child(1){
+      width: 315px;
+      padding-right: 50px;
+      animation: scrollDown 4s infinite;
+    }
+    img:nth-child(2){
+      margin-top: -1%;
+      padding-right: 98px;
+    }
+  
+  }
+}
+
+
+@media screen and (max-width:900px) {
+
+  .footeranimate{
+
+    
+    margin-top: -1% !important;
+   justify-content: center !important;
+   img:nth-child(1){
+    padding-right: 0px;
+   
+  }
+  img:nth-child(2){
+    padding-right: 8px;
+  }
+
+}
 }

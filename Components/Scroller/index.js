@@ -9,6 +9,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const products = [
   { id: 1, name: 'Product 1' },
@@ -24,43 +25,83 @@ const products = [
 const Brands = () => {
   // Simulated list of brands
   const allBrands = [
-   {icon: <ExtensionTwoToneIcon color="primary" />, name:  "Game Art"}, {icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "AAA"}, 
-   {icon: <ExtensionTwoToneIcon />, name: "Game development"}, {icon: <ExtensionTwoToneIcon />, name: "3D Modelling"},
-   {icon: <ExtensionTwoToneIcon />, name: "3D Animations"}, {icon: <ExtensionTwoToneIcon />, name: "Mobile Games"}, 
-   {icon: <ExtensionTwoToneIcon />, name: "Game Props"}, {icon: <ExtensionTwoToneIcon />, name: "Multiplayer Games"}, 
-   {icon: <ExtensionTwoToneIcon />, name: "Game Shaders"}, {icon: <ExtensionTwoToneIcon />, name: "Teaser Trailer"}
+    { icon: <ExtensionTwoToneIcon color="primary" />, name: "Game Art" }, { icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "AAA" },
+    { icon: <ExtensionTwoToneIcon />, name: "Game development" }, { icon: <ExtensionTwoToneIcon />, name: "3D Modelling" },
+    { icon: <ExtensionTwoToneIcon />, name: "3D Animations" }, { icon: <ExtensionTwoToneIcon />, name: "Mobile Games" },
+    { icon: <ExtensionTwoToneIcon />, name: "Game Props" }, { icon: <ExtensionTwoToneIcon />, name: "Multiplayer Games" },
+    { icon: <ExtensionTwoToneIcon />, name: "Game Shaders" }, { icon: <ExtensionTwoToneIcon />, name: "Teaser Trailer" }
   ];
 
   const allBrands2 = [
-    {icon: <ExtensionTwoToneIcon color="primary" />, name:  "Unity"}, {icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "Blender3D"}, 
-    {icon: <ExtensionTwoToneIcon />, name: "MAYA"}, {icon: <ExtensionTwoToneIcon />, name: "3D Max"},
-    {icon: <ExtensionTwoToneIcon />, name: "Substance Painter"}, {icon: <ExtensionTwoToneIcon />, name: "Mixamo "}, 
-    {icon: <ExtensionTwoToneIcon />, name: "Unreal"}, 
-   ];
+    { icon: <ExtensionTwoToneIcon color="primary" />, name: "Unity" }, { icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "Blender3D" },
+    { icon: <ExtensionTwoToneIcon />, name: "MAYA" }, { icon: <ExtensionTwoToneIcon />, name: "3D Max" },
+    { icon: <ExtensionTwoToneIcon />, name: "Substance Painter" }, { icon: <ExtensionTwoToneIcon />, name: "Mixamo " },
+    { icon: <ExtensionTwoToneIcon />, name: "Unreal" },
+  ];
 
-   const PrevArrow = (props) => (
-    <Button className={styles.prev} onClick={props.onClick} disabled={props.currentSlide === 0}>
-       <motion.div
-    className={`arrow-prev ${props.currentSlide === 0 ? 'disabled' : ''}`}
-    // onClick={props.onClick}
-    // whileHover={{ scale: 0.9 }} // Smaller scale on hover
-    // whileTap={{ scale: 0.9 }}   // Smaller scale while clicked
-  >
-      <ArrowBackIcon />
-      </motion.div>
-    </Button>
-  );
+  const PrevArrow = (props) => {
+    const controlsArray = Array.from({ length: props.slidesToShow }, () =>
+      useAnimation()
+    );
+
+    const handleClick = () => {
+      props.onClick();
+      animateProducts();
+    };
+
+    const animateProducts = () => {
+      controlsArray.forEach(async (controls, index) => {
+        await controls.start({ scale: 0.9 }); // Scale down
+        await controls.start({ scale: 1 });   // Scale back up
+      });
+    };
+
+    return (
+     <div className={styles.buttoncontainerleft}>
+        <Button
+          className={styles.prev}
+          onClick={handleClick}
+          disabled={props.currentSlide === 0}
+        >
+           <motion.span
+        
+        whileHover={{ scale: [1, 0.6, 1], transition: { duration: 1 }, }} // Scale sequence: 1 -> 0.6 -> 1
+        whileTap={{ scale: 0.9 }}   // Scale down while clicked
+        onHoverEnd={(event) => {
+          event.target.style.scale = 1; // Reset scale to 1 on hover end
+        }}
+      >
+          <ArrowBackIcon />
+          </motion.span>
+        </Button>
+        </div>
+      
+    );
+  };
 
   const NextArrow = (props) => (
+    <div className={styles.buttoncontainerright}>
     <Button className={styles.next} onClick={props.onClick}
       disabled={props.currentSlide === props.slideCount - props.slidesToShow}
     >
-      <ArrowForwardIcon />
+      <motion.span
+       whileHover={{ scale: [1, 0.6, 1], transition: { duration: 1 }, }} // Scale sequence: 1 -> 0.6 -> 1
+        whileTap={{ scale: 0.9 }}   // Scale down while clicked
+        onHoverEnd={(event) => {
+          event.target.style.scale = 1; // Reset scale to 1 on hover end
+        }}
+        
+      >
+        <ArrowForwardIcon />
+      </motion.span>
+
+
     </Button>
+        </div>
   );
 
-   const settings = {
-    slidesToShow: 4,
+  const settings = {
+    slidesToShow: 3,
     slidesToScroll: 1,
     infinite: false,
     speed: 1000,
@@ -68,13 +109,13 @@ const Brands = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
     ],
@@ -99,34 +140,34 @@ const Brands = () => {
 
       <Slider {...settings}>
         {products.map((product, index) => (
-        
-        <Grid item lg={4} md={6} sm={11} >
-        <Box className={`m2 ${styles.testimonial}`}>
 
-          <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
+          <Grid item lg={4} md={6} sm={11} >
+            <Box className={`m4 ${styles.testimonial}`}>
 
-          <div className={styles.bottomsection}> 
-          <h3>Name...</h3>
-          <p>Name...</p>
-          <p>Name...</p>
+              <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
+
+              <div className={styles.bottomsection}>
+                <h3>Name...</h3>
+                <p>Name...</p>
+                <p>Name...</p>
 
 
-          </div>
+              </div>
 
-        </Box>
-        </Grid>
+            </Box>
+          </Grid>
         ))}
       </Slider>
-      
-          
+
+
       <h1>Provide you when needed</h1>
-          <div className={styles.brands2}>
+      <div className={styles.brands2}>
         {extendedBrands2.map((brand, index) => (
           <div className={styles.brandItem} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
       </div>
 
-       
+
 
     </div>
   );

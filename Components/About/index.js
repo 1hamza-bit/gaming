@@ -26,19 +26,19 @@ function Abouts() {
   const [isVisible, setIsVisible] = useState(true);
   const [blinkCount, setBlinkCount] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible((prevVisible) => !prevVisible);
-      setBlinkCount((prevCount) => prevCount + 1);
-    }, 100); // Change this value to control the blink frequency
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIsVisible((prevVisible) => !prevVisible);
+  //     setBlinkCount((prevCount) => prevCount + 1);
+  //   }, 100); // Change this value to control the blink frequency
 
-    return () => {
-      clearInterval(interval);
-      if (blinkCount >= 2) {
-        setIsVisible(true);
-      }
-    };
-  }, [blinkCount]);
+  //   return () => {
+  //     clearInterval(interval);
+  //     if (blinkCount >= 2) {
+  //       setIsVisible(true);
+  //     }
+  //   };
+  // }, [blinkCount]);
 
   
 
@@ -70,13 +70,13 @@ function Abouts() {
     <Header />
     <Grid container spacing={2} className={styles.banner2}>
       <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.hero2}`}>
-      <motion.div
+      {/* <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.5 }}
-    >
+    > */}
         <h1>About <span>Mob studios</span></h1>
-    </motion.div>
+    {/* </motion.div> */}
         <Typography >Mobstudios is a leading mobile game development and design company specializing in creating captivating and innovative gaming experiences
           for mobile devices.With a team of talented developers, designers, and artists, we bring your game ideas to life and ensure a seamless and immersive
           gaming experience for your audience.
@@ -122,7 +122,6 @@ function Abouts() {
                 </p>
               </div>
               : selected === "Freelance Services" ?
-
 
                 <div className={`${styles.textbox} ${selected === "Freelance Services" ? styles.loaded : ''}`}>
                   <h3>{selected}</h3>
@@ -180,7 +179,7 @@ function Abouts() {
 
     <Grid container spacing={2} className={styles.choose}>
       {/* Left Grid: Image description */}
-      <Grid item xs={6} className={styles.chooseleft}>
+      <Grid item lg={6} md={6} sm={11} className={styles.chooseleft}>
         <div className='pl5p'>
           <h1>Why Choose <span>us</span> ?</h1>
           <Typography variant="subtitle1">{selectedItem}</Typography>
@@ -190,9 +189,9 @@ function Abouts() {
       </Grid>
 
       {/* Right Grid: List of items */}
-      <Grid item xs={6}>
+      <Grid item lg={6} md={6} sm={11}>
         <Grid container spacing={3} className={styles.blockscontainer}>
-          <Grid item xs={6}>
+          <Grid item lg={6} md={6} sm={11}>
             <Grid container spacing={3}>
               {items.map((item, index) => (
                 <Grid item xs={4}>

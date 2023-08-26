@@ -44,13 +44,16 @@ background-color: rgb(249 194 4);
 @media screen and (max-width:700px) {
 
  
-  .button1, .button2{
-    display: none;
+  .button1{
+    display: none !important;
   }
 
   .logo{
     display: flex !important;
     justify-content: flex-end !important;
+  }
+  .buttonp{
+    display: none !important;
   }
   }
 

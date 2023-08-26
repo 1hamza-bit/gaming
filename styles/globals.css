@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'ArialCustom';
-  src: url('../assets/fonts/arial.ttf') format('truetype');
+  src: url('../assets/Fonts/arial.ttf') format('truetype');
 } 
 @font-face {
   font-family: 'Arialbold';
-  src: url('../assets/fonts/ariblk.ttf') format('truetype');
+  src: url('../assets/Fonts/ariblk.ttf') format('truetype');
 } 
 @font-face {
   font-family: 'Congress';
-  src: url('../assets/fonts/Congress-Heavy.ttf') format('truetype');
+  src: url('../assets/Fonts/Congress-Heavy.ttf') format('truetype');
 } 
 
 body {
@@ -198,9 +198,16 @@ body::-webkit-scrollbar-thumb:hover {
 
 
   h1 {
-    font-size: 44px !important;
+    font-size: 40px !important;
   }
 
+  body{
+    font-size: 16px !important;
+  }
+
+  button{
+    font-size: 14px !important;
+  }
 
 
 }

@@ -81,12 +81,13 @@ const router = useRouter();
     
      
             return         <>
-
+  <div className={styles.bfcontainer}>
             <Button className={styles.getintouch}>Get in touch 
             <Image  src={button1} className={styles.img1}/>
             <Image  src={button2} className={styles.img2}/>
             <Image  src={button3} className={styles.img3}/>
             </Button>
+            </div>
             <Grid container spacing={2} className={styles.footer}>
             <Grid item lg={4} md={6} sm={11} className='m4'>
                     <h1>Mob Studios </h1>

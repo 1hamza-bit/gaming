@@ -226,9 +226,13 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Apply the fade-in animation to an element */
 img {
-
+  transform-style: preserve-3d ;
+  transition: transform 1.5s ease-in-out ;
   animation: fade-in 0s ease-in-out forwards;
   /* Apply the animation */
+}
+img:hover{
+transform: scale(1.1);
 }
 
 .pl5p{

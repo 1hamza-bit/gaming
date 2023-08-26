@@ -143,17 +143,17 @@ input {
 .getintouch {
   z-index: 1000;
   // margin-left: 43%;
-  margin-top: -2%;
-  background-color: yellow;
-  padding: 20px 50px;
-  border-radius: 100vw;
-  font-size: 20px;
-  color: black;
-  opacity: 1;
-  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  height: 5vw;
-  transform-style: preserve-3d;
-  transition: font-size 3s all-in-ease, height 1.5s ease-in-out, scale3d 1.5s ease-in-out;
+  margin-top: -2% !important;
+  background-color: yellow !important;
+  padding: 20px 50px !important;
+  border-radius: 100vw !important;
+  font-size: 20px !important;
+  color: black !important;
+  opacity: 1 !important;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg) ;
+  height: 5vw !important;
+  transform-style: preserve-3d ;
+  transition: font-size 3s all-in-ease, height 1.5s ease-in-out, scale3d 1.5s ease-in-out ;
 
 
 

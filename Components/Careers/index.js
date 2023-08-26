@@ -1,33 +1,91 @@
 'use client'
 import Header from '../Header';
-import { Button, Grid, List, ListItem, ListItemText, Typography, makeStyles } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
+import Brands from '../Scroller';
 import styles from './index.module.scss'
-import { useEffect, useState } from 'react';
+import Footer from '../Footer';
+import TopAssets from '../TopAssets';
 import Image from 'next/image';
 import robot from "../../assets/hero.png"
-import Footer from '../Footer';
-import styled from '@emotion/styled';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import dynamic from 'next/dynamic';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { motion } from 'framer-motion';
+const DynamicStyles = dynamic(() => import('./index.module.scss'), { ssr: false });
+import ExtensionTwoToneIcon from '@mui/icons-material/ExtensionTwoTone';
+import SportsEsportsTwoToneIcon from '@mui/icons-material/SportsEsportsTwoTone';
 
+const data =[ 
+  {}
+]
+const items = [
+  {
+    title: 'Item 1',
+    description: 'Description for Item 1',
+  },
+  {
+    title: 'Item 2',
+    description: 'Description for Item 2',
+  },
+  {
+    title: 'Item 3',
+    description: 'Description for Item 3',
+  },
+  {
+    title: 'Item 1',
+    description: 'Description for Item 1',
+  },
+  {
+    title: 'Item 2',
+    description: 'Description for Item 2',
+  },
+  {
+    title: 'Item 3',
+    description: 'Description for Item 3',
+  }, {
+    title: 'Item 1',
+    description: 'Description for Item 1',
+  },
+  {
+    title: 'Item 2',
+    description: 'Description for Item 2',
+  },
+  {
+    title: 'Item 3',
+    description: 'Description for Item 3',
+  },
+  // Add more items as needed
+];
 
-const StyledListItemText = (props) => (
-  <ListItemText
-    style={{
-      fontSize: "26px"
-    }}
-  />
-);
 function Careers() {
-  const [selected, setSelected] = useState("Mobile Game Development");
-  const [isVisible, setIsVisible] = useState(false);
-  const [initialLoad, setInitialLoad] = useState(true);
-  const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
-  const [selectedItem, setSelectedItem] = useState(items[0]);
+  const allBrands = [
+    { icon: <ExtensionTwoToneIcon color="primary" />, name: "Game Art" }, { icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "AAA" },
+    { icon: <ExtensionTwoToneIcon />, name: "Game development" }, { icon: <ExtensionTwoToneIcon />, name: "3D Modelling" },
+    { icon: <ExtensionTwoToneIcon />, name: "3D Animations" }, { icon: <ExtensionTwoToneIcon />, name: "Mobile Games" },
+    { icon: <ExtensionTwoToneIcon />, name: "Game Props" }, { icon: <ExtensionTwoToneIcon />, name: "Multiplayer Games" },
+    { icon: <ExtensionTwoToneIcon />, name: "Game Shaders" }, { icon: <ExtensionTwoToneIcon />, name: "Teaser Trailer" }
+  ];
   const [data, setData] = useState(null);
+  const gridItemVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+ const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth' // You can change this to 'auto' or 'instant' for different scroll behavior
+    });
+  };
+
+  const extendedBrands = [...allBrands, ...allBrands, ...allBrands]; // Duplicating the brands
+
 
   useEffect(() => {
     // Make a GET request using Axios
-    axios.get('https://jsonplaceholder.typicode.com/posts/1')
+    axios.get('https://kobmob.pythonanywhere.com/api/career-banner')
       .then(response => {
         // Save the response data in the state
         setData(response.data);
@@ -35,145 +93,100 @@ function Careers() {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []); 
-
-  const handleItemClick = (item) => {
-    setSelectedItem(item);
-  };
-
-
-
-  const handleUpdate = (value) => {
-
-    setSelected(value)
-    setIsVisible(true)
-  }
+  }, []);
 
   return <>
     <Header />
-    <Grid container spacing={2} className={styles.banner2}>
-      <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.hero2}`}>
-        <h1>About <span>Mob studios</span></h1>
 
-        <Typography >Mobstudios is a leading mobile game development and design company specializing in creating captivating and innovative gaming experiences
-          for mobile devices.With a team of talented developers, designers, and artists, we bring your game ideas to life and ensure a seamless and immersive
-          gaming experience for your audience.
-        </Typography>
+      {/* {data?.map(data, */}
+            <Grid container spacing={0}  className={styles.banner}>
 
-
+      <Grid item lg={5} md={6} sm={11} className={`m7 ${styles.hero}`}>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={gridItemVariants}
+          transition={{ duration: 0.2, delay: 0.2 }}
+        >  <h1>Game Development & Design Service</h1>
+          <Typography > Mobstudios, is the leading service-based company for Game development,
+            Assets Creation, Game Design, 3D Modeling, Shader development, and Many More, According to your Preference.</Typography>
+         
+        </motion.div>
       </Grid>
-      <Grid item lg={5} md={6} sm={11} style={{ justifyContent: "center !important", display: "flex !important" }}>
+      <Grid item lg={5} md={6} sm={11}>
         <Image
-          src={robot}
+          // src={data.image}
           className={styles.imageContainer}
-          width={600}
+        // width={700}
         />
       </Grid>
-    </Grid>
+      <div className={styles.brands}>
+        {extendedBrands.map((brand, index) => (
+          <div className={styles.brandItem} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
+        ))}
+      </div>
+
+      </Grid>
+      {/* )}; */}
+    
+      <Grid container spacing={6}  className={styles.jobs}>
+
+      <Grid item lg={5} md={6} sm={11}>
+      <Grid container spacing={0} className={styles.jobcard}>
+      <Grid item lg={7} >
+
+        <div >
+              <h2>Job title</h2>
+        <div className={styles.small}>
+
+              <h6>small</h6>
+              <h6>small</h6>
 
 
-    <Grid container spacing={2} className={styles.services}>
-
-      <Grid item lg={6} md={6} sm={11} className={styles.left}>
-        <Image
-          src={robot}
-          className={styles.imageContainer}
-          width={300}
-
-        />
-
-        {selected === "Mobile Game Development" ?
-
-          <div className={`${styles.textbox} ${selected === "Mobile Game Development" ? styles.loaded : ''}`}>
-            <h3>{selected}</h3>
-
-
-            <p> At Mobstudios, we excel in developing a wide variety of mobile games across different genres, including action, adventure, puzzle, strategy, and more.
-              Our team leverages the latest technologies and industry best practices to deliver high-quality, engaging games that captivate players and keep them coming back for more.
-            </p>
-          </div>
-          : selected === "Freelance Services" ?
-
-            <div className={`${styles.textbox} ${selected === "Freelance Services" ? styles.loaded : ''}`}>
-              <h3>{selected}</h3>
-
-              <p>In addition to our in-house game development projects, we offer freelance services to cater to specific client requirements.
-                Whether you need assistance with game design, programming, artwork, or sound effects, our team of experts is available to collaborate with you and provide tailored solutions to meet your project needs.
-              </p>
-            </div>
-            :
-              <div className={styles.textbox}>
-                <h3>{selected}</h3>
-
-                <p>Mobstudios also specializes in creating and providing Unity assets to enhance game development processes.
-                  We offer a diverse range of pre-built assets, including character models, animations, environments, sound effects, and more.
-                  Our Unity assets are designed to accelerate development timelines and empower game developers to create immersive and visually stunning games with ease.
-                </p>
               </div>
-        }
+            <p>Description</p>
+
+            <h6>date</h6>
+
+        </div>
+        </Grid>
+        <Grid item lg={4} >
+          <Image />
+        </Grid>
+          </Grid>
+          </Grid>
+          <Grid item lg={5} md={6} sm={11}>
+      <Grid container spacing={0} className={styles.jobcard}>
+      <Grid item lg={7} >
+
+        <div >
+              <h2>Job title</h2>
+        <div className={styles.small}>
+
+              <h6>small</h6>
+              <h6>small</h6>
 
 
+              </div>
+            <p>Description</p>
 
-      </Grid>
-      <Grid item lg={6} md={6} sm={11}>
-        <List className={styles.listmenu}>
-          <ListItem className={`${styles.item} ${selected === "Mobile Game Development" ? 'maincolor' : ''}`} onClick={() => handleUpdate("Mobile Game Development")} >
+            <h6>date</h6>
 
-            <ListItemText primary="Mobile Game Development" style={{
-              fontSize: "26px !important"
-            }} />
-          </ListItem>
-          <ListItem className={`${styles.item} ${selected === "Freelance Services" ? 'maincolor' : ''}`} onClick={() => handleUpdate("Freelance Services")}>
+        </div>
+        </Grid>
+        <Grid item lg={4} >
+          <Image />
+        </Grid>
+          </Grid>
+          </Grid>
 
-            <ListItemText primary="Freelance Services" style={{
-              fontSize: "26px"
-            }} />
-          </ListItem>
 
-          <ListItem className={`${styles.item} ${selected === "Unity Assets" ? 'maincolor' : ''}`} onClick={() => handleUpdate("Unity Assets")}>
+          </Grid>
 
-            <ListItemText primary="Unity Assets" style={{
-              fontSize: "26px"
-            }} />
-          </ListItem>
-
-        </List>
-
-      </Grid>
-    </Grid>
-
-   
-
-    <Grid container spacing={2} className={styles.choose}>
-      {/* Left Grid: Image description */}
-      <Grid item xs={6} className={styles.chooseleft}>
-          <div>
-            <h2>Why Choose <span>us</span> ?</h2>
-            <Typography variant="subtitle1">{selectedItem}</Typography>
-            <p>dsljfksdjklfjdklsjfksdjklfjklsdjkljklfjsdkljfklsdjklfjsdkl
-              jfkjsjklfjdklsjfksdjklfjklsdjkljklfjsdkljfklsdjklfjsdkljfkjsjklfjdklsjfksdjklfjklsdjkljklfjsdkljfklsdjklfjsdkljfkjsdklf</p>
-          </div>
-      </Grid>
-
-      {/* Right Grid: List of items */}
-      <Grid item xs={6}>
-        <List>
-          {items.map((item, index) => (
-            <ListItem
-              key={index}
-              button
-              selected={selectedItem === item}
-              onClick={() => handleItemClick(item)}
-            >
-              <ListItemText primary={item} />
-            </ListItem>
-          ))}
-        </List>
-      </Grid>
-    </Grid>
 
 
     <Footer />
+    {/* <DynamicStyles /> */}
   </>;
 }
 

@@ -89,10 +89,10 @@ const toggleDrawer =() => {
         anchor="left"
         open={isOpen}
         onClose={toggleDrawer}
-        className={`minw100p ${styles.drawer} ${isOpen ? '' : styles.closed}`}
+        className={`minw100p jc ${styles.drawer} ${isOpen ? '' : styles.closed}`}
       >
         <StyledDrawerContainer>
-          <p>hamza</p>
+          <p></p>
           <Container className={styles.container}>
       <List className={styles.list}>
       <ListItem className={styles.item} onClick={handleHomeClick}>

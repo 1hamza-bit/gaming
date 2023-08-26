@@ -87,6 +87,9 @@ body::-webkit-scrollbar-thumb:hover {
   border-bottom-right-radius: 5vw;
 }
 
+.jc{
+justify-content: center !important;
+}
 
 .ztop {
   z-index: 1201;

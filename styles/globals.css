@@ -167,7 +167,7 @@ justify-content: center !important;
 
 .MuiBackdrop-root {
 
-  background-color: rgb(221 221 221 / 50%);
+  background-color: rgb(221 221 221 / 50%) !important;
 
   width: 100vw !important;
 

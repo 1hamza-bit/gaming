@@ -1,6 +1,15 @@
+@font-face {
+  font-family: 'Congress';
+  src: url('../../assets/Fonts/Congress-Heavy.ttf') format('truetype');
+} 
+
 .header{
   position: fixed;
   top: 0;
+  span{
+    font-family: 'Congress', Courier, monospace !important;
+    font-weight: 600;
+  }
 }
 .buttonp{
   border-radius: 100vw !important;

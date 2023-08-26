@@ -85,9 +85,11 @@ body::-webkit-scrollbar-thumb:hover {
   min-width: 100% !important;
   height: 100vh !important;
   border-bottom-right-radius: 5vw;
+justify-content: center !important;
+
 }
 
-.jc{
+.jc {
 justify-content: center !important;
 }
 

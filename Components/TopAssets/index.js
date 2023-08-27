@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Grid, Button } from '@mui/material';
 import Image from 'next/image';
 import robot from "../../assets/hero.png"
@@ -9,6 +9,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import axios from 'axios';
 const products = [
   { id: 1, name: 'Product 1' },
   { id: 2, name: 'Product 2' },
@@ -25,6 +26,7 @@ const TopAssets = () => {
   const itemsInView = 4;
   const [isDragging, setIsDragging] = useState(false);
   const [animate, setAnimate] = useState(false);
+  const [data, setData] = useState(null);
 
   const PrevArrow = (props) => (
     <Button className={styles.prev} onClick={props.onClick} disabled={props.currentSlide === 0}>
@@ -40,8 +42,20 @@ const TopAssets = () => {
     </Button>
   );
 
+  useEffect(() => {
+    // Make a GET request using Axios
+    axios.get('https://kobmob.pythonanywhere.com/api/top-packs')
+      .then(response => {
+        // Save the response data in the state
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
   const settings = {
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
     infinite: false,
     speed: 500,
@@ -49,7 +63,7 @@ const TopAssets = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         },
       },
       {
@@ -94,17 +108,15 @@ const TopAssets = () => {
 
       <h1>Our <span>TOP </span>packs</h1>
       <Slider {...settings}>
-        {products.map((product, index) => (
+        {data?.map((product, index) => (
           <>
-          {!( index % 2 )?
           <div key={index} className="product-item">
-              <Image src={robot} alt={product.name} width={200} />
+              <Image src={robot} alt={product.name} width={300} />
 
-              <h3>{product.name}</h3>
+              <h3>{product.name} jshdjkshjkdhsjkhdjsh</h3>
               <p>{product.description}</p>
             </div>
-            : null
-}
+      
 
             {/* <div key={index} className="product-item">
               <Image src={robot} alt={product.name} width={200} />
@@ -114,6 +126,8 @@ const TopAssets = () => {
             </div> */}
 </>
         ))}
+
+
       </Slider>
 
 

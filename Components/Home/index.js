@@ -80,6 +80,14 @@ function Hero() {
       });
   }, []);
 
+  const handleHomeClick = () => {
+    router.push('/');
+  };
+
+  const handleContactClick = () => {
+    router.push('/contact');
+  };
+
   return <>
     <Header />
     <Grid container spacing={0} className={styles.banner}>

@@ -10,6 +10,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import ModeCommentIcon from '@mui/icons-material/ModeComment';
+import { yellow } from '@mui/material/colors';
 
 const products = [
   { id: 1, name: 'Product 1' },
@@ -21,6 +23,8 @@ const products = [
   { id: 7, name: 'Product 7' },
   // Add more product objects here
 ];
+
+const primary = yellow[500]; // #f44336
 
 const Brands = () => {
   // Simulated list of brands
@@ -143,7 +147,7 @@ const Brands = () => {
 
           <Grid item lg={4} md={6} sm={11} >
             <Box className={`m4 ${styles.testimonial}`}>
-
+              <ModeCommentIcon color={primary} />
               <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
 
               <div className={styles.bottomsection}>

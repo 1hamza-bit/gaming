@@ -232,7 +232,7 @@ justify-content: center !important;
 /* Apply the fade-in animation to an element */
 img {
   transform-style: preserve-3d ;
-  transition: transform 1.5s ease-in-out ;
+  transition: transform 1s ease-in-out ;
   animation: fade-in 0s ease-in-out forwards;
   /* Apply the animation */
 }

@@ -96,19 +96,22 @@ const TopAssets = () => {
       <Slider {...settings}>
         {products.map((product, index) => (
           <>
+          {!( index % 2 )?
           <div key={index} className="product-item">
               <Image src={robot} alt={product.name} width={200} />
 
               <h3>{product.name}</h3>
               <p>{product.description}</p>
             </div>
+            : null
+}
 
-            <div key={index} className="product-item">
+            {/* <div key={index} className="product-item">
               <Image src={robot} alt={product.name} width={200} />
 
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-            </div>
+            </div> */}
 </>
         ))}
       </Slider>

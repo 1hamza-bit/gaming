@@ -277,7 +277,12 @@ transform: scale(1.1);
   right: 10px;
 }
 
-
+.product-item{
+ 
+}
+.product-item:nth-child(2) {
+  margin-top: 20px;
+}
 
 
 

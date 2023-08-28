@@ -97,15 +97,16 @@ input {
 
   display: grid;
   direction: rtl;
-  margin-top: -19%;
+  margin-top: -11%;
   transition: transform 0.3s ease;
+  margin-right: 5%;
   img{
-    width: 200px;
+    width: 150px;
     height: auto;
     transition: transform 0.3s ease;
   }
   img:nth-child(1){
-    width: 500px;
+    width: 400px;
     padding-right: 250px;
     animation: scrollDown 4s infinite;
   }
@@ -165,7 +166,7 @@ input {
   position: fixed;
   top: -39px;
   right: 49%;
-  width: 52%;
+  width: 42%;
   height: auto;
   opacity: 0;
   visibility: hidden;
@@ -175,7 +176,7 @@ input {
   position: fixed;
   right: 67%;
   top: 50%;
-  width: 40%;
+  width: 30%;
   height: auto;
   opacity: 0;
   visibility: hidden;
@@ -187,11 +188,11 @@ input {
   top: -29px;
   /* right: 43%; */
   left: 72%;
-  width: 30%;
+  width: 25%;
   height: auto;
   opacity: 0;
   visibility: hidden;
-  transition: visibility 0.5s ease-in-out, rotate 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, rotate 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .getintouch:hover {
@@ -245,7 +246,7 @@ input {
 @media screen and (max-width:500px) {
 
   .footeranimate{
-
+    margin-right: 0%;
     margin-top: -1% !important;
     img{
       width: 164px;
@@ -269,6 +270,7 @@ input {
 @media screen and (max-width:900px) {
 
   .footeranimate{
+    margin-right: 0%;
 
     
     margin-top: -1% !important;

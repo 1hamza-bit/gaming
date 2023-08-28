@@ -50,7 +50,8 @@ const TopAssets = () => {
         setData(response.data);
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+      alert('Error fetching data:', error.error_message
+      );
       });
   }, []);
 

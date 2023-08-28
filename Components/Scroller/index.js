@@ -9,9 +9,10 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ModeCommentIcon from '@mui/icons-material/ModeComment';
 import { yellow } from '@mui/material/colors';
+import axios from 'axios';
 
 const products = [
   { id: 1, name: 'Product 1' },
@@ -27,6 +28,26 @@ const products = [
 const primary = yellow[500]; // #f44336
 
 const Brands = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    // Make a GET request using Axios
+    axios.get('https://kobmob.pythonanywhere.com/api/testimonial')
+      .then(response => {
+        // Save the response data in the state
+        setData(response.data);
+      })
+      .catch(error => {
+      alert('Error fetching data:', error.error_message
+      );
+      });
+
+
+
+
+
+
+  }, []);
   // Simulated list of brands
   const allBrands = [
     { icon: <ExtensionTwoToneIcon color="primary" />, name: "Game Art" }, { icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "AAA" },

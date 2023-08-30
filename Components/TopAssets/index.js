@@ -53,7 +53,16 @@ const TopAssets = () => {
       alert('Error fetching data:', error.error_message
       );
       });
+
+
+
+
+
+
   }, []);
+
+
+ 
 
   const settings = {
     slidesToShow: 2,

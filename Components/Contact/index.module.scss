@@ -42,52 +42,71 @@
   
 }
 
-.bannerc{
+.bannerc {
     background-color: rgb(24, 24, 24);
-    .div{
-        width: 30%;
-    /* justify-content: stretch; */
-    display: flex;
-    height: 50%;
-    margin-left: 80%;
-    margin-top: 50%;
+    
+    .div {
+        width: 20%;
+        justify-content: flex-end;
+        display: flex;
+        margin-left: 70%;
+        margin-top: 25%;
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+        // transition: transform 1.5s ease-in-out !important;
     }
  
-    img{
-        // background-image: ;
+    img {
         color: transparent;
-    display: flex;
-    align-items: end;
-    width: 100%;
-    justify-content: flex-end;
- 
-
+        display: flex;
+        align-items: end;
+        width: 100%;
+        justify-content: flex-end;
+        // transition: transform 1.5s ease-in-out !important;
     }
-    .letter1{
+    
+    .letter1 {
         display: block;
+        height: 160px !important;
     }
-    .letter2{
+    
+    .letter2 {
+        display: none;
+        height: 160px !important;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out !important;
+    }
+  
+    .div:hover img {
+        /* Apply the transformation on hover */
+        // transform: rotate(10deg);
+    }
+
+    .div:hover .letter1 {
+        /* Hide letter1 on hover */
         display: none;
     }
-    .div:hover{
-        img{
-            // animation: none;
-            transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(5deg) skew(0deg, 0deg);
-            transform-style: preserve-3d;
-         
+
+    .div:hover .letter2 {
+        /* Show letter2 on hover */
+        display: block;
+        opacity: 1;
+        animation: rotateAnimation 0.5s linear forwards;
+    }
+    @keyframes rotateAnimation {
+        from {
+            transform: rotate(0deg);
         }
-        .letter1{
-            display: none;
-        }
-        .letter2{
-            display: block;
+        to {
+            transform: rotate(5deg);
         }
     }
 }
 
 .contact{
-    background-color: rgb(24, 24, 24);
-    border-bottom-right-radius: 6vw;
+    background-color: rgb(249, 255, 255);
+  border-radius: 3vw;
+    min-height: 500px;
 
-    border-bottom-left-radius: 6vw;
+  
 }

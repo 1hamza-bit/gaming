@@ -78,7 +78,7 @@ const toggleDrawer =() => {
                                 width={70}
                                 />
                             </Typography>
-                            <Button className={styles.buttonp}>Portfolio <ArrowOutwardIcon /></Button> 
+                            <Button onClick={handlePortfolioClick} className={styles.buttonp}>Portfolio <ArrowOutwardIcon /></Button> 
                         </Toolbar>
                     </AppBar>
                     

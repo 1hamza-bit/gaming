@@ -107,6 +107,28 @@
     background-color: rgb(249, 255, 255);
   border-radius: 3vw;
     min-height: 500px;
+li{
+    border-bottom: 1px solid rgb(66, 66, 66);
+    color: black;
+    margin-bottom: 5px;
+    span{
+
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    }
+    transition: padding-left 0.5s ease-in-out;
+    cursor: pointer;
+}
+li:hover{
+    padding-left: 5%;
+}
 
   
 }
+
+.stickyHeader {
+    position: sticky;
+    top: 0; /* Stick the header to the top */
+    background-color: #fff; /* Set the background color as needed */
+    z-index: 1; /* Ensure the sticky header appears above the content */
+  }

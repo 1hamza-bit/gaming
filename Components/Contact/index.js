@@ -1,8 +1,8 @@
 'use client'
 import Header from '../Header';
-import { Button, Grid, List, ListItem, ListItemText, Typography, makeStyles } from '@mui/material';
+import { AppBar, Button, CssBaseline, Grid, List, ListItem, ListItemText, Paper, Toolbar, Typography } from '@mui/material';
 import styles from './index.module.scss'
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import robot from "../../assets/hero.png"
 import letterclosed from "../../assets/lclosed.png"
@@ -11,9 +11,43 @@ import Footer from '../Footer';
 import styled from '@emotion/styled';
 
 
+const stickyHeaderStyle = {
+  position: 'sticky',
+  top: '0',
+  backgroundColor: '#FFF', // Set the background color as needed
+  zIndex: '1', // Ensure the sticky header appears above the content
+  gridColumn: '1 / span 2', // Span both columns
+  padding: '16px', // Add padding as needed
+};
+
+const itemList = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8', 'Item 9', 'Item 10', 'Item 7', 'Item 8', 'Item 9', 'Item 10'];
+
 
 function Contacts() {
-  
+  const containerRef = useRef(null);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (containerRef.current && headerRef.current) {
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const headerRect = headerRef.current.getBoundingClientRect();
+
+        if (containerRect.top <= 0) {
+          headerRef.current.style.position = 'fixed';
+          headerRef.current.style.top = '0';
+          headerRef.current.style.left = `${containerRect.left}px`;
+        } else {
+          headerRef.current.style.position = 'static';
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return <>
     <Header />
@@ -23,10 +57,10 @@ function Contacts() {
         <h3>( Let's Create Amazing Mobile Games Together!)</h3>
 
         <Typography >Thank you for your interest in Mobstudios, the premier mobile game development and design company.
-           We're excited to collaborate with you and bring your game ideas to life. Getting in touch with us is simple,
-           and we're here to provide you with the best possible service.</Typography>
+          We're excited to collaborate with you and bring your game ideas to life. Getting in touch with us is simple,
+          and we're here to provide you with the best possible service.</Typography>
 
-           <Image
+        <Image
           src={robot}
           className={styles.imageContainer}
           width={300}
@@ -35,37 +69,37 @@ function Contacts() {
       </Grid>
       <Grid item lg={5} md={6} sm={11}>
         <div className={styles.div}>
-        <Image
-          src={letterclosed}
-          className={styles.letter1}
-          width={70}
-        />
-           <Image
-          src={opened}
-          className={styles.letter2}
-          width={70}
-        />
+          <Image
+            src={letterclosed}
+            className={styles.letter1}
+            width={120}
+          />
+          <Image
+            src={opened}
+            className={styles.letter2}
+            width={120}
+          />
         </div>
 
         <List className={styles.listmenu}>
           <ListItem className={`${styles.item} `}   >
 
-            <ListItemText  primary="Business Development" secondary="Business Development"  style={{
-      fontSize: "26px !important"
-    }} />
+            <ListItemText primary="Business Development" secondary="Business Development" style={{
+              fontSize: "26px !important"
+            }} />
           </ListItem>
           <ListItem className={`${styles.item} `}     >
 
-            <ListItemText  primary="Freelance Services"  style={{
-      fontSize: "26px"
-    }} />
+            <ListItemText primary="Freelance Services" style={{
+              fontSize: "26px"
+            }} />
           </ListItem>
 
-          <ListItem  className={`${styles.item} `}   >
+          <ListItem className={`${styles.item} `}   >
 
-            <ListItemText   primary="Unity Assets"   style={{
-      fontSize: "26px"
-    }}/>
+            <ListItemText primary="Unity Assets" style={{
+              fontSize: "26px"
+            }} />
           </ListItem>
 
         </List>
@@ -73,16 +107,36 @@ function Contacts() {
     </Grid>
 
 
-    <Grid container spacing={2} className={styles.contact}>
-      <Grid item lg={6} md={6} sm={11}>
-    
-         
-   
+    <Grid container spacing={4} className={styles.contact} ref={containerRef}>
+
+      <Grid item lg={5} md={6} sm={11}>
+        <Paper style={stickyHeaderStyle} className={`${styles.right} ${styles.stickyHeader}`} ref={headerRef}>
+          <Typography variant="h6">Sticky Heading</Typography>
+        </Paper>
       </Grid>
-      <Grid item lg={6} md={6} sm={11}>
-      
+      <Grid item lg={6} md={6} sm={11} className={styles.listContainer}>
+        <List>
+          {itemList.map((item, index) => (
+            <>
+            <ListItem key={index}>
+              <ListItemText primary={item} />
+              <div>
+                <input id="checkbox2" type="checkbox" />
+                  <label class="toggle toggle2" for="checkbox2">
+                    <div id="bar4" class="bars"></div>
+                    <div id="bar5" class="bars"></div>
+                    <div id="bar6" class="bars"></div>
+                  </label>
+              </div>
+            </ListItem>
+            <Typography >flklsjfkj</Typography>
+            </>
+          ))}
+        </List>
+
       </Grid>
     </Grid>
+
 
 
     <Footer />

@@ -47,7 +47,7 @@ svg{
   
 
 }
-background-color: rgb(249 194 4);
+background-color: #f0aa0a;
 }
 
 @media screen and (max-width:700px) {
@@ -128,14 +128,14 @@ background-color: rgb(249 194 4);
      
     }
     .item:hover  {
-      color: rgb(249 194 4);
+      color: #f0aa0a;
       transform: translate(5px, 0px);
       .icon{
-      color: rgb(249 194 4);
+      color: #f0aa0a;
 
       }
       span{
-      color: rgb(249 194 4);
+      color: #f0aa0a;
       }
     }
   }

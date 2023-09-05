@@ -53,13 +53,13 @@ body::-webkit-scrollbar-track {
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-  background: rgb(249 194 4);
+  background: #f0aa0a;
   /* color of the scrollbar handle */
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
-  background: rgb(249 194 4);
+  background: #f0aa0a;
   /* color of the scrollbar handle on hover */
 }
 
@@ -118,12 +118,12 @@ justify-content: center !important;
 }
 
 .hamburger-icon:hover .line {
-  background-color: rgb(249 194 4);
+  background-color: #f0aa0a;
 
 }
 
 .redline .line {
-  background-color: rgb(249 194 4);
+  background-color: #f0aa0a;
 }
 
 .line:nth-child(1) {
@@ -186,16 +186,16 @@ justify-content: center !important;
 }
 
 .MuiLinearProgress-root span {
-  background-color: rgb(249 194 4) !important;
+  background-color: #f0aa0a !important;
 
 }
 
 .MuiLinearProgress-bar1 {
-  background-color: rgb(249 194 4) !important;
+  background-color: #f0aa0a !important;
 }
 
 .maincolor {
-  color: rgb(249 194 4) !important;
+  color: #f0aa0a !important;
 }
 
 
@@ -363,3 +363,11 @@ transform: scale(1.1);
   transition-duration: 1.5s;
   transform: rotate(180deg);
 }
+
+
+
+
+
+
+
+

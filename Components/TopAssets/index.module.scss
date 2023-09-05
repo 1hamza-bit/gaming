@@ -48,47 +48,115 @@
   }
 }
 
+.buttons{
+  width: 180px;
+    display: flex;
+    justify-content: space-between;
+}
 
 .prev{
-  background-color: rgb(249 194 4) !important;
+  background-color: #f0aa0a !important;
   color: black !important;
   border-radius: 10vw !important;
   margin-left: 2% !important;
   padding: 10px !important;
   position: absolute !important;
-    top: 89%;
 }
 .prev:hover{
   transform: translate(1px, 1px) !important;
-  background-color: rgb(4, 227, 227) !important;
+  background-color: #f0aa0a !important;
 }
 
 .next{
-  background-color: rgb(249 194 4) !important;
+  background-color: #f0aa0a !important;
   color: black !important;
   border-radius: 10vw !important;
   margin-left: 2% !important;
   padding: 10px !important;
-  left: 8%;
-
 }
 
 .next:hover{
   transform: translate(1px, 1px) !important;
-  background-color: rgb(4, 227, 227) !important;
+  background-color: #f0aa0a !important;
 
 }
 
-@media screen and (max-width: 900px) {
-.next{
-  left: 25% !important;
-}
-
-}
-
-@media screen and (max-width: 1600px) {
+@media screen and (min-width: 200px) {
   .next{
-    left: 18% !important;
   }
   
+  }
+
+@media screen and (min-width: 600px) {
+.next{
+}
+
+}
+
+@media screen and (min-width: 1000px) {
+  .next{
+  }
+  
+  }
+
+
+  .product-item{
+    /* Default styles for slick slider items */
+    /* You can set a default width and height here */
+    width: 30vw;
+    overflow: hidden;
+    h3{
+      margin-top: -2%;
+    z-index: 1000;
+    position: absolute;
+    background: #f0aa0a;
+    color: black;
+    padding: 10px;
+    border-radius: 3vw;
+    font-size: 15px;
+    display: flex;
+    // direction: rtl;
+    align-items: center;
+    transition: all 0.8s ease-in-out;
+    margin-left: 1%;
+   
+    span{
+      // display: none;
+      width: 0px;
+      opacity: 0; /* Initially hidden with zero opacity */
+      transform: translateY(-10px); /* Initially shifted up */
+      transition: all 0.4s ease-in-out; /* Transition all properties */
+     
+    }
+  }
+  h3:hover{
+    background-color: rgb(66, 66, 66);
+    color: aliceblue;
+    span{
+      // display: block; /* Show the span on hover */
+      width: 50px;
+  opacity: 1; /* Add opacity for smooth fading effect */
+  transform: translateY(0); /* Add a smooth vertical transition */
+  transition-delay: 0.2s; 
+      
+    }
+  }
+    
+    img{
+      width: 100% !important;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .product-item {
+      width: 40vw;  /* Custom width for this breakpoint */
+      height: auto; /* Custom height for this breakpoint */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .product-item {
+      width: 100vw;  /* Custom width for this breakpoint */
+      height: auto; /* Custom height for this breakpoint */
+    }
   }

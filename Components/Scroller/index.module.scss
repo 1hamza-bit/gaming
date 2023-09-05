@@ -18,7 +18,7 @@
 .container b{
   font-size: 54px;
    
-  color: rgb(4, 249, 216);
+  color: rgb(238, 102, 102);
 }
 
 .brands {
@@ -123,7 +123,7 @@
 }
 
 .prev{
-  background-color: rgb(249 194 4) !important;
+  background-color: #f0aa0a !important;
   color: black !important;
   border-radius: 10vw !important;
   margin-left: 2% !important;
@@ -138,12 +138,12 @@
 }
 .prev:hover{
   transform: translate(1px, 1px) !important;
-  background-color: rgb(4, 227, 227) !important;
+  background-color: #f0aa0a !important;
   animation: scaleAnimation 0.3s ease-in-out;
 }
 
 .next{
-  background-color: rgb(249 194 4) !important;
+  background-color: #f0aa0a !important;
   color: black !important;
   border-radius: 10vw !important;
   margin-left: 2% !important;
@@ -157,7 +157,7 @@
 
 .next:hover{
   transform: translate(1px, 1px) !important;
-  background-color: rgb(4, 227, 227) !important;
+  background-color: #f0aa0a !important;
   animation: scaleAnimation 0.3s ease-in-out;
 }
 

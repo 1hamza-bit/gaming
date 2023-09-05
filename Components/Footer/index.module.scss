@@ -7,7 +7,7 @@
         border-color: white !important;
     }
 h1{
-    color: rgb(4, 249, 216);
+    color: #f0aa0a;
      
     font-size: 40px;
 }
@@ -39,13 +39,13 @@ input {
    
   }
   .inputbox:focus-within{
-    border-color: yellow;
+    border-color: #f0aa0a;
     border-image-slice: 1;
     border-radius: 100vw !important;
   }
   
   .inputbox:hover{
-    border: 2px solid yellow;
+    border: 2px solid #f0aa0a;
     }
   /* Remove hover effect */
   input:hover {
@@ -84,11 +84,11 @@ input {
         padding: 1%;
     }
     li:hover{
-        color: rgb(249 194 4);
+        color: #f0aa0a;
         cursor: pointer;
     }
     .icon{
-        color: rgb(249 194 4);
+        color: #f0aa0a;
     }
 }
     
@@ -146,7 +146,7 @@ input {
   z-index: 1000;
   // margin-left: 43%;
   margin-top: -3% !important;
-  background-color: yellow !important;
+  background-color: #f0aa0a !important;
   padding: 20px 50px !important;
   border-radius: 100vw !important;
   font-size: 20px !important;
@@ -198,7 +198,7 @@ input {
 
 .getintouch:hover {
 
-  background-color: yellow;
+  background-color: #f0aa0a;
   animation: scaleAnimation 0.3s ease-in-out forwards;
   padding: 30px 50px;
   .img1{

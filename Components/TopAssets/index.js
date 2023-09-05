@@ -10,6 +10,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import axios from 'axios';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 const products = [
   { id: 1, name: 'Product 1' },
   { id: 2, name: 'Product 2' },
@@ -50,8 +51,8 @@ const TopAssets = () => {
         setData(response.data);
       })
       .catch(error => {
-      alert('Error fetching data:', error.error_message
-      );
+        alert('Error fetching data:', error.error_message
+        );
       });
 
 
@@ -62,30 +63,45 @@ const TopAssets = () => {
   }, []);
 
 
- 
+
 
   const settings = {
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     infinite: false,
-    speed: 500,
+    speed: 1200,
+    customStyle: {
+      width: '300px',  // Custom width at this breakpoint
+      height: '200px', // Custom height at this breakpoint
+    },
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          variableWidth: false, // Disable variable width
+        },
+        customStyle: {
+          width: '300px',  // Custom width at this breakpoint
+          height: '200px', // Custom height at this breakpoint
         },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
+          variableWidth: false, // Disable variable width
+        },
+        customStyle: {
+          width: '150px',  // Custom width at this breakpoint
+          height: '100px', // Custom height at this breakpoint
         },
       },
     ],
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
   };
+
 
 
 
@@ -116,17 +132,17 @@ const TopAssets = () => {
 
       {/* <Draggable axis="x" onDrag={handleDrag} onStop={handleDragStop}> */}
 
-      <h1>Our <span>TOP </span>packs</h1>
+      <h1>Our <span>TOP </span>packs  <p>{data?.lenght - 1} {data?.lenght > 0 ?  "+" : null}</p></h1>
       <Slider {...settings}>
         {data?.map((product, index) => (
           <>
-          <div key={index} className="product-item">
-              <Image src={robot} alt={product.name} width={300} />
+            <div key={index} className={styles["product-item"]} b>
+              <img src={product.add_image} alt={product.name} />
 
-              <h3>{product.name} jshdjkshjkdhsjkhdjsh</h3>
+              <h3> <span> {product.image_by_title}</span> <ArrowOutwardIcon className={styles.arrow} /></h3>
               <p>{product.description}</p>
             </div>
-      
+
 
             {/* <div key={index} className="product-item">
               <Image src={robot} alt={product.name} width={200} />
@@ -134,11 +150,18 @@ const TopAssets = () => {
               <h3>{product.name}</h3>
               <p>{product.description}</p>
             </div> */}
-</>
+          </>
         ))}
 
 
       </Slider>
+      <div className={styles.buttons}>
+        <div><PrevArrow /></div>
+
+        <div><NextArrow /></div>
+        
+        </div>
+
 
 
 

@@ -1,4 +1,6 @@
 .hero{
+  padding-left: 6% !important;
+  padding-bottom: 5% !important;
     h1{
         font-size: 84px;
          
@@ -12,7 +14,7 @@
 
     .button1{
         border-radius: 100vw;
-        background-color: rgb(4, 249, 216);
+        background-color: #f0aa0a;
 //   background-color: rgb(139, 2, 2);
         color: black;
          padding: 8px 6%;
@@ -32,7 +34,7 @@
         padding-left: 2px;
         // padding: 1%;
     }
-  background-color: rgb(4, 249, 216);
+  background-color: #f0aa0a;
 
 }
     
@@ -55,6 +57,7 @@
 }
 
 .banner{
+  padding-top: 5% !important;
     border-bottom-right-radius: 6vw;
 
     border-bottom-left-radius: 6vw;
@@ -68,7 +71,7 @@
     animation: floatLeftRight 5s linear infinite; /* Customize the animation duration and timing here */
   
         object-fit: contain;
-        width: 800px !important;
+        width: 80% !important;
         position: relative !important;
         height: unset !important;
     overflow: hidden;
@@ -155,13 +158,15 @@
   }
 
   .down{
-    background-color: rgb(249 194 4) !important;
+    background-color: #f0aa0a !important;
     color: black !important;
     border-radius: 10vw !important;
     margin-left: 20% !important;
     padding: 10px !important;
     overflow: hidden !important;
     margin-top: -20% !important ;
+    margin-bottom: 5% !important;
+
   }
   
   .down:hover{

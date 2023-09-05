@@ -134,8 +134,11 @@ const TopAssets = () => {
 
       <h1>Our <span>TOP </span>packs  <p>{data?.lenght - 1} {data?.lenght > 0 ?  "+" : null}</p></h1>
       <Slider {...settings}>
-        {data?.map((product, index) => (
+        {data ?  
+        <p>There are not Top assets at this while.</p> :
+        data?.map((product, index) => (
           <>
+         
             <div key={index} className={styles["product-item"]} b>
               <img src={product.add_image} alt={product.name} />
 
@@ -151,7 +154,8 @@ const TopAssets = () => {
               <p>{product.description}</p>
             </div> */}
           </>
-        ))}
+        ))
+          }
 
 
       </Slider>

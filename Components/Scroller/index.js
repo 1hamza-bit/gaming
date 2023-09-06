@@ -164,24 +164,27 @@ const Brands = () => {
       <h1>Testimonials</h1>
 
       <Slider {...settings}>
-        {products.map((product, index) => (
+        {data ?
+        data.map((product, index) => (
 
-          <Grid item lg={4} md={6} sm={11} >
+          <Grid key={index} item lg={4} md={6} sm={11} >
             <Box className={`m4 ${styles.testimonial}`}>
               <ModeCommentIcon color={primary} />
-              <Typography>The quality, consistency and affordability of Synty assets make them an incredible resource for students and independent developers.</Typography>
+              <Typography>{product.description}</Typography>
 
               <div className={styles.bottomsection}>
-                <h3>Name...</h3>
-                <p>Name...</p>
-                <p>Name...</p>
+                <h3>{product.client_name}...</h3>
+                <p>{product.designation}...</p>
+                <p>{product.company}...</p>
 
 
               </div>
 
             </Box>
           </Grid>
-        ))}
+        )):
+        <p>There are not Top assets at this while.</p> 
+          }
       </Slider>
 
 

@@ -91,6 +91,8 @@
   border-radius: 2vw;
   flex: 0 0 auto; /* Prevent items from growing/shrinking */
   width: auto; /* Adjust the width as needed */
+  min-height: 250px;
+    max-height: 250px;
   p{
     font-size: 20px;
     margin: 5px -3px;

@@ -70,15 +70,23 @@ function Hero() {
 
   useEffect(() => {
     // Make a GET request using Axios
-    axios.get('https://jsonplaceholder.typicode.com/posts/1')
+    axios.get('https://kobmob.pythonanywhere.com/api/top-banner')
       .then(response => {
         // Save the response data in the state
         setData(response.data);
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        alert('Error fetching data:', error.error_message
+        );
       });
+
+
+
+
+
+
   }, []);
+
 
   const handleHomeClick = () => {
     router.push('/');

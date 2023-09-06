@@ -153,7 +153,7 @@ justify-content: center !important;
 }
 
 .m4 {
-  margin: 0% 4% !important;
+  margin: 1% 4% !important;
 }
 
 .m2 {
@@ -366,6 +366,25 @@ transform: scale(1.1);
 }
 
 
+/* Style for the Slider container */
+.slick-slider-container {
+  position: relative; /* Make it a positioning context */
+}
+
+/* Style for the Slider component (adjust as needed) */
+.slick-slider {
+  /* Add your slider styles here */
+}
+
+/* Style for the custom arrow buttons */
+.slick-prev, .slick-next {
+  position: absolute;
+  bottom: 10px; /* Adjust the bottom spacing as needed */
+  left: 50%; /* Position at the horizontal center */
+  transform: translateX(-50%); /* Center the buttons horizontally */
+  z-index: 1; /* Ensure buttons appear above the slider content */
+  /* Add any other custom styles for the buttons */
+}
 
 
 

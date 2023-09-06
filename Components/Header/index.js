@@ -76,6 +76,7 @@ const toggleDrawer =() => {
                                 <Image 
                                 src={logo}
                                 width={70}
+                                onClick={handleHomeClick}
                                 />
                             </Typography>
                             <Button onClick={handlePortfolioClick} className={styles.buttonp}>Portfolio <ArrowOutwardIcon /></Button> 

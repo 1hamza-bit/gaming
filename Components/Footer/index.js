@@ -38,17 +38,26 @@ function Footer()  {
     const [isOpen, setisOpen] = useState(true);
 const router = useRouter();
 
-    const handleHomeClick = () => {
-      router.push('/');
-    };
-    
-    const handleAboutClick = () => {
-      router.push('/about');
-    };
-    
-    const handleContactClick = () => {
-      router.push('/contact');
-    };
+const handleHomeClick = () => {
+  router.push('/');
+};
+
+const handleAboutClick = () => {
+  router.push('/about');
+};
+
+const handleContactClick = () => {
+  router.push('/contact');
+};
+
+const handlePortfolioClick = () => {
+  router.push('/portfolio');
+};
+
+const handleCareerClick = () => {
+  router.push('/careers');
+};
+
 
     const ImageHoverEffect = () => {
       useEffect(() => {
@@ -82,7 +91,7 @@ const router = useRouter();
      
             return         <>
   <div className={styles.bfcontainer}>
-            <Button className={styles.getintouch}>Get in touch 
+            <Button className={styles.getintouch} onClick={handleContactClick}>Get in touch 
             <Image  src={button1} className={styles.img1}/>
             <Image  src={button2} className={styles.img2}/>
             <Image  src={button3} className={styles.img3}/>
@@ -125,7 +134,7 @@ and lunch it in the real world and make your games with your full control, custo
       <List className={styles.listmenu}>
           
           
-        <ListItem className={styles.item}>
+        <ListItem className={styles.item} onClick={handlePortfolioClick}>
           
           <ListItemText primary="Portfolio" />
         </ListItem>

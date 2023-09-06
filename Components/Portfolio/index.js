@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './index.module.scss'
-import { Button } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 
 const projectData = [
   {
@@ -33,7 +33,9 @@ const Projects = () => {
         <Button className={styles.tag}><span>UI/UX Design</span></Button>
       </div>
       <div className={styles['project-cards']}>
+        <Grid container spacing={2}>
         {projectData.map((project, index) => (
+          <Grid item lg={4} md={6} sm={11}>
           <div key={index} className={styles['project-card']}>
             <div className={styles['project-image']}>
               <img src={"https://wallpaperaccess.com/full/381739.jpg"} alt={project.title} />
@@ -44,7 +46,9 @@ const Projects = () => {
               <span className={styles['category-tag']}>{project.category}</span>
             </div>
           </div>
+          </Grid>
         ))}
+        </Grid>
       </div>
     </motion.div>
   </section>

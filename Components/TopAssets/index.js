@@ -30,17 +30,21 @@ const TopAssets = () => {
   const [data, setData] = useState(null);
 
   const PrevArrow = (props) => (
+    <div className={styles.buttons}>
     <Button className={styles.prev} onClick={props.onClick} disabled={props.currentSlide === 0}>
       <ArrowBackIcon />
     </Button>
+    </div>
   );
 
   const NextArrow = (props) => (
+    <div className={styles.buttons}>
     <Button className={styles.next} onClick={props.onClick}
       disabled={props.currentSlide === props.slideCount - props.slidesToShow}
     >
       <ArrowForwardIcon />
     </Button>
+    </div>
   );
 
   useEffect(() => {
@@ -98,8 +102,8 @@ const TopAssets = () => {
         },
       },
     ],
-    // prevArrow: <PrevArrow />,
-    // nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
   };
 
 
@@ -132,15 +136,15 @@ const TopAssets = () => {
 
       {/* <Draggable axis="x" onDrag={handleDrag} onStop={handleDragStop}> */}
 
-      <h1>Our <span>TOP </span>packs  <p>{data?.lenght - 1} {data?.lenght > 0 ?  "+" : null}</p></h1>
-      <Slider {...settings}>
+      <h1>Our <span>TOP </span>packs </h1>
+      <Slider  prevArrow={<PrevArrow />} nextArrow={<NextArrow />} {...settings}>
         {data ?  
-        <p>There are not Top assets at this while.</p> :
-        data?.map((product, index) => (
+       
+        data.map((product, index) => (
           <>
          
             <div key={index} className={styles["product-item"]} b>
-              <img src={product.add_image} alt={product.name} />
+              <img src={product.image} alt={product.name} />
 
               <h3> <span> {product.image_by_title}</span> <ArrowOutwardIcon className={styles.arrow} /></h3>
               <p>{product.description}</p>
@@ -154,17 +158,18 @@ const TopAssets = () => {
               <p>{product.description}</p>
             </div> */}
           </>
-        ))
+        )):
+        <p>There are not Top assets at this while.</p> 
           }
-
-
-      </Slider>
-      <div className={styles.buttons}>
+       {/* <div className={styles.buttons}>
         <div><PrevArrow /></div>
 
         <div><NextArrow /></div>
         
-        </div>
+        </div> */}
+
+      </Slider>
+     
 
 
 

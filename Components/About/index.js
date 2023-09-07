@@ -42,17 +42,17 @@ function Abouts() {
 
   
 
-  // useEffect(() => {
-  //   // Make a GET request using Axios
-  //   axios.get('https://jsonplaceholder.typicode.com/posts/1')
-  //     .then(response => {
-  //       // Save the response data in the state
-  //       setData(response.data);
-  //     })
-  //     .catch(error => {
-  //       console.error('Error fetching data:', error);
-  //     });
-  // }, []);
+  useEffect(() => {
+    // Make a GET request using Axios
+    axios.get('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => {
+        // Save the response data in the state
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
@@ -96,7 +96,7 @@ function Abouts() {
 
     <Grid container spacing={2} className={styles.services}>
 
-      <Grid item lg={6} md={6} sm={11} className={styles.left}>
+      <Grid item lg={6} md={6} sm={11} className={`jc ${styles.left}` }>
         <Image
           src={robot}
           className={styles.imageContainer}

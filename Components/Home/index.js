@@ -114,7 +114,7 @@ function Hero() {
       </Grid>
       <Grid item lg={5} md={6} sm={11}>
         <img
-          src={data[0].image}
+          src={data && data[0].image}
           className={styles.imageContainer}
           
         // width={700}

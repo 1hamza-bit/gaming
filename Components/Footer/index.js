@@ -38,6 +38,8 @@ function Footer()  {
     const [isOpen, setisOpen] = useState(true);
 const router = useRouter();
 
+
+
 const handleHomeClick = () => {
   router.push('/');
 };
@@ -91,11 +93,14 @@ const handleCareerClick = () => {
      
             return         <>
   <div className={styles.bfcontainer}>
+    {router.pathname !== '/contact' ?
             <Button className={styles.getintouch} onClick={handleContactClick}>Get in touch 
             <Image  src={button1} className={styles.img1}/>
             <Image  src={button2} className={styles.img2}/>
             <Image  src={button3} className={styles.img3}/>
             </Button>
+            : null
+}
             </div>
             <Grid container spacing={2} className={styles.footer}>
             <Grid item lg={4} md={6} sm={11} className='m4'>

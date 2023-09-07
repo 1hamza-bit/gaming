@@ -106,17 +106,17 @@ function Hero() {
           animate="visible"
           variants={gridItemVariants}
           transition={{ duration: 0.2, delay: 0.2 }}
-        >  <h1>Game Development & Design Service</h1>
-          <Typography > Mobstudios, is the leading service-based company for Game development,
-            Assets Creation, Game Design, 3D Modeling, Shader development, and Many More, According to your Preference.</Typography>
+        >  <h1>{data ? data[0].title : "Game Development & Design Service"}</h1>
+          <Typography >{data && data[0].description}</Typography>
           <Button className={styles.button1}>Portfolio <ArrowOutwardIcon /></Button>
           <Button className={styles.button2}>About Us</Button>
         </motion.div>
       </Grid>
       <Grid item lg={5} md={6} sm={11}>
-        <Image
-          src={robot}
+        <img
+          src={data[0].image}
           className={styles.imageContainer}
+          
         // width={700}
         />
       </Grid>

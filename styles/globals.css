@@ -20,10 +20,13 @@ body {
   font-family: 'ArialCustom', 'Arial Narrow', Arial, sans-serif;
 }
 
-h1, .message{
+h1{
   font-family: 'Congress', Times, serif;
 }
 
+.message{
+  font-family: 'Congress', Times, serif !important;
+}
 
 
 div {

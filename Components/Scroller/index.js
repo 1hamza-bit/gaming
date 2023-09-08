@@ -169,7 +169,7 @@ const Brands = () => {
 
           <Grid key={index} item lg={4} md={6} sm={11} >
             <Box className={`m4 ${styles.testimonial}`}>
-              <ModeCommentIcon color={primary} />
+              <ModeCommentIcon className='maincolor' />
               <Typography className={styles.message}>{product.description}</Typography>
 
               <div className={styles.bottomsection}>

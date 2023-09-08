@@ -25,6 +25,10 @@ function Abouts() {
   const [selectedItem, setSelectedItem] = useState(items[0]);
   const [isVisible, setIsVisible] = useState(true);
   const [blinkCount, setBlinkCount] = useState(0);
+  const [data, setData] = useState("");
+  const [assets, setAssets] = useState(null);
+  const [why, setWhy] = useState(null);
+
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -44,10 +48,29 @@ function Abouts() {
 
   useEffect(() => {
     // Make a GET request using Axios
-    axios.get('https://jsonplaceholder.typicode.com/posts/1')
+    axios.get('https://kobmob.pythonanywhere.com/api/about-banner')
       .then(response => {
         // Save the response data in the state
         setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+
+      axios.get('https://kobmob.pythonanywhere.com/api/about-asserts')
+      .then(response => {
+        // Save the response data in the state
+        setAseets(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+
+
+      axios.get('https://kobmob.pythonanywhere.com/api/why-choose-us')
+      .then(response => {
+        // Save the response data in the state
+        setWhy(response.data);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -75,18 +98,16 @@ function Abouts() {
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.5 }}
     > */}
-        <h1>About <span>Mob studios</span></h1>
+        <h1>{data && data[0].title}</h1>
     {/* </motion.div> */}
-        <Typography >Mobstudios is a leading mobile game development and design company specializing in creating captivating and innovative gaming experiences
-          for mobile devices.With a team of talented developers, designers, and artists, we bring your game ideas to life and ensure a seamless and immersive
-          gaming experience for your audience.
+        <Typography >{data && data[0].description}
         </Typography>
 
 
       </Grid>
       <Grid item lg={5} md={6} sm={11} style={{ justifyContent: "center !important", display: "flex !important" }}>
-        <Image
-          src={robot}
+      <img
+          src={data && data[0].image}
           className={styles.imageContainer}
           width={600}
         />

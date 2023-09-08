@@ -27,26 +27,28 @@ function Contacts() {
   const containerRef = useRef(null);
   const headerRef = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (containerRef.current && headerRef.current) {
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const headerRect = headerRef.current.getBoundingClientRect();
 
-        if (containerRect.top <= 0) {
-          headerRef.current.style.position = 'fixed';
-          headerRef.current.style.top = '0';
-          headerRef.current.style.left = `${containerRect.left}px`;
-        } else {
-          headerRef.current.style.position = 'static';
-        }
-      }
-    };
+ useEffect(() => {
+    // Make a GET request using Axios
+    axios.get('https://kobmob.pythonanywhere.com/api/contact-banner')
+      .then(response => {
+        // Save the response data in the state
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+      axios.get('https://kobmob.pythonanywhere.com/api/contact-email')
+      .then(response => {
+        // Save the response data in the state
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+
+
   }, []);
 
   return <>

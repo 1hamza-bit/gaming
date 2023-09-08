@@ -28,6 +28,7 @@ const TopAssets = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [animate, setAnimate] = useState(false);
   const [data, setData] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const PrevArrow = (props) => (
     <div className={styles.buttons}>
@@ -73,6 +74,9 @@ const TopAssets = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: false,
+    afterChange: (index) => {
+      setCurrentIndex(index);
+    },
     speed: 1200,
     customStyle: {
       width: '300px',  // Custom width at this breakpoint

@@ -39,7 +39,7 @@
   background-color: #fff;
   border-radius: 1vw;
   align-items: center;
-  padding: 0.5vw 1vw;
+  padding: 0.5vw 1vw !important;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -85,7 +85,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 2vw 2.5vw;
+  padding: 2vw 2.5vw !important;
   transition: all .2s cubic-bezier(.25, .46, .45, .94);
   box-shadow: 0 4px 19px rgba(142, 151, 158, .25);
   border-radius: 2vw;

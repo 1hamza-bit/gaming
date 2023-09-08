@@ -60,17 +60,20 @@ function Abouts() {
       axios.get('https://kobmob.pythonanywhere.com/api/about-asserts')
       .then(response => {
         // Save the response data in the state
-        setAseets(response.data);
+        setAssets(response.data);
+        setSelected(response.data[0])
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
 
 
-      axios.get('https://kobmob.pythonanywhere.com/api/why-choose-us')
+      axios.get('https://kobmob.pythonanywhere.com/api/why-chose-us')
       .then(response => {
         // Save the response data in the state
         setWhy(response.data);
+        setSelectedItem(response.data[0])
+
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -117,105 +120,79 @@ function Abouts() {
 
     <Grid container spacing={2} className={styles.services}>
 
+
       <Grid item lg={6} md={6} sm={11} className={`jc ${styles.left}` }>
-        <Image
-          src={robot}
+      <AnimatePresence mode="wait">
+  {selected && (
+    <motion.div
+      key={selected.id}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className={styles.container}>
+        <img
+          src={selected.image}
           className={styles.imageContainer}
           width={300}
-
+          alt={selected.assert_title}
         />
-        <AnimatePresence mode="wait">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            key={selected}
-          >
-            {selected === "Mobile Game Development" ?
 
-              <div className={`${styles.textbox} ${selected === "Mobile Game Development" ? styles.loaded : ''}`}>
-                <h3>{selected}</h3>
+        <div className={`${styles.textbox} ${styles.loaded}`}>
+          <h3>{selected.assert_title}</h3>
+          <p>{selected.assert_detail}</p>
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
-
-                <p> At Mobstudios, we excel in developing a wide variety of mobile games across different genres, including action, adventure, puzzle, strategy, and more.
-                  Our team leverages the latest technologies and industry best practices to deliver high-quality, engaging games that captivate players and keep them coming back for more.
-                </p>
-              </div>
-              : selected === "Freelance Services" ?
-
-                <div className={`${styles.textbox} ${selected === "Freelance Services" ? styles.loaded : ''}`}>
-                  <h3>{selected}</h3>
-
-                  <p>In addition to our in-house game development projects, we offer freelance services to cater to specific client requirements.
-                    Whether you need assistance with game design, programming, artwork, or sound effects, our team of experts is available to collaborate with you and provide tailored solutions to meet your project needs.
-                  </p>
-                </div>
- 
-
-                : selected === "Unity Assets" ?
-                  <div className={`${styles.textbox} ${selected === "Unity Assets" ? styles.loaded : ''}`}>
-                    <h3>{selected}</h3>
-
-                    <p>Mobstudios also specializes in creating and providing Unity assets to enhance game development processes.
-                      We offer a diverse range of pre-built assets, including character models, animations, environments, sound effects, and more.
-                      Our Unity assets are designed to accelerate development timelines and empower game developers to create immersive and visually stunning games with ease.
-                    </p>
-                  </div>
-                  : null
-            }
-          </motion.div>
-        </AnimatePresence>
 
 
       </Grid>
+
       <Grid item lg={6} md={6} sm={11}>
         <List className={styles.listmenu}>
-          <ListItem className={`${styles.item} ${selected === "Mobile Game Development" ? 'maincolor' : ''}`} onClick={() => handleUpdate("Mobile Game Development")} >
+        {assets ?
+          assets.map((product, index) => (
+          <ListItem className={`${styles.item} ${selected === product ? 'maincolor' : ''}`} onClick={() => handleUpdate(product)} >
 
-            <ListItemText primary="Mobile Game Development" style={{
+            <ListItemText primary={product.assert_title} style={{
               fontSize: "26px !important"
             }} />
           </ListItem>
-          <ListItem className={`${styles.item} ${selected === "Freelance Services" ? 'maincolor' : ''}`} onClick={() => handleUpdate("Freelance Services")}>
-
-            <ListItemText primary="Freelance Services" style={{
-              fontSize: "26px"
-            }} />
-          </ListItem>
-
-          <ListItem className={`${styles.item} ${selected === "Unity Assets" ? 'maincolor' : ''}`} onClick={() => handleUpdate("Unity Assets")}>
-
-            <ListItemText primary="Unity Assets" style={{
-              fontSize: "26px"
-            }} />
-          </ListItem>
+           )):
+           <p>There are not  assets at this while.</p> 
+             }
 
         </List>
 
       </Grid>
-    </Grid>
-
+   
+   
+ </Grid>
 
 
     <Grid container spacing={2} className={styles.choose}>
       {/* Left Grid: Image description */}
       <Grid item lg={6} md={6} sm={11} className={styles.chooseleft}>
+        
         <div className='pl5p'>
-          <h1>Why Choose <span>us</span> ?</h1>
-          <Typography variant="subtitle1">{selectedItem}</Typography>
-          <p>dsljfksdjklfjdklsjfksdjklfjklsdjkljklfjsdkljfklsdjklfjsdkl
-            jfkjsjklfjdklsjfksdjklfjklsdjkljklfjsdkljfklsdjklfjsdkljfkjsjklfjdklsjfksdjklfjklsdjkljklfjsdkljfklsdjklfjsdkljfkjsdklf</p>
+          <h1>{selectedItem.title}</h1>
+          {/* <Typography variant="subtitle1">{selectedItem}</Typography> */}
+          <p>{selectedItem.description}</p>
         </div>
       </Grid>
 
       {/* Right Grid: List of items */}
       <Grid item lg={6} md={6} sm={11}>
         <Grid container spacing={3} className={styles.blockscontainer}>
-          <Grid item lg={6} md={6} sm={11}>
+          <Grid item lg={9} md={9} sm={10} style={{marginBottom: "5% !important"}}>
             <Grid container spacing={3}>
-              {items.map((item, index) => (
+              {why?.map((item, index) => (
                 <Grid item xs={4}>
+                  <img src={item.image} />
                   <Button
                     key={index}
                     button
@@ -223,7 +200,7 @@ function Abouts() {
                     selected={selectedItem === item}
                     onClick={() => handleItemClick(item)}
                   >
-                    {item}
+                    {item.title}
                   </Button>
                 </Grid>
               ))}

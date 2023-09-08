@@ -30,6 +30,7 @@ const primary = yellow[500]; // #f44336
 const Brands = () => {
   const [data, setData] = useState(null);
 
+  const [currentIndex, setCurrentIndex] = useState(null);
   useEffect(() => {
     // Make a GET request using Axios
     axios.get('https://kobmob.pythonanywhere.com/api/testimonial')
@@ -38,8 +39,8 @@ const Brands = () => {
         setData(response.data);
       })
       .catch(error => {
-      alert('Error fetching data:', error.error_message
-      );
+        alert('Error fetching data:', error.error_message
+        );
       });
 
 
@@ -82,53 +83,56 @@ const Brands = () => {
     };
 
     return (
-     <div className={styles.buttoncontainerleft}>
+      <div className={styles.buttoncontainerleft}>
         <Button
           className={styles.prev}
           onClick={handleClick}
           disabled={props.currentSlide === 0}
         >
-           <motion.span
-        
-        whileHover={{ scale: [1, 0.6, 1], transition: { duration: 1 }, }} // Scale sequence: 1 -> 0.6 -> 1
-        whileTap={{ scale: 0.9 }}   // Scale down while clicked
-        onHoverEnd={(event) => {
-          event.target.style.scale = 1; // Reset scale to 1 on hover end
-        }}
-      >
-          <ArrowBackIcon />
+          <motion.span
+
+            whileHover={{ scale: [1, 0.6, 1], transition: { duration: 1 }, }} // Scale sequence: 1 -> 0.6 -> 1
+            whileTap={{ scale: 0.9 }}   // Scale down while clicked
+            onHoverEnd={(event) => {
+              event.target.style.scale = 1; // Reset scale to 1 on hover end
+            }}
+          >
+            <ArrowBackIcon />
           </motion.span>
         </Button>
-        </div>
-      
+      </div>
+
     );
   };
 
   const NextArrow = (props) => (
     <div className={styles.buttoncontainerright}>
-    <Button className={styles.next} onClick={props.onClick}
-      disabled={props.currentSlide === props.slideCount - props.slidesToShow}
-    >
-      <motion.span
-       whileHover={{ scale: [1, 0.6, 1], transition: { duration: 1 }, }} // Scale sequence: 1 -> 0.6 -> 1
-        whileTap={{ scale: 0.9 }}   // Scale down while clicked
-        onHoverEnd={(event) => {
-          event.target.style.scale = 1; // Reset scale to 1 on hover end
-        }}
-        
+      <Button className={styles.next} onClick={props.onClick}
+        disabled={props.currentSlide === props.slideCount - props.slidesToShow}
       >
-        <ArrowForwardIcon />
-      </motion.span>
+        <motion.span
+          whileHover={{ scale: [1, 0.6, 1], transition: { duration: 1 }, }} // Scale sequence: 1 -> 0.6 -> 1
+          whileTap={{ scale: 0.9 }}   // Scale down while clicked
+          onHoverEnd={(event) => {
+            event.target.style.scale = 1; // Reset scale to 1 on hover end
+          }}
+
+        >
+          <ArrowForwardIcon />
+        </motion.span>
 
 
-    </Button>
-        </div>
+      </Button>
+    </div>
   );
 
   const settings = {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: false,
+    afterChange: (index) => {
+      setCurrentIndex(index);
+    },
     speed: 1000,
     responsive: [
       {
@@ -165,26 +169,26 @@ const Brands = () => {
 
       <Slider {...settings}>
         {data ?
-        data.map((product, index) => (
+          data.map((product, index) => (
 
-          <Grid key={index} item lg={4} md={6} sm={11} >
-            <Box className={`m4 ${styles.testimonial}`}>
-              <ModeCommentIcon className='maincolor' />
-              <Typography className={styles.message}>{product.description}</Typography>
+            <Grid key={index} item lg={4} md={6} sm={11} >
+              <Box className={`m4 ${styles.testimonial}`}>
+                <ModeCommentIcon className={` ${index === currentIndex ? 'red' : 'maincolor'}`} />
+                <Typography className={styles.message}>{product.description}</Typography>
 
-              <div className={styles.bottomsection}>
-                <h3>{product.client_name}...</h3>
-                <p>{product.designation}...</p>
-                <p>{product.company}...</p>
+                <div className={styles.bottomsection}>
+                  <h3>{product.client_name}...</h3>
+                  <p>{product.designation}...</p>
+                  <p>{product.company}...</p>
 
+                  
+                </div>
 
-              </div>
-
-            </Box>
-          </Grid>
-        )):
-        <p>There are not Top assets at this while.</p> 
-          }
+              </Box>
+            </Grid>
+          )) :
+          <p>There are not Top assets at this while.</p>
+        }
       </Slider>
 
 

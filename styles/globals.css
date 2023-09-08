@@ -201,6 +201,11 @@ justify-content: center !important;
   color: #f0aa0a !important;
 }
 
+.red {
+  color: rgb(238, 102, 102) !important;
+ 
+}
+
 
 @media screen and (max-width:700px) {
 
@@ -394,3 +399,45 @@ transform: scale(1.1);
 
 
 
+
+/* Star.css */
+
+.star {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: rotate 2s linear infinite;
+}
+
+.star-inner {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid yellow; /* You can set the color of the star */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

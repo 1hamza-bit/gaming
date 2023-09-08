@@ -30,7 +30,7 @@ const primary = yellow[500]; // #f44336
 const Brands = () => {
   const [data, setData] = useState(null);
 
-  const [currentIndex, setCurrentIndex] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
     // Make a GET request using Axios
     axios.get('https://kobmob.pythonanywhere.com/api/testimonial')

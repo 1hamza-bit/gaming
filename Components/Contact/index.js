@@ -9,6 +9,7 @@ import letterclosed from "../../assets/lclosed.png"
 import opened from "../../assets/lopen.png"
 import Footer from '../Footer';
 import styled from '@emotion/styled';
+import axios from 'axios';
 
 
 const stickyHeaderStyle = {

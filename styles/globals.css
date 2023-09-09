@@ -95,6 +95,14 @@ justify-content: center !important;
 .jc {
 justify-content: center !important;
 }
+.jcspace{
+  justify-content: space-between;
+}
+
+.df{
+  display: flex;
+  align-items: center;
+}
 
 .ztop {
   z-index: 1201;
@@ -170,7 +178,7 @@ justify-content: center !important;
 
 .MuiBackdrop-root {
 
-  background-color: rgb(221 221 221 / 50%) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
 
   width: 120vw !important;
 

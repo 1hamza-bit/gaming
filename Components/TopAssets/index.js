@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Grid, Button } from '@mui/material';
+import { Grid, Button, Stack } from '@mui/material';
 import Image from 'next/image';
 import robot from "../../assets/hero.png"
 import styles from "./index.module.scss"
@@ -29,6 +29,7 @@ const TopAssets = () => {
   const [animate, setAnimate] = useState(false);
   const [data, setData] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+
 
   const PrevArrow = (props) => (
     <div className={styles.buttons}>
@@ -139,8 +140,15 @@ const TopAssets = () => {
     <div style={{ overflow: 'hidden' }} className={styles.topp}>
 
       {/* <Draggable axis="x" onDrag={handleDrag} onStop={handleDragStop}> */}
-
+      <Stack direction="row" className='jcspace df'>
       <h1>Our <span>TOP </span>packs </h1>
+      <Button className={styles.buttonassets}>Portfolio <ArrowOutwardIcon /></Button>
+         
+
+
+</Stack>
+      
+
       <Slider  prevArrow={<PrevArrow />} nextArrow={<NextArrow />} {...settings}>
         {data ?  
        

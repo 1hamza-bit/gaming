@@ -160,7 +160,10 @@ input {
   transform-style: preserve-3d ;
   transition: font-size 3s all-in-ease, height 1.5s ease-in-out, scale3d 1.5s ease-in-out ;
 
+img{
+  display: none !important;
 
+}
 
 
 }

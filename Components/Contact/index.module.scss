@@ -107,10 +107,14 @@
     background-color: rgb(249, 255, 255);
   border-radius: 3vw;
     min-height: 500px;
-li{
+    .faq{
+        color: black;
     border-bottom: 1px solid rgb(66, 66, 66);
+    }
+li{
+    // border-bottom: 1px solid rgb(66, 66, 66);
     color: black;
-    margin-bottom: 5px;
+    // margin-bottom: 5px;
     span{
 
     font-size: 30px !important;
@@ -132,3 +136,5 @@ li:hover{
     background-color: #fff; /* Set the background color as needed */
     z-index: 1; /* Ensure the sticky header appears above the content */
   }
+
+  

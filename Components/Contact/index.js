@@ -27,6 +27,10 @@ const itemList = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'I
 function Contacts() {
   const containerRef = useRef(null);
   const headerRef = useRef(null);
+  const [data, setData] = useState(null);
+  const [emails, setEmails] = useState(null);
+  const [faqs, setFaqs] = useState([]);
+
 
 
  useEffect(() => {
@@ -43,7 +47,19 @@ function Contacts() {
       axios.get('https://kobmob.pythonanywhere.com/api/contact-email')
       .then(response => {
         // Save the response data in the state
-        setData(response.data);
+       let emails = response.data.filter((item) => item.is_active === true)
+        setEmails(emails);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+
+       axios.get('https://kobmob.pythonanywhere.com/api/our-faq')
+      .then(response => {
+        // Save the response data in the state
+       const faqs = response.data.filter(item => item.is_active === true);
+       faqs.map(item => ({ ...item, visible: false }));
+        setFaqs(faqs);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -57,20 +73,18 @@ function Contacts() {
     <Grid container spacing={2} className={styles.bannerc}>
       <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.heroc}`}>
         <h1>Get in Touch with   <span> Mobstudios :</span></h1>
-        <h3>( Let's Create Amazing Mobile Games Together!)</h3>
+        <h3>{data && data[0].title}</h3>
 
-        <Typography >Thank you for your interest in Mobstudios, the premier mobile game development and design company.
-          We're excited to collaborate with you and bring your game ideas to life. Getting in touch with us is simple,
-          and we're here to provide you with the best possible service.</Typography>
+        <Typography >{data && data[0].description}</Typography>
 
-        <Image
-          src={robot}
+        <img
+          src={data && data[0].image}
           className={styles.imageContainer}
           width={300}
         />
 
       </Grid>
-      <Grid item lg={5} md={6} sm={11}>
+      <Grid item lg={6} md={6} sm={11}>
         <div className={styles.div}>
           <Image
             src={letterclosed}
@@ -85,26 +99,18 @@ function Contacts() {
         </div>
 
         <List className={styles.listmenu}>
+        {emails &&   emails.map((email, index) => (
+        
           <ListItem className={`${styles.item} `}   >
-
-            <ListItemText primary="Business Development" secondary="Business Development" style={{
+       
+            <ListItemText primary={email.department} secondary={email.email} style={{
               fontSize: "26px !important"
             }} />
           </ListItem>
-          <ListItem className={`${styles.item} `}     >
+          
 
-            <ListItemText primary="Freelance Services" style={{
-              fontSize: "26px"
-            }} />
-          </ListItem>
-
-          <ListItem className={`${styles.item} `}   >
-
-            <ListItemText primary="Unity Assets" style={{
-              fontSize: "26px"
-            }} />
-          </ListItem>
-
+))}
+      
         </List>
       </Grid>
     </Grid>
@@ -119,21 +125,26 @@ function Contacts() {
       </Grid>
       <Grid item lg={6} md={6} sm={11} className={styles.listContainer}>
         <List>
-          {itemList.map((item, index) => (
-            <>
-            <ListItem key={index}>
-              <ListItemText primary={item} />
+          {faqs && faqs.map((item, index) => (
+            <div className={styles.faq}>
+            <ListItem key={item.id}>
+              <ListItemText primary={item.question} />
               <div>
-                <input id="checkbox2" type="checkbox" />
+                <input id="checkbox2" type="checkbox" checked={item.visible} />
                   <label class="toggle toggle2" for="checkbox2">
                     <div id="bar4" class="bars"></div>
                     <div id="bar5" class="bars"></div>
                     <div id="bar6" class="bars"></div>
                   </label>
               </div>
+              
+              
             </ListItem>
-            <Typography >flklsjfkj</Typography>
-            </>
+              {item.visible ? 
+            <div> <Typography >{item.answer}</Typography></div>
+            : null }
+
+            </div>
           ))}
         </List>
 

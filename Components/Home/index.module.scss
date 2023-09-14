@@ -2,13 +2,13 @@
   padding-left: 6% !important;
   padding-bottom: 5% !important;
     h1{
-        font-size: 84px;
+        font-size: 64px;
          
         color: rgb(53, 53, 53);
     }
     p{
        font-size: 20px;
-        margin-bottom: 15px;
+        margin-bottom: 35px;
         margin-left: 5%;
     }
 
@@ -45,6 +45,8 @@
         min-width: 20px;
         margin-left: 15px;
         margin-top: 10px;
+      background-color: white;
+   box-shadow: rgba(95, 95, 95, 0.1) 0px 4px 16px, rgba(52, 52, 53, 0.1) 0px 8px 24px, rgba(54, 54, 54, 0.1) 0px 16px 56px;
 
     }
 
@@ -61,7 +63,7 @@
     border-bottom-right-radius: 6vw;
 
     border-bottom-left-radius: 6vw;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(248, 255, 255);
    color: black;
    box-shadow: rgba(221, 221, 225, 0.1) 0px 4px 16px, rgba(226, 226, 235, 0.1) 0px 8px 24px, rgba(229, 229, 230, 0.1) 0px 16px 56px;
 }
@@ -170,20 +172,21 @@
   }
 
   .down{
-    background-color: #f0aa0a !important;
-    color: black !important;
+    color: #f0aa0a !important;
+    background-color: black !important;
     border-radius: 10vw !important;
     margin-left: 20% !important;
     padding: 10px !important;
     overflow: hidden !important;
     margin-top: -20% !important ;
     margin-bottom: 5% !important;
-
+    transition: color 0.5s ease-in-out;
   }
   
   .down:hover{
     transform: translate(1px, 1px) !important;
-    background-color: rgb(4, 227, 227) !important;
+    background-color: #f0aa0a !important;
+    color: black !important;
     .arrowdown{
       // animation: none;
     }

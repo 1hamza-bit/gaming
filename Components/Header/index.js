@@ -12,7 +12,7 @@ import ContactMailIcon from '@mui/icons-material/ContactMail';
 import { useRouter } from "next/router";
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import logo from "../../assets/Logo.png"
-import logo3d from "../../assets/Logo.png"
+import logo3d from "../../assets/logo3.png"
 import Image from "next/image";
 
 
@@ -66,7 +66,6 @@ const toggleDrawer =() => {
                         <Toolbar>
                             <button onClick={toggleDrawer} className={styles.hambutton}> 
                             <div className={`hamburger-icon ${isOpen ? 'open redline' : ''}`} >
-                                <div className="line "></div>
                                 <div className="line"></div>
                                 <div className="line"></div>
                             </div>
@@ -74,10 +73,11 @@ const toggleDrawer =() => {
                             <Typography className={` fantasy ${styles.logo}`} variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                 {/* Mob Studios */}
                                 <Image 
-                                src={logo}
+                                src={logo3d}
                                 width={70}
                                 onClick={handleHomeClick}
                                 />
+                               <span> Mob Studios</span> 
                             </Typography>
                             <Button onClick={handlePortfolioClick} className={styles.buttonp}>Portfolio <ArrowOutwardIcon /></Button> 
                         </Toolbar>

@@ -4,7 +4,7 @@
   -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
   scrollbar-width: none !important; 
   h1{
-    font-size: 70px;
+    font-size: 55px;
      
     color: aliceblue;
     span{
@@ -12,6 +12,28 @@
          
     }
   }
+
+  .buttonassets{
+    border-radius: 100vw;
+        background-color: #ffffff;
+//   background-color: rgb(139, 2, 2);
+        color: black;
+         padding: 8px 3%;
+        min-width: 20px;
+        transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s cubic-bezier(.23, 1, .32, 1);
+  }
+  .buttonassets:hover{
+    transform: translate(2px, 2px);
+    box-shadow: inset -3px 3px 15px rgba(0, 0, 0, .2), 0 0 rgba(0, 0, 0, 0);
+    background-color: #f0aa0a;
+    svg{
+        transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s cubic-bezier(.23, 1, .32, 1);
+
+        transform: scale3d(1.3,1.1,1);
+        padding-left: 2px;
+        // padding: 1%;
+  }
+}
 }
 .top::-webkit-scrollbar {
   display: none !important;
@@ -150,29 +172,65 @@
       width: 0px;
       opacity: 0; /* Initially hidden with zero opacity */
       transform: translateY(-10px); /* Initially shifted up */
-      transition: all 0.4s ease-in-out; /* Transition all properties */
-     
+      transition: all 0.2s ease-in-out; /* Transition all properties */
+     cursor: pointer;
     }
   
   h3:hover{
-    background-color: rgb(66, 66, 66);
-    color: aliceblue;
+    background-color: rgb(0, 0, 0);
+    color: #f0aa0a;
     span{
-      // display: block; /* Show the span on hover */
-      width: 50px;
+    color: #f0aa0a;
+      
   opacity: 1; /* Add opacity for smooth fading effect */
   transform: translateY(0); /* Add a smooth vertical transition */
-  transition-delay: 0.2s; 
+  // transition-delay: 0.2s; 
+ 
+    width: 50px;
+   
       
     }
+    svg{
+      background-color: #f0aa0a;
+      color: black;
+      border-radius: 50%;
+      margin-left: 6%;
+      width: 30px;
+      height: auto;
+    }
   }
-    
-
+  
     img{
       width: 100% !important;
     }
   
   }
+  .first{
+    h3{
+      background-color: rgb(0, 0, 0);
+      color: #f0aa0a;
+      span{
+      color: #f0aa0a;
+        
+    opacity: 1; /* Add opacity for smooth fading effect */
+    transform: translateY(0); /* Add a smooth vertical transition */
+    // transition-delay: 0.2s; 
+   
+      width: 50px;
+     
+        
+      }
+      svg{
+        background-color: #f0aa0a;
+        color: black;
+        border-radius: 50%;
+        margin-left: 6%;
+        width: 30px;
+        height: auto;
+      }
+    }
+}
+
   @media (max-width: 1524px) {
     .product-item {
       width: 30vw;  /* Custom width for this breakpoint */

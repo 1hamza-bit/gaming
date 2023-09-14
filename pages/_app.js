@@ -48,10 +48,10 @@ export default function App({ Component, pageProps }) {
 
   return <Parallax  strength={5000}>
     <ScrollProgressBar />
-    {isLoading? 
-    <h1 style={{margin: "20%"}}>Mob Studios Loading...</h1> :
+    {/* {isLoading? 
+    <h1 style={{margin: "20%"}}>Mob Studios Loading...</h1> : */}
     <Component {...pageProps} />
-}
+{/* } */}
   </Parallax>
 
 }

@@ -13,6 +13,24 @@ import { useEffect, useState } from 'react';
 import ModeCommentIcon from '@mui/icons-material/ModeComment';
 import { yellow } from '@mui/material/colors';
 import axios from 'axios';
+import animations from "../../assets/Animations/animations.png"
+import assets from "../../assets/Animations/assets.png"
+import blender from "../../assets/Animations/blender.png"
+import gamedevelopment from "../../assets/Animations/game development.png"
+import gameprops from "../../assets/Animations/game props.png"
+import gameshader from "../../assets/Animations/game shader.png"
+import game from "../../assets/Animations/game.png"
+import max from "../../assets/Animations/max.png"
+import maya from "../../assets/Animations/maya.png"
+import mixamo from "../../assets/Animations/mixamo.png"
+import mobilegame from "../../assets/Animations/mobile game.png"
+import modeling from "../../assets/Animations/modeling.png"
+import multiplayergames from "../../assets/Animations/multiplayer games.png"
+import substance from "../../assets/Animations/substance.png"
+import trailer from "../../assets/Animations/trailer.png"
+import unity from "../../assets/Animations/unity.png"
+import unreal from "../../assets/Animations/unreal.png"
+
 
 const products = [
   { id: 1, name: 'Product 1' },

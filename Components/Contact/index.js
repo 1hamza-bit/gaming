@@ -112,7 +112,7 @@ function Contacts() {
 
     <Grid container spacing={4} className={styles.contact} ref={containerRef}>
 
-      <Grid item lg={5} md={6} sm={11}>
+      {/* <Grid item lg={5} md={6} sm={11}>
         <Paper style={stickyHeaderStyle} className={`${styles.right} ${styles.stickyHeader}`} ref={headerRef}>
           <Typography variant="h6">Sticky Heading</Typography>
         </Paper>
@@ -137,7 +137,7 @@ function Contacts() {
           ))}
         </List>
 
-      </Grid>
+      </Grid> */}
     </Grid>
 
 

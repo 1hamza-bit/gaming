@@ -69,18 +69,18 @@ const Brands = () => {
   }, []);
   // Simulated list of brands
   const allBrands = [
-    { icon: <ExtensionTwoToneIcon color="primary" />, name: "Game Art" }, { icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "AAA" },
-    { icon: <ExtensionTwoToneIcon />, name: "Game development" }, { icon: <ExtensionTwoToneIcon />, name: "3D Modelling" },
-    { icon: <ExtensionTwoToneIcon />, name: "3D Animations" }, { icon: <ExtensionTwoToneIcon />, name: "Mobile Games" },
-    { icon: <ExtensionTwoToneIcon />, name: "Game Props" }, { icon: <ExtensionTwoToneIcon />, name: "Multiplayer Games" },
-    { icon: <ExtensionTwoToneIcon />, name: "Game Shaders" }, { icon: <ExtensionTwoToneIcon />, name: "Teaser Trailer" }
+    { icon: <Image src={game} />, name: "Game Art" }, { icon: <Image src={game}/>, name: "AAA" },
+    { icon: <Image src={gamedevelopment}/>, name: "Game development" }, { icon: <Image src={modeling}/>, name: "3D Modelling" },
+    { icon: <Image src={animations}/>, name: "3D Animations" }, { icon: <Image src={mobilegame}/>, name: "Mobile Games" },
+    { icon: <Image src={gameprops}/>, name: "Game Props" }, { icon: <Image src={multiplayergames}/>, name: "Multiplayer Games" },
+    { icon: <Image src={gameshader}/>, name: "Game Shaders" }, { icon: <Image src={trailer}/>, name: "Teaser Trailer" }
   ];
 
   const allBrands2 = [
-    { icon: <ExtensionTwoToneIcon color="primary" />, name: "Unity" }, { icon: <SportsEsportsTwoToneIcon color="secondary" />, name: "Blender3D" },
-    { icon: <ExtensionTwoToneIcon />, name: "MAYA" }, { icon: <ExtensionTwoToneIcon />, name: "3D Max" },
-    { icon: <ExtensionTwoToneIcon />, name: "Substance Painter" }, { icon: <ExtensionTwoToneIcon />, name: "Mixamo " },
-    { icon: <ExtensionTwoToneIcon />, name: "Unreal" },
+    { icon: <Image src={unity}/>, name: "Unity" }, { icon: <Image src={blender}/>, name: "Blender3D" },
+    { icon: <Image src={maya}/>, name: "MAYA" }, { icon: <Image src={max}/>, name: "3D Max" },
+    { icon: <Image src={substance}/>, name: "Substance Painter" }, { icon: <Image src={mixamo}/>, name: "Mixamo " },
+    { icon: <Image src={unreal}/>, name: "Unreal" },
   ];
 
   const PrevArrow = (props) => {

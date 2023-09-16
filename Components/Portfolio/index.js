@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './index.module.scss'
 import { Button, Grid } from '@mui/material';
+import axios from 'axios';
 
 const projectData = [
   {
@@ -23,6 +24,23 @@ const projectData = [
 ];
 
 const Projects = () => {
+  const [data, setData] = useState([]);
+
+
+
+ useEffect(() => {
+    // Make a GET request using Axios
+    axios.get('https://kobmob.pythonanywhere.com/api/portfolio')
+      .then(response => {
+        // Save the response data in the state
+        setData(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+    })
+
+
   return (
     <section id="projects" className={styles.projects}>
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>

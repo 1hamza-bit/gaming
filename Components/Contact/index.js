@@ -103,9 +103,15 @@ function Contacts() {
         
           <ListItem className={`${styles.item} `}   >
        
-            <ListItemText primary={email.department} secondary={email.email} style={{
+            <ListItemText primary={email.department}         secondary={
+          <a href={`mailto:${email.email}`} >
+            {email.email}
+          </a>
+        }
+ style={{
               fontSize: "26px !important"
             }} />
+            {/* <a href={`mailto:${email.department}`} >{email.department}</a> */}
           </ListItem>
           
 
@@ -116,7 +122,7 @@ function Contacts() {
     </Grid>
 
 
-    <Grid container spacing={4} className={styles.contact} ref={containerRef}>
+    {/* <Grid container spacing={4} className={styles.contact} ref={containerRef}>
 
       {/* <Grid item lg={5} md={6} sm={11}>
         <Paper style={stickyHeaderStyle} className={`${styles.right} ${styles.stickyHeader}`} ref={headerRef}>
@@ -148,8 +154,8 @@ function Contacts() {
           ))}
         </List>
 
-      </Grid> */}
-    </Grid>
+      </Grid> 
+    </Grid> */}
 
 
 

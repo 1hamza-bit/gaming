@@ -4,6 +4,7 @@ import { Grid, InputAdornment, TextField } from "@mui/material";
 import { useState } from "react";
 import styles from "./index.module.scss"
 import YouTubeIcon from '@mui/icons-material/YouTube';
+// import discord from '../../assets/discord.png'
 import discord from '../../assets/discord.png'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
@@ -19,6 +20,7 @@ import button1 from "../../assets/button1.png"
 import button2 from "../../assets/button2.png"
 import button3 from "../../assets/button3.png"
 // import DiscordIcon from '@mui/icons-material/Discord';
+import { BsDiscord } from 'react-icons/fa';
 
 function CustomInput({ inputProps }) {
   return (
@@ -159,7 +161,9 @@ function Footer() {
           </ListItem>
           <ListItem className={styles.item}>
             <ListItemIcon className={styles.icon}>
-            {/* <DiscordIcon fontSize="large" color="primary" /> */}
+            <Image src={discord} width={30} color="primary" />
+            
+             {/* <BsDiscord /> */}
 
             </ListItemIcon>
           </ListItem>

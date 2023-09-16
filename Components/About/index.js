@@ -122,6 +122,7 @@ function Abouts() {
 
 
       <Grid item lg={6} md={6} sm={11} className={`jc ${styles.left}` }>
+      <h1 style={{marginLeft: "20px"}}>Our <span>Assets</span></h1>
       <AnimatePresence mode="wait">
   {selected && (
     <motion.div
@@ -153,6 +154,8 @@ function Abouts() {
       </Grid>
 
       <Grid item lg={6} md={6} sm={11}>
+      
+
         <List className={styles.listmenu}>
         {assets ?
           assets.map((product, index) => (
@@ -177,6 +180,7 @@ function Abouts() {
     <Grid container spacing={2} className={styles.choose}>
       {/* Left Grid: Image description */}
       <Grid item lg={6} md={6} sm={11} className={styles.chooseleft}>
+      <h1 style={{marginLeft: "30px", marginBottom: "15px"}}>Why choose <span>Mob studios</span></h1>
         
         <div className='pl5p'>
           <h1>{selectedItem.title}</h1>

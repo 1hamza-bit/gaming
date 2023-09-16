@@ -86,6 +86,9 @@ function Careers() {
     { icon: <Image src={gameshader}/>, name: "Game Shaders" }, { icon: <Image src={trailer}/>, name: "Teaser Trailer" }
   ];
   const [data, setData] = useState(null);
+  const [jobs, setJobs] = useState(null);
+
+
   const gridItemVariants = {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0 },
@@ -111,6 +114,15 @@ function Careers() {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
+
+      axios.get('https://kobmob.pythonanywhere.com/api/career')
+      .then(response => {
+        // Save the response data in the state
+        setJobs(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
   }, []);
 
   return <>
@@ -125,15 +137,14 @@ function Careers() {
           animate="visible"
           variants={gridItemVariants}
           transition={{ duration: 0.2, delay: 0.2 }}
-        >  <h1>Game Development & Design Service</h1>
-          <Typography > Mobstudios, is the leading service-based company for Game development,
-            Assets Creation, Game Design, 3D Modeling, Shader development, and Many More, According to your Preference.</Typography>
+        >  <h1>{data && data[0].title}</h1>
+          <Typography >{data && data[0].description}</Typography>
          
         </motion.div>
       </Grid>
       <Grid item lg={5} md={6} sm={11}>
-        <Image
-          // src={data.image}
+        <img
+          src={data && data[0].image}
           className={styles.imageContainer}
         // width={700}
         />
@@ -148,56 +159,35 @@ function Careers() {
       {/* )}; */}
     
       <Grid container spacing={6}  className={styles.jobs}>
-
+      {jobs?.map ((item) => 
       <Grid item lg={5} md={6} sm={11}>
-      <Grid container spacing={0} className={styles.jobcard}>
-      <Grid item lg={7} >
+      <Grid container spacing={3} className={styles.jobcard}>
+      <Grid item lg={item. image ? 7: 11} >
 
         <div >
-              <h2>Job title</h2>
+              <h2>{item.title}</h2>
         <div className={styles.small}>
 
-              <h6>small</h6>
-              <h6>small</h6>
+              <h6>{item.is_full_time_role ? "fulltime" : "part time"}</h6>
+              <h6>{item.is_remote_role ? "Remote" : "(On site)"}</h6>
 
 
               </div>
-            <p>Description</p>
+            <p style={{maxHeight: "80px", overflow: "auto"}}>{item.job_role} </p>
 
-            <h6>date</h6>
-
-        </div>
-        </Grid>
-        <Grid item lg={4} >
-          <Image />
-        </Grid>
-          </Grid>
-          </Grid>
-          <Grid item lg={5} md={6} sm={11}>
-      <Grid container spacing={0} className={styles.jobcard}>
-      <Grid item lg={7} >
-
-        <div >
-              <h2>Job title</h2>
-        <div className={styles.small}>
-
-              <h6>small</h6>
-              <h6>small</h6>
-
-
-              </div>
-            <p>Description</p>
-
-            <h6>date</h6>
+            <h6>{item.created_at}</h6>
 
         </div>
         </Grid>
+        {item.image?
         <Grid item lg={4} >
-          <Image />
+          <img style={{    width: "100%", height: "152px",  marginTop: "27px"}} src={item.image} />
         </Grid>
+        : null }
           </Grid>
           </Grid>
-
+       
+      )}
 
           </Grid>
 

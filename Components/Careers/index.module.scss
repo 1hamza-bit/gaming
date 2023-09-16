@@ -1,6 +1,6 @@
 .hero{
     h1{
-        font-size: 84px;
+        font-size: 64px;
          
         color: rgb(53, 53, 53);
     }
@@ -68,10 +68,11 @@
     animation: floatLeftRight 5s linear infinite; /* Customize the animation duration and timing here */
   
         object-fit: contain;
-        width: 800px !important;
+        width: 700px !important;
         position: relative !important;
         height: unset !important;
     overflow: hidden;
+    margin-top: 10%;
   }
 
   @media screen and (max-width:700px) {

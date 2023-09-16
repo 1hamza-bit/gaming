@@ -11,21 +11,33 @@
   src: url('../assets/Fonts/Congress-Heavy.ttf') format('truetype');
 } 
 
+@font-face {
+  font-family: 'arialblack';
+  src: url('../assets/Fonts/arial\ black.ttf') format('truetype');
+} @font-face {
+  font-family: 'ariall';
+  src: url('../assets/Fonts/arial\ regular.ttf') format('truetype');
+} 
+
 body {
   margin: 0px;
   overflow-x: hidden;
   background-color: #262626;
   color: white;
   scroll-behavior: smooth;
-  font-family: 'ArialCustom', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'ariall', 'Arial Narrow', Arial, sans-serif !important;
 }
 
 h1{
-  font-family: 'Congress', Times, serif;
+  font-family: 'arialblack', Times, serif !important;
 }
 
 .message{
-  font-family: 'Congress', Times, serif !important;
+  font-family: 'ariall', Times, serif !important;
+}
+.MuiTypography-root{
+  font-family: 'ariall', Times, serif !important;
+
 }
 
 

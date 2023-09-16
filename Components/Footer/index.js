@@ -106,7 +106,7 @@ function Footer() {
     </div>
     <Grid container spacing={2} className={styles.footer}>
       <Grid item lg={4} md={6} sm={11} className='m4'>
-        <h1>Mob Studios </h1>
+        <h1>MobStudios </h1>
         <p>Develop and Design all types of games and art for your IOS and Android stores with all of the features involved
           and lunch it in the real world and make your games with your full control, customization, and Art
 

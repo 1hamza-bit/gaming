@@ -72,7 +72,7 @@ function Contacts() {
     <Header />
     <Grid container spacing={2} className={styles.bannerc}>
       <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.heroc}`}>
-        <h1>Get in Touch with   <span> Mobstudios :</span></h1>
+        <h1>Get in Touch with   <span> Mobstudios</span></h1>
         <h3>{data && data[0].title}</h3>
 
         <Typography >{data && data[0].description}</Typography>

@@ -60,14 +60,14 @@ input {
     min-height: 38px;
     border-radius: 100vw;
 //   transition: color 200ms;
-  transition: width 2.5s ease-in-out ;
+  transition: all .5s ease-in-out ;
   color: white;
 
 }
 .inputbutton:hover{
-    background-color: rgba(137, 186, 199, 0.5);
-    min-width: 143px;
-
+    background-color: #f0aa0a;
+    min-width: 138px;
+  color: black;
 
 }
 

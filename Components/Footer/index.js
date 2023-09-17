@@ -5,7 +5,7 @@ import { useState } from "react";
 import styles from "./index.module.scss"
 import YouTubeIcon from '@mui/icons-material/YouTube';
 // import discord from '../../assets/discord.png'
-import discord from '../../assets/discord.png'
+import discord from '../../assets/discordi.png'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';

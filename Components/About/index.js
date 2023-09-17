@@ -183,7 +183,7 @@ function Abouts() {
       <h1 style={{marginLeft: "30px", marginBottom: "15px"}}>Why choose <span>Mob studios</span></h1>
         
         <div className='pl5p'>
-          <h1>{selectedItem.title}</h1>
+          {/* <h1>{selectedItem.title}</h1> */}
           {/* <Typography variant="subtitle1">{selectedItem}</Typography> */}
           <p>{selectedItem.description}</p>
         </div>

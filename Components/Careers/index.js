@@ -173,7 +173,7 @@ function Careers() {
 
 
               </div>
-            <p style={{maxHeight: "80px", overflow: "auto"}}>{item.job_role} </p>
+            <p style={{maxHeight: "80px", overflow: "hidden"}}> {item.job_role.substring(0, 220)}...</p>
 
             <h6>{item.created_at}</h6>
 

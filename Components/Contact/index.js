@@ -118,6 +118,15 @@ function Contacts() {
 ))}
       
         </List>
+
+<div style={{alignContent:"end", display: "flex", justifyContent: "end", width: "90%", marginTop: "5%", marginBottom: "3%"}}>
+        <img
+          src={data && data[0].image}
+        className={styles.icon}
+          width={30}
+          style={{width: "10% !important"}}
+        />
+        </div>
       </Grid>
     </Grid>
 

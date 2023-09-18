@@ -213,7 +213,13 @@ function Abouts() {
         </Grid>
       </Grid>
     </Grid>
-
+    <div style={{alignContent:"end", display: "flex", justifyContent: "start", width: "90%", marginLeft: "3%", marginTop: "-5%", marginBottom: "4%"}}>
+        <img
+          src={data && data[0].image}
+          // className={styles.imageContainer}
+          width={50}
+        />
+        </div>      
 
     <Footer />
   </>;

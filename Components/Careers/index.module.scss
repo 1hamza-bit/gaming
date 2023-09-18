@@ -65,14 +65,14 @@
 
 .imageContainer {
     position: relative;
-    animation: floatLeftRight 5s linear infinite; /* Customize the animation duration and timing here */
+    // animation: floatLeftRight 5s linear infinite; /* Customize the animation duration and timing here */
   
         object-fit: contain;
         width: 700px !important;
         position: relative !important;
         height: unset !important;
     overflow: hidden;
-    margin-top: 10%;
+    margin-top: 14%;
   }
 
   @media screen and (max-width:700px) {
@@ -133,12 +133,28 @@
 
   .jobcard{
     padding: 10px;
-    padding-left: 50px;
+    padding-left: 30px;
 
     background-color: #fff;
     border-radius: 2vw;
+    margin-bottom: 7%;
    box-shadow: rgba(221, 221, 225, 0.1) 0px 4px 16px, rgba(226, 226, 235, 0.1) 0px 8px 24px, rgba(229, 229, 230, 0.1) 0px 16px 56px;
    color: black;
+   button{
+    color: black;
+    background-color: #f0aa0a;
+   }
+   button:hover{
+    background-color: #ffba18;
+   }
+   a{
+    margin-left: 1%;
+    margin-right: 2%;
+    border-bottom: 1px solid black;
+    color: #f0aa0a;
+    font-weight: 600;
+    cursor: pointer;
+   }
    h2{
     margin: 0px;
     padding-top: 10px;
@@ -153,6 +169,8 @@
             h6{
                 padding-right: 10px;
                 margin: 5px;
+                color: gray;
+                font-size: 14px;
             }
         }
   }

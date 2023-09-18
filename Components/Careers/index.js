@@ -87,7 +87,16 @@ function Careers() {
   ];
   const [data, setData] = useState(null);
   const [jobs, setJobs] = useState(null);
+  const [more, setMore] = useState(false);
 
+  const handleMore = (i) => {
+    setMore(true);
+
+  }
+
+  const handleLess = (i) => {
+    setMore(false);
+  }
 
   const gridItemVariants = {
     hidden: { opacity: 0, x: 100 },
@@ -159,7 +168,7 @@ function Careers() {
       {/* )}; */}
     
       <Grid container spacing={6}  className={styles.jobs}>
-      {jobs?.map ((item) => 
+      {jobs?.map ((item, i) => 
       <Grid item lg={5} md={6} sm={11}>
       <Grid container spacing={3} className={styles.jobcard}>
       <Grid item lg={item. image ? 7: 11} >
@@ -173,9 +182,19 @@ function Careers() {
 
 
               </div>
-            <p style={{maxHeight: "80px", overflow: "hidden"}}> {item.job_role.substring(0, 220)}...</p>
+        {    !more ?
+            <p style={{maxHeight: "80px", overflow: "hidden", lineHeight: "21px"}}> {item.job_role}...</p>:
 
-            <h6>{item.created_at}</h6>
+            <p style={{ overflow: "hidden"}}> {item.job_role.substring(0, 220)}</p>}
+            
+          {more ?
+          <>
+            <b>Requirements</b>
+            <p style={{ overflow: "hidden"}}> {item.requirements}</p>
+            </>: ""
+}
+
+            <h5><b>Job Posted :</b>{item.created_at}</h5>
 
         </div>
         </Grid>
@@ -183,8 +202,15 @@ function Careers() {
         <Grid item lg={4} >
           <img style={{    width: "100%", height: "152px",  marginTop: "27px"}} src={item.image} />
         </Grid>
+
         : null }
+        <div style={{width: "100%", textAlign: "end"}}>{more ?<a onClick={handleLess}>View less</a> : null }<Button variant='contained' onClick={() => handleMore(i)}>{more ? "Apply" : "view more"}</Button></div>
+          
+
+       
           </Grid>
+
+          
           </Grid>
        
       )}

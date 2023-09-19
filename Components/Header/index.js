@@ -2,7 +2,7 @@
 // import styles from "./index.module.scss"
 'use client'
 import styled from "@emotion/styled";
-import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
+import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Paper, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
 import { useState } from "react";
 import styles from './index.module.scss'
 import HomeIcon from '@mui/icons-material/Home';
@@ -42,19 +42,35 @@ const handleCareerClick = () => {
 };
 
 
-const StyledDrawer = styled(Drawer)({
+const StyledDrawer = styled(Drawer)(({ theme }) => ({
+  width: 270,
+  flexShrink: 0,
+  '& .MuiDrawer-paper': {
     minWidth: 250,
     width: 270,
-    flexShrink: 0,
-  });
-  
-  const StyledDrawerPaper = styled('div')({
-    width: 240,
-  });
-  
-  const StyledDrawerContainer = styled('div')({
-    overflow: 'auto',
-  });
+    transition: 'transform 0.5s, width 0.5s ease-in-out, opacity 0.5s ease-in-out',
+    '&.MuiDrawer-open': {
+      transform: 'translateX(0)',
+      width: '270px',
+      opacity: 1,
+    },
+    '&.MuiDrawer-paperAnchorLeft': {
+      transform: 'translateX(-100%)',
+      width: 0,
+      opacity: 0,
+    },
+  },
+}));
+
+const StyledDrawerPaper = styled('div')({
+  width: 240,
+});
+
+const StyledDrawerContainer = styled('div')({
+  overflow: 'auto',
+  marginLeft: '240px',
+  transition: 'margin-left 0.5s ease-in-out',
+});
 
 const toggleDrawer =() => {
     setIsOpen(!isOpen)
@@ -82,17 +98,17 @@ const toggleDrawer =() => {
                             <Button onClick={handlePortfolioClick} className={styles.buttonp}>Portfolio <ArrowOutwardIcon /></Button> 
                         </Toolbar>
                     </AppBar>
-                    
-                    <StyledDrawer
+                    {isOpen && <div className="backdrop" onClick={toggleDrawer} />}
+                    <div
         classes={{
           paper: StyledDrawerPaper,
         }}
         anchor="left"
         open={isOpen}
         onClose={toggleDrawer}
-        className={`minw100p jc ${styles.drawer} ${isOpen ? '' : styles.closed}`}
+        className={` ${styles.drawer} jc ${isOpen ? styles.open  : styles.closed}`}
       >
-        <StyledDrawerContainer>
+        <Paper className={styles.custom}>
           <p></p>
           <Container className={styles.container}>
       <List className={styles.list}>
@@ -128,10 +144,10 @@ const toggleDrawer =() => {
         </ListItem>
       </List>
     </Container>
-        </StyledDrawerContainer>
+        </Paper>
         
         
-      </StyledDrawer>
+      </div>
    
                 </Box>
 

@@ -115,14 +115,48 @@ background-color: #f0aa0a;
     }
   }
   
+  .custom {
+    // width: 300px;
+    // height: 100%;
+    // position: fixed;
+    // top: 0;
+    // bottom: 0;
+    // left: -300px;
+    // transition: left 0.3s ease-in-out;
+    // background-color: #333;
+    // color: white;
+    height: 100%;
+    border-bottom-right-radius: 5vw;
+  }
   .drawer {
-    animation: slideIn 1s forwards;
-    transition: transform 0.5s;
+    // animation: slideIn 1s forwards;
+    transition: all 0.5s ease-in-out;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1105;
+    overflow: hidden;
+  //   background-color: rgba(255, 255, 255, 0.6) !important;
+
+  // width: 120vw !important;
+  }
+  .open{
+    width: 240px;
 
   }
   
-  .drawer.closed {
+  .closed {
+    transition: width 0.9s ease-in-out, opacity 0.9s ease-in-out;
     animation: slideOut 1s forwards;
+
+    width: 0 !important;
+    // opacity: 0 !important;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1105;
   }
   .hambutton{
     border: 0px;
@@ -134,6 +168,7 @@ background-color: #f0aa0a;
     justify-content: center;
     align-items: center;
     height: 65vh;
+    padding-top: 100%;
   }
   .list{
     width: 100%;

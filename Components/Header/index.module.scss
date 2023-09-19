@@ -142,34 +142,40 @@ background-color: #f0aa0a;
   // width: 120vw !important;
   }
   .open{
-    width: 240px;
+    width: 290px;
+    transition: all 0.3s ease-in-out;
 
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 65vh;
+      padding-top: 100%;
+      opacity: 1;
+    }
   }
   
   .closed {
-    transition: width 0.9s ease-in-out, opacity 0.9s ease-in-out;
-    animation: slideOut 1s forwards;
+    
+    transition: all 0.3s ease-in-out;
 
     width: 0 !important;
-    // opacity: 0 !important;
-    position: fixed;
-    height: 100%;
-    top: 0;
-    bottom: 0;
-    z-index: 1105;
+    
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 65vh;
+      padding-top: 100%;
+      opacity: 0;
+    }
   }
   .hambutton{
     border: 0px;
     background-color: transparent;
   }
 
-  .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 65vh;
-    padding-top: 100%;
-  }
+  
   .list{
     width: 100%;
     max-width: 360;

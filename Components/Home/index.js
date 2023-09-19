@@ -56,7 +56,17 @@ const items = [
 
 function Hero() {
   const [data, setData] = useState(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
   const gridItemVariants = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const gridItemVariantsimg = {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0 },
   };
@@ -105,20 +115,28 @@ function Hero() {
           initial="hidden"
           animate="visible"
           variants={gridItemVariants}
-          transition={{ duration: 0.2, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
         >  <h1>{data ? data[0].title : "Game Development & Design Service"}</h1>
           <Typography >{data && data[0].description}</Typography>
           <Button className={styles.button1}>Portfolio <ArrowOutwardIcon /></Button>
           <Button className={styles.button2}>About Us</Button>
         </motion.div>
       </Grid>
-      <Grid item lg={5} md={6} sm={11}>
+      <Grid  item lg={5} md={6} sm={11}>
+      <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={gridItemVariantsimg}
+          transition={{ duration: 0.9, delay: 0.9 }}
+        > 
         <img
           src={data && data[0].image}
           className={styles.imageContainer}
+          onLoad={handleImageLoad}
           
         // width={700}
         />
+        </motion.div>
       </Grid>
       <Grid item lg={3} md={3} sm={3}>
 

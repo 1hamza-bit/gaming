@@ -137,7 +137,7 @@ justify-content: center !important;
   height: 5px;
   background-color: #000;
   transition: transform 0.5s;
-
+  border-radius: 100vw;
 }
 
 .hamburger-icon:hover .line {
@@ -485,4 +485,17 @@ transform: scale(1.1);
   100% {
     opacity: 0;
   }
+}
+
+
+/* CSS for the fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* Start from a slightly lower position */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-in.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0); /* Move to the original position */
 }

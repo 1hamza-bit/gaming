@@ -155,7 +155,7 @@ const TopAssets = () => {
         data.map((product, index) => (
           <>
          
-            <div key={index} className={`${styles["product-item"]} ${index === currentIndex ? styles.first : ""}`} b>
+            <div key={index} className={`fade-in ${styles["product-item"]} ${index === currentIndex ? styles.first : ""}`} b>
               <img src={product.image} alt={product.name} />
 
               <h3> <span> {product.image_by_title}</span> <ArrowOutwardIcon className={styles.arrow} /></h3>

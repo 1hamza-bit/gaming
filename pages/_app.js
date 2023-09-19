@@ -9,29 +9,40 @@ import { debounce } from '@mui/material';
 export default function App({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Listen for the window.onload event
-    window.onload = () => {
-      // When the website is fully loaded, hide the loader
-      setIsLoading(false);
-    };
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.onload = null;
-    };
-  }, []);
+  const [shouldFadeIn, setShouldFadeIn] = useState(false);
 
   useEffect(() => {
-    // You can also listen for the DOMContentLoaded event
-    document.addEventListener('DOMContentLoaded', () => {
-      // When the DOM content is fully loaded, hide the loader
-      setIsLoading(false);
-    });
+    // Function to check if an element is in the viewport
+    const isElementInViewport = (element) => {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth)
+      );
+    };
 
-    // Clean up the event listener when the component unmounts
+    // Function to handle the scroll event
+    const handleScroll = () => {
+      // Get all the elements with the "fade-in" class
+      const elements = document.querySelectorAll('.fade-in');
+
+      elements.forEach((element) => {
+        if (isElementInViewport(element) && !element.classList.contains('fade-in-visible')) {
+          element.classList.add('fade-in-visible');
+        }
+      });
+    };
+
+    // Add the scroll event listener when the component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the listener when the component unmounts
     return () => {
-      document.removeEventListener('DOMContentLoaded', () => {});
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 

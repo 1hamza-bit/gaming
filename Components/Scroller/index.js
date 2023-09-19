@@ -49,6 +49,7 @@ const Brands = () => {
   const [data, setData] = useState(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+ 
   useEffect(() => {
     // Make a GET request using Axios
     axios.get('https://kobmob.pythonanywhere.com/api/testimonial')
@@ -180,7 +181,7 @@ const Brands = () => {
       <h1>The <b>services</b> we are amazing with</h1>
       <div className={styles.brands}>
         {extendedBrands.map((brand, index) => (
-          <div className={styles.brandItem} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
+          <div className={`fade-in ${styles.brandItem}`} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
       </div>
       <h1>Testimonials</h1>
@@ -189,7 +190,7 @@ const Brands = () => {
         {data ?
           data.map((product, index) => (
 
-            <Grid key={index} item lg={4} md={6} sm={11} >
+            <Grid className="fade-in" key={index} item lg={4} md={6} sm={11} >
               <Box className={`m4 ${styles.testimonial}`}>
                 <ModeCommentIcon className={` ${index === currentIndex ? 'red' : 'maincolor'}`} />
                 <Typography className={styles.message}>{product.description}</Typography>
@@ -213,7 +214,7 @@ const Brands = () => {
       <h1>Provide you when needed</h1>
       <div className={styles.brands2}>
         {extendedBrands2.map((brand, index) => (
-          <div className={styles.brandItem} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
+          <div className={`fade-in ${styles.brandItem}`} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
       </div>
 

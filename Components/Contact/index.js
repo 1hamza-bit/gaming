@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import robot from "../../assets/hero.png"
 import letterclosed from "../../assets/lclosed.png"
+import asset from "../../assets/asset.png"
 import opened from "../../assets/lopen.png"
 import Footer from '../Footer';
 import styled from '@emotion/styled';
@@ -121,7 +122,7 @@ function Contacts() {
 
 <div style={{alignContent:"end", display: "flex", justifyContent: "end", width: "90%", marginTop: "5%", marginBottom: "3%"}}>
         <img
-          src={data && data[0].image}
+          src={asset}
         className={styles.icon}
           width={30}
           style={{width: "10% !important"}}

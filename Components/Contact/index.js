@@ -121,7 +121,7 @@ function Contacts() {
         </List>
 
 <div style={{alignContent:"end", display: "flex", justifyContent: "end", width: "90%", marginTop: "5%", marginBottom: "3%"}}>
-        <img
+        <Image
           src={asset}
         className={styles.icon}
           width={30}

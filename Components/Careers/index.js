@@ -169,7 +169,7 @@ function Careers() {
     
       <Grid container spacing={6}  className={styles.jobs}>
       {jobs?.map ((item, i) => 
-      <Grid item lg={5} md={6} sm={11}>
+      <Grid item lg={5} md={6} sm={11} onClick={() => handleMore(i)}>
       <Grid container spacing={3} className={styles.jobcard}>
       <Grid item lg={item. image ? 7: 11} >
 

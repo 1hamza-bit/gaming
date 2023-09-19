@@ -214,7 +214,7 @@ function Abouts() {
         </Grid>
       </Grid>
     </Grid>
-    <div style={{alignContent:"end", display: "flex", justifyContent: "start", width: "90%", marginLeft: "3%", marginTop: "-5%", marginBottom: "4%"}}>
+    <div style={{alignContent:"end", display: "flex", justifyContent: "start", width: "90%", marginLeft: "0%", marginTop: "-9%", marginBottom: "4%"}}>
         <Image
           src={asset}
           // className={styles.imageContainer}

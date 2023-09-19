@@ -124,7 +124,7 @@ function Contacts() {
         <Image
           src={asset}
         className={styles.icon}
-          width={30}
+          width={100}
           style={{width: "10% !important"}}
         />
         </div>

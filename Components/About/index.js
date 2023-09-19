@@ -218,7 +218,7 @@ function Abouts() {
         <Image
           src={asset}
           // className={styles.imageContainer}
-          width={50}
+          width={150}
         />
         </div>      
 

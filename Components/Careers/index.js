@@ -19,16 +19,16 @@ import SportsEsportsTwoToneIcon from '@mui/icons-material/SportsEsportsTwoTone';
 import animations from "../../assets/Animations/animations.png"
 import assets from "../../assets/Animations/assets.png"
 import blender from "../../assets/Animations/blender.png"
-import gamedevelopment from "../../assets/Animations/game development.png"
-import gameprops from "../../assets/Animations/game props.png"
-import gameshader from "../../assets/Animations/game shader.png"
+import gamedevelopment from "../../assets/Animations/gamedevelopment.png"
+import gameprops from "../../assets/Animations/gameprops.png"
+import gameshader from "../../assets/Animations/gameshader.png"
 import game from "../../assets/Animations/game.png"
 import max from "../../assets/Animations/max.png"
 import maya from "../../assets/Animations/maya.png"
 import mixamo from "../../assets/Animations/mixamo.png"
-import mobilegame from "../../assets/Animations/mobile game.png"
+import mobilegame from "../../assets/Animations/mobilegame.png"
 import modeling from "../../assets/Animations/modeling.png"
-import multiplayergames from "../../assets/Animations/multiplayer games.png"
+import multiplayergames from "../../assets/Animations/multiplayergames.png"
 import substance from "../../assets/Animations/substance.png"
 import trailer from "../../assets/Animations/trailer.png"
 import unity from "../../assets/Animations/unity.png"
@@ -90,13 +90,13 @@ function Careers() {
   const [more, setMore] = useState(false);
 
   const handleMore = (i) => {
-    setMore(true);
+    setMore(!more);
 
   }
 
-  const handleLess = (i) => {
-    setMore(false);
-  }
+  // const handleLess = (i) => {
+  //   setMore(false);
+  // }
 
   const gridItemVariants = {
     hidden: { opacity: 0, x: 100 },
@@ -204,7 +204,7 @@ function Careers() {
         </Grid>
 
         : null }
-        <div style={{width: "100%", textAlign: "end"}}>{more ?<a onClick={handleLess}>View less</a> : null }<Button variant='contained' onClick={() => handleMore(i)}>{more ? "Apply" : "view more"}</Button></div>
+        <div style={{width: "100%", textAlign: "end"}}>{more !== false?<a onClick={() => handleMore(i)}>View less</a> : null }<Button variant='contained' onClick={() => handleMore(i)}>{more ? "Apply" : "view more"}</Button></div>
           
 
        

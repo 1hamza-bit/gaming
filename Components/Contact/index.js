@@ -125,7 +125,7 @@ function Contacts() {
           src={asset}
         className={styles.icon}
           width={100}
-          style={{width: "10% !important"}}
+          style={{width: "20% !important"}}
         />
         </div>
       </Grid>

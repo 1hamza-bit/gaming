@@ -143,6 +143,8 @@
    button{
     color: black;
     background-color: #f0aa0a;
+    border-radius: 10px;
+
    }
    button:hover{
     background-color: #ffba18;
@@ -169,8 +171,11 @@
             h6{
                 padding-right: 10px;
                 margin: 5px;
-                color: gray;
+                color: rgb(94, 94, 94);
                 font-size: 14px;
+                border: 1px solid #f0aa0a;
+                padding: 1%;
+                
             }
         }
   }

@@ -13,13 +13,20 @@ import { useRouter } from "next/router";
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import logo from "../../assets/Logo.png"
 import logo3d from "../../assets/logo3.png"
+import logof from "../../assets/logof.png"
+import logof2 from "../../assets/logof2.png"
 import Image from "next/image";
+import { motion } from 'framer-motion';
 
 
 
 function Header()  {
 const [isOpen, setIsOpen] = useState(false);
 const router = useRouter();
+const gridItemVariants = {
+  hidden: { opacity: 0, y: -100 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const handleHomeClick = () => {
   router.push('/');
@@ -78,6 +85,7 @@ const toggleDrawer =() => {
  
         return         <>
                 <Box sx={{ flexGrow: 1 }}>
+         
                     <AppBar position="static" className={`bgwhite ztop ${styles.header}`}>
                         <Toolbar>
                             <button onClick={toggleDrawer} className={styles.hambutton}> 
@@ -89,15 +97,29 @@ const toggleDrawer =() => {
                             <Typography className={` fantasy ${styles.logo}`} variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                 {/* Mob Studios */}
                                 <Image 
-                                src={logo3d}
-                                width={70}
+                                src={logof}
+                                width={60}
                                 onClick={handleHomeClick}
                                 />
-                               <span> Mob Studios</span> 
+                                <Image 
+                                src={logof2}
+                                width={140}
+                                onClick={handleHomeClick}
+                                style={{marginLeft: "8px !important"}}
+                                />
+                               {/* <span> Mob Studios</span>  */}
                             </Typography>
+                            <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={gridItemVariants}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
                             <Button onClick={handlePortfolioClick} className={styles.buttonp}>Portfolio <ArrowOutwardIcon /></Button> 
+                            </motion.div>
                         </Toolbar>
                     </AppBar>
+                    
                     {isOpen && <button className="backdrop" onClick={toggleDrawer}  />}
                     <div
         classes={{

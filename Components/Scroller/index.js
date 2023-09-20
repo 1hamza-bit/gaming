@@ -70,7 +70,7 @@ const Brands = () => {
   }, []);
   // Simulated list of brands
   const allBrands = [
-    { icon: <Image src={game} />, name: "Game Art" }, { icon: <Image src={game}/>, name: "AAA" },
+    { icon: <Image src={game} style={{width: "35px", height: "24px !important"}} />, name: "Game Art" }, { icon: <Image src={game} style={{width: "35px", height: "24px !important"}}/>, name: "AAA" },
     { icon: <Image src={gamedevelopment}/>, name: "Game development" }, { icon: <Image src={modeling}/>, name: "3D Modelling" },
     { icon: <Image src={animations}/>, name: "3D Animations" }, { icon: <Image src={mobilegame}/>, name: "Mobile Games" },
     { icon: <Image src={gameprops}/>, name: "Game Props" }, { icon: <Image src={multiplayergames}/>, name: "Multiplayer Games" },
@@ -179,10 +179,12 @@ const Brands = () => {
   return (
     <div className={styles.container}>
       <h1>The <b>services</b> we are amazing with</h1>
-      <div className={`fade-in ${styles.brands2}`}>
+      <div className="fade-in">
+      <div className={`${styles.brands2}`}>
         {extendedBrands.map((brand, index) => (
-          <div className={`fade-in ${styles.brandItem}`} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
+          <div className={`${styles.brandItem}`} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
+      </div>
       </div>
       <h1>Testimonials</h1>
 
@@ -212,12 +214,13 @@ const Brands = () => {
 
 
       <h1>Provide you when needed</h1>
-      <div className={`fade-in ${styles.brands2}`}>
+      <div className="fade-in">
+      <div className={`${styles.brands2}`}>
         {extendedBrands2.map((brand, index) => (
           <div className={` ${styles.brandItem}`} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
       </div>
-
+        </div>
 
 
     </div>

@@ -6,6 +6,7 @@
 .header{
   position: fixed;
   top: 0;
+  padding: 0% 2%;
   span{
     font-family: 'Congress', Courier, monospace !important;
     font-weight: 600;
@@ -37,8 +38,10 @@
   border-radius: 100vw !important;
   background-color: rgb(65 63 59) !important;
   color: white !important;
-   padding: 8px 4% !important;
-   margin-top: 10px;
+  padding: 12px 17% !important;
+    margin-top: 10px;
+    min-width: 20px;
+    margin-left: -30%;
   min-width: 20px;
   // margin-left: 5%;
   transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s cubic-bezier(.23, 1, .32, 1) , color .3 all;
@@ -48,9 +51,14 @@
 .logo{
   justify-content: center;
     display: flex;
-    margin: 2px 0% !important;
-    margin-left: 6% !important;
+    margin: 12px 0% !important;
+    margin-left: 0% !important;
     align-items: center;
+    cursor: pointer;
+    transition: transform 1s ease-in-out ;
+    img:hover{
+      transform: scale(1);
+      }
     span{
       margin-left: 1%;
       margin-top: 10px;
@@ -61,6 +69,9 @@
 .logo:hover{
   transform: translate(1px, 1px);
   opacity: 0.8;
+  img{
+    transform: scale(0.98);
+    }
 }
 
 .buttonp:hover{

@@ -124,8 +124,8 @@ justify-content: center !important;
 }
 
 .hamburger-icon {
-  width: 35px;
-  height: 15px;
+  width: 40px;
+  height: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -137,7 +137,7 @@ justify-content: center !important;
   height: 5px;
   background-color: #000;
   transition: transform 0.5s;
-  border-radius: 100vw;
+  border-radius: 300px;
 }
 
 .hamburger-icon:hover .line {
@@ -150,12 +150,16 @@ justify-content: center !important;
 }
 
 .line:nth-child(1) {
-  height: 4px;
+  height: 6px;
+  border-radius: 300px;
+
 }
 
 .line:nth-child(3) {
   width: 101%;
-  height: 5px;
+  height: 6px;
+  border-radius: 100vw;
+
 }
 
 
@@ -498,4 +502,8 @@ transform: scale(1.1);
 .fade-in.fade-in-visible {
   opacity: 1;
   transform: translateY(0); /* Move to the original position */
+}
+
+.MuiTouchRipple-root{
+  display: none !important;
 }

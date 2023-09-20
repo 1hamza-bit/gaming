@@ -48,7 +48,7 @@
 .logo{
   justify-content: center;
     display: flex;
-    margin: 2px 0%;
+    margin: 2px 0% !important;
     margin-left: 6% !important;
     align-items: center;
     span{
@@ -136,15 +136,15 @@ background-color: #f0aa0a;
     top: 0;
     bottom: 0;
     z-index: 1105;
+    width: 290px;
     overflow: hidden;
   //   background-color: rgba(255, 255, 255, 0.6) !important;
 
   // width: 120vw !important;
   }
   .open{
-    width: 290px;
     transition: all 0.3s ease-in-out;
-
+    left: 0;
     .container{
       display: flex;
       justify-content: center;
@@ -159,7 +159,7 @@ background-color: #f0aa0a;
     
     transition: all 0.3s ease-in-out;
 
-    width: 0 !important;
+    left: -500px !important;
     
     .container{
       display: flex;

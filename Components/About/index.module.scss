@@ -57,7 +57,7 @@
     position: relative;
     animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
     transform: rotate(45deg);
-    margin-top: 10%;
+    margin-top: 18%;
    
   }
   .imageContainer:hover{
@@ -211,5 +211,9 @@
       background-color: rgb(50, 27, 3);
       color: white;
     }
+}
+
+.container{
+  margin-left: 4%;
 }
   

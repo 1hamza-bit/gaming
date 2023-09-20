@@ -179,18 +179,18 @@ const Brands = () => {
   return (
     <div className={styles.container}>
       <h1>The <b>services</b> we are amazing with</h1>
-      <div className={styles.brands}>
+      <div className={`fade-in ${styles.brands2}`}>
         {extendedBrands.map((brand, index) => (
           <div className={`fade-in ${styles.brandItem}`} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
       </div>
       <h1>Testimonials</h1>
 
-      <Slider {...settings}>
+      <Slider className="fade-in" {...settings}>
         {data ?
           data.map((product, index) => (
 
-            <Grid className="fade-in" key={index} item lg={4} md={6} sm={11} >
+            <Grid  key={index} item lg={4} md={6} sm={11} >
               <Box className={`m4 ${styles.testimonial}`}>
                 <ModeCommentIcon className={` ${index === currentIndex ? 'red' : 'maincolor'}`} />
                 <Typography className={styles.message}>{product.description}</Typography>
@@ -212,9 +212,9 @@ const Brands = () => {
 
 
       <h1>Provide you when needed</h1>
-      <div className={styles.brands2}>
+      <div className={`fade-in ${styles.brands2}`}>
         {extendedBrands2.map((brand, index) => (
-          <div className={`fade-in ${styles.brandItem}`} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
+          <div className={` ${styles.brandItem}`} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
       </div>
 

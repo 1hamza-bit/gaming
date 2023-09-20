@@ -98,7 +98,7 @@ const toggleDrawer =() => {
                             <Button onClick={handlePortfolioClick} className={styles.buttonp}>Portfolio <ArrowOutwardIcon /></Button> 
                         </Toolbar>
                     </AppBar>
-                    {isOpen && <div className="backdrop" onClick={toggleDrawer} />}
+                    {isOpen && <button className="backdrop" onClick={toggleDrawer}  />}
                     <div
         classes={{
           paper: StyledDrawerPaper,

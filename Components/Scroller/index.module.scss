@@ -50,7 +50,7 @@
     max-width: auto;
     img{
       width: 30px;
-      height: auto;
+      height: 30px !important;
     }
 }
 
@@ -99,7 +99,8 @@
   min-height: 150px;
   max-height: 150px;
   line-height: 1.3em;
-    font-weight: 600;
+    // font-weight: 600;
+    line-height: 35px !important;
     font-size: 18px;
   font-family: 'ariall', Times, serif !important;
 

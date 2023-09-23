@@ -11,6 +11,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import axios from 'axios';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import { motion } from 'framer-motion';
+
 const products = [
   { id: 1, name: 'Product 1' },
   { id: 2, name: 'Product 2' },
@@ -23,6 +25,10 @@ const products = [
 ];
 
 const TopAssets = () => {
+  const gridItemVariants = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0 },
+  };
   const sliderRef = useRef(null);
   const itemsInView = 4;
   const [isDragging, setIsDragging] = useState(false);
@@ -141,7 +147,14 @@ const TopAssets = () => {
 
       {/* <Draggable axis="x" onDrag={handleDrag} onStop={handleDragStop}> */}
       <Stack direction="row" className='jcspace df'>
+      <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={gridItemVariants}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
       <h1>Our <span>TOP </span>packs </h1>
+      </motion.div>
       <Button className={styles.buttonassets}>Portfolio <ArrowOutwardIcon /></Button>
          
 

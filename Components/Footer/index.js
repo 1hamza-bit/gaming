@@ -5,7 +5,8 @@ import { useState } from "react";
 import styles from "./index.module.scss"
 import YouTubeIcon from '@mui/icons-material/YouTube';
 // import discord from '../../assets/discord.png'
-import discord from '../../assets/discordi.png'
+import discord from '../../assets/discord.png'
+import discordwhite from '../../assets/discordwhite.png'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
@@ -94,7 +95,7 @@ function Footer() {
 
 
   return <>
-    <div className={styles.bfcontainer}>
+    <div className={`fade-in ${styles.bfcontainer}`}>
       {router.pathname !== '/contact' ?
         <Button className={styles.getintouch} onClick={handleContactClick}>Get in touch
           <Image src={button1} className={styles.img1} />
@@ -104,15 +105,15 @@ function Footer() {
         : null
       }
     </div>
-    <Grid container spacing={2} className={styles.footer}>
-      <Grid item lg={4} md={6} sm={11} className='m4'>
-        <h1>MobStudios </h1>
+    <Grid container spacing={2} className={` ${styles.footer}`}>
+      <Grid item lg={4} md={6} sm={11} className='m4 fade-in'>
+        <h1>Mobstudios </h1>
         <p>Develop and Design all types of games and art for your IOS and Android stores with all of the features involved
           and lunch it in the real world and make your games with your full control, customization, and Art
 
         </p>
 
-        <h3 className="mt15">Sign up to our newletter</h3>
+        <h3 className="mt15 ">Sign up to our newletter</h3>
 
         {/* <TextField variant="outlined"    InputProps={{
     style: {borderRadius: "100vw !important", borderColor: "white !important"},
@@ -125,7 +126,7 @@ function Footer() {
 
       </Grid>
 
-      <Grid item lg={3} md={6} sm={11} className={`m2 ${styles.menu}`}>
+      <Grid item lg={3} md={6} sm={11} className={`fade-in m2 ${styles.menu}`}>
         <List className={styles.listmenu}>
           <ListItem className={styles.item} onClick={handleHomeClick}>
 
@@ -152,7 +153,7 @@ function Footer() {
         </List>
 
       </Grid>
-      <Grid item lg={2} md={6} sm={11} className={`m2 ${styles.menu}`}>
+      <Grid item lg={2} md={6} sm={11} className={`fade-in m2 ${styles.menu}`}>
         <List className={styles.listmenu}>
           <ListItem className={styles.item}>
             <ListItemIcon className={styles.icon}>
@@ -160,8 +161,10 @@ function Footer() {
             </ListItemIcon>
           </ListItem>
           <ListItem className={styles.item}>
-            <ListItemIcon className={styles.icon}>
-            <Image src={discord} width={30} color="primary" />
+            <ListItemIcon className={styles.icond}>
+            <Image className={styles.white} src={discordwhite} width={25} color="primary" />
+            <Image className={styles.yel} src={discord} width={25} color="primary" />
+
             
              {/* <BsDiscord /> */}
 
@@ -179,14 +182,14 @@ function Footer() {
       </Grid>
     </Grid>
 
-    <div className={styles.footeranimate}>
+    <div className={` ${styles.footeranimate}`}>
       <Image
         src={footer2}
-        className="movable-image"
+        className="fade-in movable-image"
       />
       <Image
         src={footer1}
-        className="movable-image"
+        className="fade-in movable-image"
 
       />
 

@@ -7,6 +7,12 @@ import Footer from '../Footer';
 import TopAssets from '../TopAssets';
 import Image from 'next/image';
 import robot from "../../assets/hero.png"
+import home1 from "../../assets/home1.png"
+import home2 from "../../assets/home2.png"
+import home3 from "../../assets/home3.png"
+import home4 from "../../assets/home4.png"
+import home5 from "../../assets/home5.png"
+
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import dynamic from 'next/dynamic';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
@@ -57,6 +63,7 @@ const items = [
 function Hero() {
   const [data, setData] = useState(null);
   const [imageLoaded, setImageLoaded] = useState(false);
+  
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -105,6 +112,7 @@ function Hero() {
   const handleContactClick = () => {
     router.push('/contact');
   };
+  
 
   return <>
     <Header />
@@ -129,13 +137,40 @@ function Hero() {
           variants={gridItemVariantsimg}
           transition={{ duration: 0.9, delay: 0.9 }}
         > 
-        <img
+         {/* {!imageLoaded ? <p>loading </p>: <img
           src={data && data[0].image}
           className={styles.imageContainer}
           onLoad={handleImageLoad}
           
         // width={700}
         />
+         } */}
+         <div className={`df ${styles.images}`}>
+         <Image
+         src={home4}
+         className={styles.imageContainer}
+          onLoad={handleImageLoad}
+         />
+         <div className={styles.smallimages}>
+         <Image
+         src={home5}
+         className={styles.imageContainer2}
+          onLoad={handleImageLoad}
+         /><Image
+         src={home1}
+         className={styles.imageContainer3}
+          onLoad={handleImageLoad}
+         /><Image
+         src={home2}
+         className={styles.imageContainer4}
+          onLoad={handleImageLoad}
+         /><Image
+         src={home3}
+         className={styles.imageContainer5}
+          onLoad={handleImageLoad}
+         />
+         </div>
+         </div>
         </motion.div>
       </Grid>
       <Grid item lg={3} md={3} sm={3}>

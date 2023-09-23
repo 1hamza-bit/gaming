@@ -2,7 +2,7 @@
 // import styles from "./index.module.scss"
 'use client'
 import styled from "@emotion/styled";
-import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Paper, Slide, Toolbar, Typography, makeStyles } from "@mui/material";
+import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Modal, Paper,  Toolbar, Typography, makeStyles } from "@mui/material";
 import { useState } from "react";
 import styles from './index.module.scss'
 import HomeIcon from '@mui/icons-material/Home';
@@ -13,19 +13,28 @@ import { useRouter } from "next/router";
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import logo from "../../assets/Logo.png"
 import logo3d from "../../assets/logo3.png"
-import logof from "../../assets/logof.png"
+import logof from "../../assets/New_Logo.png"
 import logof2 from "../../assets/logof2.png"
 import Image from "next/image";
 import { motion } from 'framer-motion';
-
+import { createGlobalStyle } from "styled-components";
+import Slide from '@mui/material/Slide';
+import TemporaryDrawer from "./drawe";
+import Sidebar from "./drawe";
 
 
 function Header()  {
+
 const [isOpen, setIsOpen] = useState(false);
 const router = useRouter();
 const gridItemVariants = {
   hidden: { opacity: 0, y: -100 },
   visible: { opacity: 1, y: 0 },
+};
+
+const drawerVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0 },
 };
 
 const handleHomeClick = () => {
@@ -79,14 +88,30 @@ const StyledDrawerContainer = styled('div')({
   transition: 'margin-left 0.5s ease-in-out',
 });
 
+const useStyles = styled((theme) => ({
+  drawer: {
+    width: drawerWidth,
+  },
+  paper: {
+    borderRadius: '16px', // Adjust the border radius as needed
+    padding: theme.spacing(2),
+  },
+}));
+
 const toggleDrawer =() => {
     setIsOpen(!isOpen)
 }
- 
+const paperStyles = {
+  transition: 'all 5.3s ease-in-out, width 5.3s ease-in-out !important',
+  borderBottomRightRadius: '5vw', // Adjust the radius as needed
+  // Add any other styles you want here
+  width: isOpen ? '300px' : '0px',
+};
+const classes = useStyles();
         return         <>
                 <Box sx={{ flexGrow: 1 }}>
          
-                    <AppBar position="static" className={`bgwhite ztop ${styles.header}`}>
+                    <AppBar position="static" className={`bggrey ztop ${styles.header}`}>
                         <Toolbar>
                             <button onClick={toggleDrawer} className={styles.hambutton}> 
                             <div className={`hamburger-icon ${isOpen ? 'open redline' : ''}`} >
@@ -98,15 +123,10 @@ const toggleDrawer =() => {
                                 {/* Mob Studios */}
                                 <Image 
                                 src={logof}
-                                width={60}
+                                width={180}
                                 onClick={handleHomeClick}
                                 />
-                                <Image 
-                                src={logof2}
-                                width={140}
-                                onClick={handleHomeClick}
-                                style={{marginLeft: "8px !important"}}
-                                />
+                             {/* <Sidebar /> */}
                                {/* <span> Mob Studios</span>  */}
                             </Typography>
                             <motion.div
@@ -120,7 +140,9 @@ const toggleDrawer =() => {
                         </Toolbar>
                     </AppBar>
                     
-                    {isOpen && <button className="backdrop" onClick={toggleDrawer}  />}
+                    {/* {isOpen && <button className="backdrop" onClick={toggleDrawer}  />} */}
+                    {/* <GlobalPaperStyles /> */}
+                    {isOpen && <Button className="backdrop" onClick={toggleDrawer}  />}
                     <div
         classes={{
           paper: StyledDrawerPaper,
@@ -170,6 +192,10 @@ const toggleDrawer =() => {
         
         
       </div>
+      
+
+    
+    
    
                 </Box>
 

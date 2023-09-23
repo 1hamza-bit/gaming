@@ -55,10 +55,11 @@
 
 .imageContainer {
     position: relative;
-    animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
-    transform: rotate(45deg);
-    margin-top: 18%;
-   
+    // animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
+    // transform: rotate(45deg);
+    margin-top: 15%;
+    height: 450px !important;
+    overflow: hidden;
   }
   .imageContainer:hover{
    transform:  translate(2px, 2px);
@@ -72,11 +73,12 @@
     width: 90%;
     padding: 1% 5%;
     img{
-        transform: rotate(20deg); 
-      width: 500px;
+        transform: rotate(-5deg); 
+      width: 550px;
+      height: auto !important;
     margin-left: 5%;
       margin-top: 4% !important;
-      margin-bottom: -2% !important;
+      margin-bottom: -8% !important;
     }
       .textbox{
          background-color: white;
@@ -136,13 +138,17 @@
             }
       }
       span{
-        font-size: 26px !important;
+        font-size: 22px !important;
          
       }
     
   }
 
-  @media screen and (max-width:700px) {
+  @media screen and (max-width:800px) {
+    .services{
+      .left{
+       width: 100%;
+      }}
 
     .banner2{
       overflow: hidden;
@@ -152,16 +158,16 @@
     .hero2{
       width: 100%;
       h1{
-        font-size: 44px;
+        font-size: 38px;
         
     }
     p{
-       font-size: 15px;
+       font-size: 14px;
         margin-bottom: 15px;
         margin-left: 5%;
     }
     .button1, .button2{
-      font-size: 15px;
+      font-size: 14px;
     }
     }
     .imageContainer {
@@ -176,12 +182,13 @@
 .chooseleft{
   padding: 5%;
   h1{
-    font-size: 50px;
+    font-size: 35px;
   }
 
   p{
     margin-top: 4%;
-    font-size: 25px;
+    font-size: 20px;
+    line-height: 35px  !important;
   }
 }
 
@@ -197,6 +204,7 @@
       box-shadow: rgba(50, 50, 93, 0.15) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out ;
       width: 90%;
+      font-size: 11px;
     margin-top: -10%;
     }
     img{

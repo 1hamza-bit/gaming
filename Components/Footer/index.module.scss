@@ -93,6 +93,28 @@ input {
     .icon:hover{
         color: #f0aa0a;
     }
+    .icond{
+      img{
+        transition: none;
+      }
+      img:hover{
+        transform: scale(1);
+      }
+      .white{
+        display: block;
+      }
+      .yel{
+        display: none;
+      }
+    }
+    .icond:hover{
+      .white{
+        display: none;
+      }
+      .yel{
+        display: block;
+      }
+    }
 }
     
 }

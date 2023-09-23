@@ -95,7 +95,7 @@ function Abouts() {
 
   return <>
     <Header />
-    <Grid container spacing={2} className={styles.banner2}>
+    <Grid container spacing={2} className={` ${styles.banner2}`}>
       <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.hero2}`}>
       {/* <motion.div
       initial={{ opacity: 0 }}
@@ -122,7 +122,7 @@ function Abouts() {
     <Grid container spacing={2} className={styles.services}>
 
 
-      <Grid item lg={6} md={6} sm={11} className={`jc ${styles.left}` }>
+      <Grid   item lg={6} md={6} sm={11} className={` jc ${styles.left}` }>
       <h1 style={{marginLeft: "20px"}}>Our <span>Assets</span></h1>
       <AnimatePresence mode="wait">
   {selected && (
@@ -154,7 +154,7 @@ function Abouts() {
 
       </Grid>
 
-      <Grid item lg={6} md={6} sm={11}>
+      <Grid   item lg={6} md={6} sm={11}>
       
 
         <List className={styles.listmenu}>
@@ -180,10 +180,10 @@ function Abouts() {
 
     <Grid container spacing={2} className={styles.choose}>
       {/* Left Grid: Image description */}
-      <Grid item lg={6} md={6} sm={11} className={styles.chooseleft}>
-      <h1 style={{marginLeft: "30px", marginBottom: "15px"}}>Why choose <span>Mob studios</span></h1>
+      <Grid item lg={6} md={6} sm={11} className={` ${styles.chooseleft}`}>
+      <h1 className="fade-in"  style={{marginLeft: "30px", marginBottom: "15px"}}>Why choose <span>Mob studios</span></h1>
         
-        <div className='pl5p'>
+        <div className=' fade-in pl5p'>
           {/* <h1>{selectedItem.title}</h1> */}
           {/* <Typography variant="subtitle1">{selectedItem}</Typography> */}
           <p>{selectedItem.description}</p>
@@ -192,9 +192,9 @@ function Abouts() {
 
       {/* Right Grid: List of items */}
       <Grid item lg={6} md={6} sm={11}>
-        <Grid container spacing={3} className={styles.blockscontainer}>
-          <Grid item lg={9} md={9} sm={10} style={{marginBottom: "5% !important"}}>
-            <Grid container spacing={3}>
+        <Grid container spacing={4} className={styles.blockscontainer}>
+          <Grid  item lg={9} md={9} sm={10} style={{marginBottom: "5% !important"}}>
+            <Grid className="fade-in"  container spacing={6}>
               {why?.map((item, index) => (
                 <Grid item xs={4}>
                   <img src={item.image} />
@@ -214,11 +214,11 @@ function Abouts() {
         </Grid>
       </Grid>
     </Grid>
-    <div style={{alignContent:"end", display: "flex", justifyContent: "start", width: "90%", marginLeft: "0%", marginTop: "-9%", marginBottom: "4%"}}>
+    <div className="fade-in"  style={{alignContent:"end", display: "flex", justifyContent: "start", width: "90%", marginLeft: "0%", marginTop: "-9%", marginBottom: "4%"}}>
         <Image
           src={asset}
           // className={styles.imageContainer}
-          width={150}
+          width={170}
         />
         </div>      
 

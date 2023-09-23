@@ -7,11 +7,15 @@
   position: fixed;
   top: 0;
   padding: 0% 2%;
+  border-bottom-right-radius: 0vw !important;
+  // background-color: #000000;
   span{
     font-family: 'Congress', Courier, monospace !important;
     font-weight: 600;
   }
+
 }
+
 .header::-webkit-scrollbar {
   width: 8px;
   /* width of the scrollbar */
@@ -36,8 +40,8 @@
 }
 .buttonp{
   border-radius: 100vw !important;
-  background-color: rgb(65 63 59) !important;
-  color: white !important;
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0) !important;
   padding: 12px 17% !important;
     margin-top: 10px;
     min-width: 20px;
@@ -68,7 +72,7 @@
 
 .logo:hover{
   transform: translate(1px, 1px);
-  opacity: 0.8;
+  opacity: 1.1;
   img{
     transform: scale(0.98);
     }
@@ -192,6 +196,8 @@ background-color: #f0aa0a;
     max-width: 360;
     justify-content: center;
     display: grid;
+    overflow-y: auto;
+    max-height: 40vw;
    
     .item{
       margin-bottom: 15%;
@@ -222,3 +228,6 @@ background-color: #f0aa0a;
       }
     }
   }
+
+
+  

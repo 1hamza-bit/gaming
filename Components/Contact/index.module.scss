@@ -50,14 +50,16 @@
     background-color: rgb(24, 24, 24);
     
     .div {
-        width: 20%;
+        margin-top: 10%;
+        width: 90%;
         justify-content: flex-end;
         display: flex;
-        margin-left: 70%;
+        margin-left: 1%;
         margin-top: 25%;
         transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
         transform-style: preserve-3d;
         // transition: transform 1.5s ease-in-out !important;
+
     }
  
     img {
@@ -69,9 +71,11 @@
         // transition: transform 1.5s ease-in-out !important;
     }
     
+    
     .letter1 {
         display: block;
         height: 160px !important;
+        width: 80%;
     }
     
     .letter2 {
@@ -79,19 +83,39 @@
         height: 160px !important;
         opacity: 0;
         transition: opacity 1.5s ease-in-out !important;
+        width: 80%;
+
     }
+    
   
     .div:hover img {
         /* Apply the transformation on hover */
         // transform: rotate(10deg);
     }
+ .computer{
+    display: flex;
+    position: absolute;
+    right: 35%;
+    top: 0;
 
-    .div:hover .letter1 {
+        .cm1{
+            display: block;
+            height: 160px !important;
+            margin-left: 15%;
+        }
+        .cm2{
+            display: block;
+            height: 120px !important;
+            margin-top: 10%;
+    }
+}
+
+    .letter:hover .letter1 {
         /* Hide letter1 on hover */
         display: none;
     }
 
-    .div:hover .letter2 {
+    .letter:hover .letter2 {
         /* Show letter2 on hover */
         display: block;
         opacity: 1;
@@ -106,6 +130,7 @@
         }
     }
 }
+
 
 .contact{
     background-color: rgb(249, 255, 255);

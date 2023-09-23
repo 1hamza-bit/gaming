@@ -8,6 +8,15 @@ import robot from "../../assets/hero.png"
 import letterclosed from "../../assets/lclosed.png"
 import asset from "../../assets/asset.png"
 import opened from "../../assets/lopen.png"
+import contact1 from "../../assets/contact/contact1.png"
+import contact2 from "../../assets/contact/contact2.png"
+import contact3 from "../../assets/contact/contact3.png"
+import contact4 from "../../assets/contact/contact4.png"
+import contact5 from "../../assets/contact/contact5.png"
+import contact6 from "../../assets/contact/contact6.png"
+import contact7 from "../../assets/contact/contact7.png"
+import contact8 from "../../assets/contact/contact8.png"
+import contact9 from "../../assets/contact/contact9.png"
 import Footer from '../Footer';
 import styled from '@emotion/styled';
 import axios from 'axios';
@@ -86,7 +95,22 @@ function Contacts() {
 
       </Grid>
       <Grid item lg={6} md={6} sm={11}>
+    
         <div className={styles.div}>
+          <div className={styles.computer}>
+        <Image
+            src={contact1}
+            className={styles.cm1}
+           
+          />
+          <Image
+            src={contact2}
+            className={styles.cm2}
+           
+          />
+          </div>
+       
+          <div className={styles.letter}>
           <Image
             src={letterclosed}
             className={styles.letter1}
@@ -97,7 +121,10 @@ function Contacts() {
             className={styles.letter2}
             width={120}
           />
+         </div>
+        
         </div>
+       
 
         <List className={styles.listmenu}>
         {emails &&   emails.map((email, index) => (

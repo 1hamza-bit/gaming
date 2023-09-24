@@ -199,8 +199,9 @@ function Careers() {
 
     </Grid>
     {/* )}; */}
-
+    <h1 className={styles.jobheading}>Jobs  </h1>
     <Grid container spacing={6} className={styles.jobs}>
+  
       {jobs?.map((item, i) =>
         <Grid className='fade-in' item lg={5} md={6} sm={11} >
           <Grid container spacing={3} className={styles.jobcard}>

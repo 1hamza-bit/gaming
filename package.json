@@ -15,6 +15,8 @@
     "@mui/material": "^5.14.0",
     "@next/font": "^13.4.12",
     "@trendyol-js/react-carousel": "^3.0.2",
+    "@uidotdev/usehooks": "^2.3.1",
+    "animate.css": "^4.1.1",
     "axios": "^1.4.0",
     "embla-carousel": "^8.0.0-rc11",
     "embla-carousel-autoplay": "^8.0.0-rc11",
@@ -29,8 +31,10 @@
     "react-parallax": "^3.5.1",
     "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.29.0",
+    "react-transition-group": "^4.4.5",
     "sass": "^1.63.6",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^6.0.8"
+    "styled-components": "^6.0.8",
+    "wowjs": "^1.1.3"
   }
 }

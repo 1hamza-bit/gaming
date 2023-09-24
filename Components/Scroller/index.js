@@ -213,7 +213,7 @@ const Brands = () => {
       </Slider>
 
 
-      <h1>Provide you when needed</h1>
+      <h1>Provide you when <b>needed</b></h1>
       <div className="fade-in">
       <div className={`${styles.brands2}`}>
         {extendedBrands2.map((brand, index) => (

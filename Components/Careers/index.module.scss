@@ -1,3 +1,8 @@
+.jobheading{
+  color: #f0aa0a;
+  text-decoration: underline;
+  margin-left: 5%;
+}
 .hero{
     h1{
         font-size: 64px;
@@ -126,9 +131,11 @@
 
   .jobs{
     min-height: 400px;
-    margin: 1% !important;
     border-bottom: 1px solid rgb(197, 197, 197);
     margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
   }
 
   .jobcard{

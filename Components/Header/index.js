@@ -1,9 +1,8 @@
-
 // import styles from "./index.module.scss"
 'use client'
 import styled from "@emotion/styled";
 import { AppBar, Box, Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Modal, Paper,  Toolbar, Typography, makeStyles } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from './index.module.scss'
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
@@ -21,11 +20,18 @@ import { createGlobalStyle } from "styled-components";
 import Slide from '@mui/material/Slide';
 import TemporaryDrawer from "./drawe";
 import Sidebar from "./drawe";
+import { useClickAway } from "@uidotdev/usehooks";
 
 
 function Header()  {
 
 const [isOpen, setIsOpen] = useState(false);
+const [isTogglePending, setIsTogglePending] = useState(false);
+
+const ref = useClickAway(() => {
+  setIsOpen(false);
+});
+
 const router = useRouter();
 const gridItemVariants = {
   hidden: { opacity: 0, y: -100 },
@@ -98,9 +104,22 @@ const useStyles = styled((theme) => ({
   },
 }));
 
-const toggleDrawer =() => {
-    setIsOpen(!isOpen)
-}
+const toggleDrawer = () => {
+  // If a toggle is pending (drawer was just closed), do not reopen immediately
+  if (isTogglePending) {
+    setIsTogglePending(false);
+  } else {
+    setIsOpen(!isOpen); // Toggle the isOpen state
+  }
+};
+
+// Listen for changes to isOpen and set a pending toggle if it's true
+useEffect(() => {
+  if (isOpen) {
+    setIsTogglePending(true);
+  }
+}, [isOpen]);
+
 const paperStyles = {
   transition: 'all 5.3s ease-in-out, width 5.3s ease-in-out !important',
   borderBottomRightRadius: '5vw', // Adjust the radius as needed
@@ -109,16 +128,17 @@ const paperStyles = {
 };
 const classes = useStyles();
         return         <>
+        {isOpen && <div className="backdrop"> </div>}
                 <Box sx={{ flexGrow: 1 }}>
          
                     <AppBar position="static" className={`bggrey ztop ${styles.header}`}>
                         <Toolbar>
-                            <button onClick={toggleDrawer} className={styles.hambutton}> 
-                            <div className={`hamburger-icon ${isOpen ? 'open redline' : ''}`} >
-                                <div className="line"></div>
-                                <div className="line"></div>
-                            </div>
-                            </button>
+                        <button onClick={!isOpen && toggleDrawer} className={styles.hambutton}>
+    <div className={`hamburger-icon ${isOpen ? 'open redline' : ''}`}>
+        <div className="line"></div>
+        <div className="line"></div>
+    </div>
+</button>
                             <Typography className={` fantasy ${styles.logo}`} variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                 {/* Mob Studios */}
                                 <Image 
@@ -142,14 +162,13 @@ const classes = useStyles();
                     
                     {/* {isOpen && <button className="backdrop" onClick={toggleDrawer}  />} */}
                     {/* <GlobalPaperStyles /> */}
-                    {isOpen && <Button className="backdrop" onClick={toggleDrawer}  />}
-                    <div
+                    
+                    <div ref={ref}
         classes={{
           paper: StyledDrawerPaper,
         }}
         anchor="left"
         open={isOpen}
-        onClose={toggleDrawer}
         className={` ${styles.drawer} jc ${isOpen ? styles.open  : styles.closed}`}
       >
         <Paper className={styles.custom}>

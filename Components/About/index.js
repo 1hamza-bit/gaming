@@ -20,6 +20,15 @@ const StyledListItemText = (props) => (
   />
 );
 function Abouts() {
+  const gridItemVariants = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const gridItemVariantsimg = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+  };
   const [selected, setSelected] = useState("Mobile Game Development");
   const [initialLoad, setInitialLoad] = useState(true);
   const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6'];
@@ -96,26 +105,38 @@ function Abouts() {
   return <>
     <Header />
     <Grid container spacing={2} className={` ${styles.banner2}`}>
+   
       <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.hero2}`}>
-      {/* <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 0.5 }}
-    > */}
+      <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={gridItemVariants}
+          transition={{ duration: 0.9, delay: 0.9 }}
+        > 
         <h1>{data && data[0].title}</h1>
     {/* </motion.div> */}
         <Typography >{data && data[0].description}
         </Typography>
-
+        </motion.div>
 
       </Grid>
+      
+    
       <Grid item lg={5} md={6} sm={11} style={{ justifyContent: "center !important", display: "flex !important" }}>
+      <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={gridItemVariantsimg}
+          transition={{ duration: 0.9, delay: 0.9 }}
+        > 
       <img
           src={data && data[0].image}
           className={styles.imageContainer}
           width={600}
         />
+         </motion.div>
       </Grid>
+     
     </Grid>
 
 
@@ -157,7 +178,7 @@ function Abouts() {
       <Grid   item lg={6} md={6} sm={11}>
       
 
-        <List className={styles.listmenu}>
+        <List className={`fade-in ${styles.listmenu}`}>
         {assets ?
           assets.map((product, index) => (
           <ListItem className={`${styles.item} ${selected === product ? 'maincolor' : ''}`} onClick={() => handleUpdate(product)} >

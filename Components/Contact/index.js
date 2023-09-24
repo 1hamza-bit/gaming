@@ -20,7 +20,7 @@ import contact9 from "../../assets/contact/contact9.png"
 import Footer from '../Footer';
 import styled from '@emotion/styled';
 import axios from 'axios';
-
+import { CSSTransition } from 'react-transition-group';
 
 const stickyHeaderStyle = {
   position: 'sticky',
@@ -40,7 +40,9 @@ function Contacts() {
   const [data, setData] = useState(null);
   const [emails, setEmails] = useState(null);
   const [faqs, setFaqs] = useState([]);
+  const [showComponent, setshowComponent] = useState(true);
 
+  
 
 
  useEffect(() => {
@@ -78,10 +80,12 @@ function Contacts() {
 
   }, []);
 
+
   return <>
     <Header />
     <Grid container spacing={2} className={styles.bannerc}>
-      <Grid item lg={4} md={6} sm={11} className={`m7 ${styles.heroc}`}>
+  
+      <Grid item lg={4} md={6} sm={11}  className={`m7 ${styles.heroc}`}>
         <h1>Get in Touch with   <span> Mobstudios</span></h1>
         <h3>{data && data[0].title}</h3>
 
@@ -94,7 +98,7 @@ function Contacts() {
         />
 
       </Grid>
-      <Grid item lg={6} md={6} sm={11}>
+      <Grid  item lg={6} md={6} sm={11}>
     
         <div className={styles.div}>
           <div className={styles.computer}>
@@ -147,14 +151,59 @@ function Contacts() {
       
         </List>
 
-<div style={{alignContent:"end", display: "flex", justifyContent: "end", width: "90%", marginTop: "5%", marginBottom: "3%"}}>
+        <div className={styles.div}>
+            <div className={styles.comp}>
+        <Image
+            src={contact5}
+            className={styles.cm5}
+           
+          />
+          <Image
+            src={contact6}
+            className={styles.cm6}
+           
+          />
+           <Image
+            src={contact9}
+            className={styles.cm9}
+           
+          /> <Image
+          src={contact3}
+          className={styles.cm3}
+         
+        />
+         <Image
+            src={contact8}
+            className={styles.cm8}
+           
+          /> <Image
+          src={contact4}
+          className={styles.cm4}
+         
+        />
+        
+       
+        
+          <Image
+            src={contact7}
+            className={styles.cm7}
+            width={120}
+          />
+         
+        
+        </div>
+        
+        </div>
+        
+
+{/* <div style={{alignContent:"end", display: "flex", justifyContent: "end", width: "90%", marginTop: "5%", marginBottom: "3%"}}>
         <Image
           src={asset}
         className={styles.icon}
           width={100}
           style={{width: "20% !important"}}
         />
-        </div>
+        </div> */}
       </Grid>
     </Grid>
 

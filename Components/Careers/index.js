@@ -173,7 +173,7 @@ function Careers() {
     {/* {data?.map(data, */}
     <Grid container spacing={0} className={styles.banner}>
 
-      <Grid item lg={5} md={6} sm={11} className={`mr2p m7 ${styles.hero}`}>
+      <Grid item lg={5} md={6} sm={11} style={{marginRight: "2% !important"}} className={`mr2p m7 ${styles.hero}`}>
         <motion.div
           initial="hidden"
           animate="visible"

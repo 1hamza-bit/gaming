@@ -142,6 +142,10 @@ const TopAssets = () => {
     sliderRef.current.scrollLeft -= scrollAmount;
   };
 
+  const handlePortfolioClick = () => {
+    router.push('/portfolio');
+  };
+
   return (
     <div style={{ overflow: 'hidden' }} className={styles.topp}>
 
@@ -155,20 +159,20 @@ const TopAssets = () => {
         >
       <h1>Our <span>TOP </span>packs </h1>
       </motion.div>
-      <Button className={styles.buttonassets}>Portfolio <ArrowOutwardIcon /></Button>
+      <Button onClick={handlePortfolioClick} className={styles.buttonassets}>Assets <ArrowOutwardIcon /></Button>
          
 
 
 </Stack>
       
-
+<div className='fade-in'>
       <Slider  prevArrow={<PrevArrow />} nextArrow={<NextArrow />} {...settings}>
         {data ?  
        
         data.map((product, index) => (
           <>
          
-            <div key={index} className={`fade-in ${styles["product-item"]} ${index === currentIndex ? styles.first : ""}`} b>
+            <div key={index} className={`${styles["product-item"]} ${index === currentIndex ? styles.first : ""}`} b>
               <img src={product.image} alt={product.name} />
 
               <h3> <span> {product.image_by_title}</span> <ArrowOutwardIcon className={styles.arrow} /></h3>
@@ -194,7 +198,7 @@ const TopAssets = () => {
         </div> */}
 
       </Slider>
-     
+      </div>
 
 
 

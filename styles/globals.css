@@ -171,6 +171,10 @@ justify-content: center !important;
   transform: translateY(-8px) rotate(-45deg);
 }
 
+.mr2p{
+  margin-right: 2% !important;
+}
+
 .m7 {
   margin: 7% !important;
 }

@@ -173,7 +173,7 @@ function Careers() {
     {/* {data?.map(data, */}
     <Grid container spacing={0} className={styles.banner}>
 
-      <Grid item lg={5} md={6} sm={11} className={`m7 ${styles.hero}`}>
+      <Grid item lg={5} md={6} sm={11} className={`mr2p m7 ${styles.hero}`}>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -199,7 +199,7 @@ function Careers() {
 
     </Grid>
     {/* )}; */}
-    <h1 className={styles.jobheading}>Jobs  </h1>
+    <h1 className={styles.jobheading}>Careers  </h1>
     <Grid container spacing={6} className={styles.jobs}>
   
       {jobs?.map((item, i) =>

@@ -63,11 +63,16 @@ const items = [
 function Hero() {
   const [data, setData] = useState(null);
   const [imageLoaded, setImageLoaded] = useState(false);
-  
+ 
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-  };
+  useEffect(() => {
+    const img = new Image();
+    img.src = data[0]?.image;
+    img.onload = () => {
+      // Image has loaded
+      setImageLoaded(true);
+    };
+  }, [data[0]?.image]);
   const gridItemVariants = {
     hidden: { opacity: 0, y: -100 },
     visible: { opacity: 1, y: 0 },
@@ -133,7 +138,7 @@ function Hero() {
       <Grid  item lg={5} md={6} sm={11}>
       <motion.div
           initial="hidden"
-          animate="visible"
+          animate={{ imageLoaded ? "visible" : "hidden" }}
           variants={gridItemVariantsimg}
           transition={{ duration: 0.9, delay: 0.9 }}
         > 

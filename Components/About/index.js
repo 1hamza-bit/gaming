@@ -38,6 +38,7 @@ function Abouts() {
   const [data, setData] = useState("");
   const [assets, setAssets] = useState(null);
   const [why, setWhy] = useState(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
 
   // useEffect(() => {
@@ -53,7 +54,14 @@ function Abouts() {
   //     }
   //   };
   // }, [blinkCount]);
-
+  useEffect(() => {
+    const img = new Image();
+    img.src = data[0]?.image;
+    img.onload = () => {
+      // Image has loaded
+      setImageLoaded(true);
+    };
+  }, [data[0]?.image]);
   
 
   useEffect(() => {
@@ -125,7 +133,7 @@ function Abouts() {
       <Grid item lg={5} md={6} sm={11} style={{ justifyContent: "center !important", display: "flex !important" }}>
       <motion.div
           initial="hidden"
-          animate="visible"
+          animate={{ imageLoaded ? "visible" : "hidden" }}
           variants={gridItemVariantsimg}
           transition={{ duration: 0.9, delay: 0.9 }}
         > 

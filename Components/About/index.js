@@ -39,6 +39,8 @@ function Abouts() {
   const [assets, setAssets] = useState(null);
   const [why, setWhy] = useState(null);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [image2Loaded, setImage2Loaded] = useState(false);
+
 
 
   // useEffect(() => {
@@ -62,6 +64,16 @@ function Abouts() {
       setImageLoaded(true);
     };
   }, [data[0]?.image]);
+  
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = selected.image;
+    img.onload = () => {
+      // Image has loaded
+      setImage2Loaded(true);
+    };
+  }, [selected.image]);
   
 
   useEffect(() => {
@@ -158,7 +170,7 @@ function Abouts() {
     <motion.div
       key={selected.id}
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{ opacity: image2Loaded ? 1 : 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >

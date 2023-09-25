@@ -85,7 +85,7 @@ function Hero() {
 
  const scrollToBottom = () => {
     window.scrollTo({
-      top:  800,
+      top:  750,
       behavior: 'smooth' // You can change this to 'auto' or 'instant' for different scroll behavior
     });
   };

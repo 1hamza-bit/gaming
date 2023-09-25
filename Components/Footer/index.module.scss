@@ -123,7 +123,7 @@ input {
 
   display: grid;
   direction: rtl;
-  margin-top: -2%;
+  margin-top: -6%;
   transition: transform 0.3s ease;
   margin-right: 5%;
   img{
@@ -154,10 +154,10 @@ input {
 
 @keyframes scrollDown {
   0%, 100% {
-    transform: translateY(-10%);
+    transform: translateY(-4%);
   }
   50% {
-    transform: translateY(10%);
+    transform: translateY(6%);
   }
 }
 

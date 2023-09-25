@@ -143,7 +143,7 @@ const classes = useStyles();
                                 {/* Mob Studios */}
                                 <Image 
                                 src={logof}
-                                width={180}
+                                width={220}
                                 onClick={handleHomeClick}
                                 />
                              {/* <Sidebar /> */}

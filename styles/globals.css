@@ -115,6 +115,15 @@ justify-content: center !important;
   display: flex;
   align-items: center;
 }
+.mappedtitle{
+  display: flex;
+  overflow-wrap: break-word;
+
+}
+.mappedtitle h1{
+    padding-left: 5px;
+    padding-right: 5px;
+}
 
 .ztop {
   z-index: 1201;

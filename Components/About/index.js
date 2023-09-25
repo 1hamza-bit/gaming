@@ -83,22 +83,24 @@ function Abouts() {
         // Save the response data in the state
         setWhy(response.data);
         setSelectedItem(response.data[0])
-
-      })
+        
       .catch(error => {
         console.error('Error fetching data:', error);
       });
 
-      // const titleWords = response.data[0]?.title.split(' ');
-
-      // // Function to style the third and fourth words
-      // const stylizeWords = (index) => {
-      //   if (index === 4 || index === 4) {
-      //     return { color: 'red' }; // Change the color as needed
-      //   }
-      //   return {};
-      // };
+     
+    })
   }, []);
+
+  const titleWords = data[0]?.title.split(' ');
+
+  // Function to style the third and fourth words
+  const stylizeWords = (index) => {
+    if (index === 3 || index === 4) {
+      return { color: 'red' }; // Change the color as needed
+    }
+    return {};
+  };
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
@@ -124,11 +126,7 @@ function Abouts() {
           transition={{ duration: 0.9, delay: 0.9 }}
         > 
         <h1>{data && data[0].title}</h1>
-        {/* {titleWords.map((word, index) => (
-        <h1 key={index} style={stylizeWords(index)}>
-          {word}{' '}
-        </h1>
-      ))} */}
+     
     {/* </motion.div> */}
         <Typography >{data && data[0].description}
         </Typography>
@@ -217,7 +215,7 @@ function Abouts() {
     <Grid container spacing={2} className={styles.choose}>
       {/* Left Grid: Image description */}
       <Grid item lg={6} md={6} sm={11} className={` ${styles.chooseleft}`}>
-      <h1 className="fade-in"  style={{marginLeft: "30px", marginBottom: "15px"}}>Why choose <span>Mob studios</span></h1>
+      <h1 className="fade-in"  style={{marginLeft: "60px", marginBottom: "15px", marginTop: "10%", fontSize: "41px"}}>Why choose <span>Mob studios</span></h1>
         
         <div className=' fade-in pl5p'>
           {/* <h1>{selectedItem.title}</h1> */}
@@ -230,7 +228,7 @@ function Abouts() {
       <Grid item lg={6} md={6} sm={11}>
         <Grid container spacing={4} className={styles.blockscontainer}>
           <Grid  item lg={9} md={9} sm={10} style={{marginBottom: "5% !important"}}>
-            <Grid className="fade-in"  container spacing={6}>
+            <Grid className="fade-in"  container spacing={4}>
               {why?.map((item, index) => (
                 <Grid item xs={4}>
                   <img src={item.image} />
@@ -250,13 +248,13 @@ function Abouts() {
         </Grid>
       </Grid>
     </Grid>
-    <div className="fade-in"  style={{alignContent:"end", display: "flex", justifyContent: "start", width: "90%", marginLeft: "0%", marginTop: "-9%", marginBottom: "4%"}}>
+    {/* <div className="fade-in"  style={{alignContent:"end", display: "flex", justifyContent: "start", width: "90%", marginLeft: "0%", marginTop: "-9%", marginBottom: "4%"}}>
         <Image
           src={asset}
           // className={styles.imageContainer}
           width={170}
         />
-        </div>      
+        </div>       */}
 
     <Footer />
   </>;

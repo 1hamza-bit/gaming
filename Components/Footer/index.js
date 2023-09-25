@@ -113,7 +113,7 @@ function Footer() {
 
         </p>
 
-        <h3 className="mt15 ">Sign up to our newletter</h3>
+        {/* <h3 className="mt15 ">Sign up to our newletter</h3> */}
 
         {/* <TextField variant="outlined"    InputProps={{
     style: {borderRadius: "100vw !important", borderColor: "white !important"},
@@ -121,7 +121,7 @@ function Footer() {
                       <Button className={styles.inputbutton}>Go </Button>
                     </InputAdornment>,
                   }} fullWidth/> */}
-        <CustomInput inputProps={customInputProps} />
+        {/* <CustomInput inputProps={customInputProps} /> */}
         <h4>2023 Mob Studios, Inc</h4>
 
       </Grid>

@@ -38,9 +38,6 @@ function Abouts() {
   const [data, setData] = useState("");
   const [assets, setAssets] = useState(null);
   const [why, setWhy] = useState(null);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [image2Loaded, setImage2Loaded] = useState(false);
-
 
 
   // useEffect(() => {
@@ -56,24 +53,7 @@ function Abouts() {
   //     }
   //   };
   // }, [blinkCount]);
-  useEffect(() => {
-    const img = new Image();
-    img.src = data[0]?.image;
-    img.onload = () => {
-      // Image has loaded
-      setImageLoaded(true);
-    };
-  }, [data[0]?.image]);
-  
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = selected.image;
-    img.onload = () => {
-      // Image has loaded
-      setImage2Loaded(true);
-    };
-  }, [selected.image]);
   
 
   useEffect(() => {
@@ -108,6 +88,16 @@ function Abouts() {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
+
+      // const titleWords = response.data[0]?.title.split(' ');
+
+      // // Function to style the third and fourth words
+      // const stylizeWords = (index) => {
+      //   if (index === 4 || index === 4) {
+      //     return { color: 'red' }; // Change the color as needed
+      //   }
+      //   return {};
+      // };
   }, []);
 
   const handleItemClick = (item) => {
@@ -134,6 +124,11 @@ function Abouts() {
           transition={{ duration: 0.9, delay: 0.9 }}
         > 
         <h1>{data && data[0].title}</h1>
+        {/* {titleWords.map((word, index) => (
+        <h1 key={index} style={stylizeWords(index)}>
+          {word}{' '}
+        </h1>
+      ))} */}
     {/* </motion.div> */}
         <Typography >{data && data[0].description}
         </Typography>
@@ -145,7 +140,7 @@ function Abouts() {
       <Grid item lg={5} md={6} sm={11} style={{ justifyContent: "center !important", display: "flex !important" }}>
       <motion.div
           initial="hidden"
-          animate={{ imageLoaded ? "visible" : "hidden" }}
+          animate="visible"
           variants={gridItemVariantsimg}
           transition={{ duration: 0.9, delay: 0.9 }}
         > 
@@ -170,7 +165,7 @@ function Abouts() {
     <motion.div
       key={selected.id}
       initial={{ opacity: 0 }}
-      animate={{ opacity: image2Loaded ? 1 : 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >

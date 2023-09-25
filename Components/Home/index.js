@@ -65,14 +65,14 @@ function Hero() {
   const [imageLoaded, setImageLoaded] = useState(false);
  
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = data[0]?.image;
-    img.onload = () => {
-      // Image has loaded
-      setImageLoaded(true);
-    };
-  }, [data[0]?.image]);
+  // useEffect(() => {
+  //   const img = new Image();
+  //   img.src = data[0]?.image;
+  //   img.onload = () => {
+  //     // Image has loaded
+  //     setImageLoaded(true);
+  //   };
+  // }, [data && data[0]?.image]);
   const gridItemVariants = {
     hidden: { opacity: 0, y: -100 },
     visible: { opacity: 1, y: 0 },
@@ -138,7 +138,7 @@ function Hero() {
       <Grid  item lg={5} md={6} sm={11}>
       <motion.div
           initial="hidden"
-          animate={{ imageLoaded ? "visible" : "hidden" }}
+          animate="visible"
           variants={gridItemVariantsimg}
           transition={{ duration: 0.9, delay: 0.9 }}
         > 
@@ -154,25 +154,25 @@ function Hero() {
          <Image
          src={home4}
          className={styles.imageContainer}
-          onLoad={handleImageLoad}
+          // onLoad={handleImageLoad}
          />
          <div className={styles.smallimages}>
          <Image
          src={home5}
          className={styles.imageContainer2}
-          onLoad={handleImageLoad}
+          // onLoad={handleImageLoad}
          /><Image
          src={home1}
          className={styles.imageContainer3}
-          onLoad={handleImageLoad}
+          // onLoad={handleImageLoad}
          /><Image
          src={home2}
          className={styles.imageContainer4}
-          onLoad={handleImageLoad}
+          // onLoad={handleImageLoad}
          /><Image
          src={home3}
          className={styles.imageContainer5}
-          onLoad={handleImageLoad}
+          // onLoad={handleImageLoad}
          />
          </div>
          </div>

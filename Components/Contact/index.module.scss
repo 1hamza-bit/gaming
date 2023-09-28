@@ -114,6 +114,21 @@
               
 }
 
+.computer:hover{
+ 
+  
+
+        .cm1{
+         transform: translateX(20px);
+
+        }
+        .cm2{
+           transform: translateX(10px) translateY(-10px) rotate(10deg);
+    }
+   
+              
+}
+
 .comp{
     position: relative;
     height: 250px;
@@ -129,7 +144,7 @@
     }
 .cm3{
     display: block;
-    right: 18%;
+    right: 22%;
    
 }    .cm4{
     display: block;
@@ -146,15 +161,15 @@ width: 6%;
 
 }    .cm6{
 display: block;
-left: 30%;
-bottom: 10%;
+left: 35%;
+bottom: 22%;
 width: 12%;
 
 
 }
 .cm7{
 display: block;
-right: 0;
+right: 5%;
 }
 .cm8{
     display: block;
@@ -171,13 +186,15 @@ right: 0;
         width: 22%;
     }
 }
+
+
 .comp:hover{
     .cm3{
         transform: translateX(-35px);
        
     }    .cm4{
         transform: translateX(25px);
-    transform: rotate(172deg);
+    transform: rotate(132deg);
 
     
     
@@ -185,19 +202,19 @@ right: 0;
         transform: translateX(-35px);
     
     }    .cm6{
-        transform: translateY(15px);
+        transform: translateY(15px) rotate(-5deg);
     
     
     }
     .cm7{
-        transform: translateX(25px);
+        transform: translateX(25px) rotate(-5deg);
     }
     .cm8{
         transform: translateY(35px);
     
     }
         .cm9{
-            transform: translateY(-15px);
+            transform: translateY(-5px) translateX(-15px) rotate(-10deg);
         }
 }
 

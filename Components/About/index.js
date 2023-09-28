@@ -126,6 +126,17 @@ function Abouts() {
           transition={{ duration: 0.9, delay: 0.9 }}
         > 
         <h1>{data && data[0].title}</h1>
+        <h1 >
+
+        {titleWords?.map((word, index) => (
+        // <Grid item xs={2} key={index}>
+        <g key={index} style={{  ...stylizeWords(index) }}>{word}</g>
+            
+          
+        // </Grid>
+      ))}
+      </h1>
+
      
     {/* </motion.div> */}
         <Typography >{data && data[0].description}

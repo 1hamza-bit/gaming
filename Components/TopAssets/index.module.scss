@@ -113,7 +113,7 @@
 
 @media screen and (min-width: 200px) {
   .next{
-    left: 25%;
+    left: 75%;
 
   }
   
@@ -121,7 +121,7 @@
 
 @media screen and (min-width: 600px) {
 .next{
-  left: 18%;
+  left: 80%;
 
 }
 
@@ -238,7 +238,7 @@
   @media (max-width: 1524px) {
     .product-item {
       width: 30vw;  /* Custom width for this breakpoint */
-      height: auto; /* Custom height for this breakpoint */
+      // height: auto; /* Custom height for this breakpoint */
       h3{
       top: 68%; 
       font-size: 12px;
@@ -248,7 +248,7 @@
 @media (max-width: 1024px) {
   .product-item {
     width: 40vw;  /* Custom width for this breakpoint */
-    height: auto; /* Custom height for this breakpoint */
+    height: 22vw; /* Custom height for this breakpoint */
     h3{
     top: 60%; 
     font-size: 10px;
@@ -256,9 +256,12 @@
 }
 }
 @media (max-width: 800px) {
+  .buttonassets{
+    display: none;
+  }
   .product-item {
     width: 40vw;  /* Custom width for this breakpoint */
-    height: auto; /* Custom height for this breakpoint */
+    height: 22vw; /* Custom height for this breakpoint */
     h3{
     top: 58%; 
   }
@@ -267,7 +270,7 @@
   @media (max-width: 600px) {
     .product-item {
       width: 85vw;  /* Custom width for this breakpoint */
-      height: auto; /* Custom height for this breakpoint */
+      height: 33vw; /* Custom height for this breakpoint */
       h3{
         top: 65%; 
       }

@@ -60,6 +60,10 @@
     align-items: center;
     cursor: pointer;
     transition: transform 1s ease-in-out ;
+    img{
+      width: 15vw !important;
+      height: auto;
+    }
     img:hover{
       transform: scale(1);
       }
@@ -230,4 +234,13 @@ background-color: #f0aa0a;
   }
 
 
-  
+  @media (max-width: 700px) {
+
+    .logo{
+
+      img{
+        width: 30vw !important;
+      }
+    }
+
+  }

@@ -163,8 +163,9 @@
     }
     .hero2{
       width: 100%;
+      order: 2;
       h1{
-        font-size: 38px;
+        font-size: 35px;
         
     }
     p{
@@ -177,9 +178,9 @@
     }
     }
     .imageContainer {
-        
-            width: 100% !important;
-            
+        // margin-top: 5% !important;
+            width: 90% !important;
+            margin: 4% !important;
     animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
           
       }

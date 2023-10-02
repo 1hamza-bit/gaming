@@ -126,7 +126,7 @@ function Abouts() {
           transition={{ duration: 0.9, delay: 0.9 }}
         > 
         <h1>{data && data[0].title}</h1>
-        <h1 >
+        {/* <h1 >
 
         {titleWords?.map((word, index) => (
         // <Grid item xs={2} key={index}>
@@ -135,7 +135,7 @@ function Abouts() {
           
         // </Grid>
       ))}
-      </h1>
+      </h1> */}
 
      
     {/* </motion.div> */}
@@ -199,7 +199,7 @@ function Abouts() {
 
       </Grid>
 
-      <Grid   item lg={6} md={6} sm={11}>
+      <Grid   item lg={6} md={6} sm={11}  xs={12}>
       
 
         <List className={`fade-in ${styles.listmenu}`}>

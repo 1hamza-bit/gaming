@@ -203,6 +203,7 @@ const TopAssets = () => {
       </div>
 
 
+      <Button onClick={handlePortfolioClick} className={styles.buttonassetsm}>Assets <ArrowOutwardIcon /></Button>
 
 
       {/* </Draggable> */}

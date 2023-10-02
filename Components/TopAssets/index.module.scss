@@ -34,6 +34,18 @@
         // padding: 1%;
   }
 }
+
+.buttonassetsm{
+  border-radius: 100vw;
+      background-color: #ffffff;
+//   background-color: rgb(139, 2, 2);
+display: none;
+      color: black;
+       padding: 8px 3%;
+      min-width: 20px;
+      transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s cubic-bezier(.23, 1, .32, 1);
+      margin: 5%;
+}
 }
 .top::-webkit-scrollbar {
   display: none !important;
@@ -255,9 +267,12 @@
   }
 }
 }
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .buttonassets{
     display: none;
+  }
+  .buttonassetsm{
+    display: block;
   }
   .product-item {
     width: 40vw;  /* Custom width for this breakpoint */

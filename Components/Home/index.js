@@ -123,7 +123,7 @@ function Hero() {
     <Header />
     <Grid container spacing={2} className={styles.banner}>
 
-      <Grid item lg={6} md={6} sm={11} className={` ${styles.hero}`}>
+      <Grid item lg={6} md={6} sm={11}  className={` ${styles.hero}`}>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -135,7 +135,7 @@ function Hero() {
           <Button className={styles.button2}>About Us</Button>
         </motion.div>
       </Grid>
-      <Grid  item lg={5} md={6} sm={11}>
+      <Grid  item lg={5} md={6} sm={11} xs={12}>
       <motion.div
           initial="hidden"
           animate="visible"
@@ -178,7 +178,7 @@ function Hero() {
          </div>
         </motion.div>
       </Grid>
-      <Grid item lg={3} md={3} sm={3}>
+      <Grid item lg={3} md={3} sm={3} className={styles.neeche}>
 
         <Button onClick={scrollToBottom}className={styles.down}><ArrowDownwardIcon className={styles.arrowdown} /> </Button>
       </Grid>

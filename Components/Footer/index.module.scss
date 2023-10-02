@@ -283,11 +283,12 @@ img{
       transition: transform 0.3s ease;
     }
     img:nth-child(1){
-      width: 315px;
+      width: 240px;
       padding-right: 50px;
       animation: scrollDown 4s infinite;
     }
     img:nth-child(2){
+      width: 100px;
       margin-top: -1%;
       padding-right: 98px;
     }
@@ -297,6 +298,11 @@ img{
 
 
 @media screen and (max-width:900px) {
+
+  .footer{
+    justify-content: flex-start !important;
+    margin-left: 1px;
+  }
 
   .footeranimate{
     margin-right: 0%;
@@ -310,6 +316,9 @@ img{
   }
   img:nth-child(2){
     padding-right: 8px;
+  }
+  img{
+
   }
 
 }

@@ -187,9 +187,24 @@
 
 @media (max-width: 800px) {
 
-.container b{
-  font-size: 40px;
+.container{
+  border-radius: 10vw;
+ b{
+  font-size: 38px;
 
+} 
+h1{
+  font-size: 38px;
+  margin-top: 7%;
+}
+}
+
+.provide{
+  margin-top: 20% !important;
+  h1{
+  margin-top: 20% !important;
+
+  }
 }
 
 .testimonial{
@@ -199,12 +214,16 @@
 }
 
 .buttoncontainerleft {
-top: 78%;
+top: 92%;
 }
 
 .buttoncontainerright {
 
-  top: 78%;
+  top: 92%;
  
+}
+.brandItem{
+  padding: 0.5% 2% !important;
+  
 }
 }

@@ -44,7 +44,7 @@ display: none;
        padding: 8px 3%;
       min-width: 20px;
       transition: transform .4s cubic-bezier(.175, .885, .32, 1.275), box-shadow .4s cubic-bezier(.23, 1, .32, 1);
-      margin: 5%;
+      margin: 5% 1%;
 }
 }
 .top::-webkit-scrollbar {
@@ -268,11 +268,26 @@ display: none;
 }
 }
 @media screen and (max-width: 800px) {
+  .topp{
+  h1 {
+    font-size: 38px;
+    margin-top: 0%;
+  }
+}
+.next{
+  padding: 5px !important;
+  
+}
+.prev{
+  padding: 5px !important;
+  
+}
   .buttonassets{
     display: none;
   }
   .buttonassetsm{
-    display: block;
+    display: flex !important;
+    padding: 8px 6% !important;
   }
   .product-item {
     width: 40vw;  /* Custom width for this breakpoint */

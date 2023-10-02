@@ -2,7 +2,7 @@
   color: #f0aa0a;
   text-decoration: underline;
   margin-left: 8%;
-  margin-bottom: 1%;
+  margin-bottom: 1% !important;
 }
 .hero{
     h1{
@@ -148,7 +148,7 @@
 
     background-color: #fff;
     border-radius: 2vw;
-    margin-bottom: 7%;
+    margin-bottom: 10%;
    box-shadow: rgba(221, 221, 225, 0.1) 0px 4px 16px, rgba(226, 226, 235, 0.1) 0px 8px 24px, rgba(229, 229, 230, 0.1) 0px 16px 56px;
    color: black;
    button{

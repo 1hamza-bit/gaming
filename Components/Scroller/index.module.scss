@@ -209,17 +209,22 @@ h1{
 
 .testimonial{
   padding: 5% !important;
-  font-size: 16px;
+  font-size: 15px !important;
   font-weight:200 ;
+  line-height: 30px;
+}
+.message{
+  font-size: 15px !important;
+
 }
 
 .buttoncontainerleft {
-top: 92%;
+top: 86%;
 }
 
 .buttoncontainerright {
 
-  top: 92%;
+  top: 86%;
  
 }
 .brandItem{

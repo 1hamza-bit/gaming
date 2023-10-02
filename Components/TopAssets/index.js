@@ -175,7 +175,7 @@ const TopAssets = () => {
           <>
          
             <div key={index} className={`${styles["product-item"]} ${index === currentIndex ? styles.first : ""}`} b>
-              <img alt="mon studious" src={product.image} alt={product.name} />
+              <img  src={product.image} alt={product.name} />
 
               <h3> <span> {product.image_by_title}</span> <ArrowOutwardIcon className={styles.arrow} /></h3>
               <p>{product.description}</p>

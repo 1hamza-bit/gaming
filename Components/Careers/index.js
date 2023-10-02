@@ -33,6 +33,8 @@ import substance from "../../assets/Animations/substance.png"
 import trailer from "../../assets/Animations/trailer.png"
 import unity from "../../assets/Animations/unity.png"
 import unreal from "../../assets/Animations/unreal.png"
+import career from "../../assets/01.png"
+
 
 
 const data = [
@@ -106,12 +108,12 @@ function Careers() {
   const handleButtonClick = (index) => {
     const updatedJobs = [...jobs]; // Create a copy of the current state array
     const currentItem = updatedJobs[index]; // Get the item at the specified index
-  
+
     // Toggle the "more" property of the current item
     currentItem.more = !currentItem.more;
-  
+
     // alert('Updated Jobs:', updatedJobs); // Debugging
-  
+
     // Update the state with the modified item
     setJobs(updatedJobs);
   };
@@ -173,7 +175,7 @@ function Careers() {
     {/* {data?.map(data, */}
     <Grid container spacing={0} className={styles.banner}>
 
-      <Grid item lg={5} md={6} sm={11} style={{marginRight: "2% !important"}} className={`mr2p m7 ${styles.hero}`}>
+      <Grid item lg={5} md={6} sm={11} style={{ marginRight: "2% !important" }} className={`mr2p m7 ${styles.hero}`}>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -198,58 +200,65 @@ function Careers() {
       </div>
 
     </Grid>
-    {/* )}; */}
     <h1 className={styles.jobheading}>Careers  </h1>
+
+
     <Grid container spacing={6} className={styles.jobs}>
-  
-      {jobs?.map((item, i) =>
-        <Grid className='fade-in' item lg={5} md={6} sm={11} >
-          <Grid container spacing={3} className={styles.jobcard}>
-            <Grid item lg={item.image ? 7 : 11} >
 
-              <div >
-                <h2>{item.title}</h2>
-                <div className={styles.small}>
+      {jobs && jobs.length <= 0 ?
+        <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+          <Image src={career}  />
+        </div> :
+        <>
+          {jobs?.map((item, i) =>
+            <Grid className='fade-in' item lg={5} md={6} sm={11} >
+              <Grid container spacing={3} className={styles.jobcard}>
+                <Grid item lg={item.image ? 7 : 11} >
 
-                  <h6>{item.is_full_time_role ? "fulltime" : "part time"}</h6>
-                  <h6>{item.is_remote_role ? "Remote" : "(On site)"}</h6>
+                  <div >
+                    <h2>{item.title}</h2>
+                    <div className={styles.small}>
+
+                      <h6>{item.is_full_time_role ? "fulltime" : "part time"}</h6>
+                      <h6>{item.is_remote_role ? "Remote" : "(On site)"}</h6>
 
 
-                </div>
-                {!item.more ?
-                  <p style={{ maxHeight: "80px", overflow: "hidden", lineHeight: "21px" }}> {item.job_role}...</p> :
+                    </div>
+                    {!item.more ?
+                      <p style={{ maxHeight: "80px", overflow: "hidden", lineHeight: "21px" }}> {item.job_role}...</p> :
 
-                  <p style={{ overflow: "hidden" }}> {item.job_role.substring(0, 220)}</p>}
+                      <p style={{ overflow: "hidden" }}> {item.job_role.substring(0, 220)}</p>}
 
-                {item.more && (
-                  <>
-                    <b>Requirements</b>
-                    <p style={{ overflow: "hidden" }}>{item.requirements}</p>
-                  </>
-                )}
+                    {item.more && (
+                      <>
+                        <b>Requirements</b>
+                        <p style={{ overflow: "hidden" }}>{item.requirements}</p>
+                      </>
+                    )}
 
-                <h5><b>Job Posted :</b>{item.created_at}</h5>
+                    <h5><b>Job Posted :</b>{item.created_at}</h5>
 
-              </div>
-            </Grid>
-            {item.image ?
-              <Grid item lg={4} >
-                <img alt="mon studious" style={{ width: "100%", height: "152px", marginTop: "27px" }} src={item.image} />
+                  </div>
+                </Grid>
+                {item.image ?
+                  <Grid item lg={4} >
+                    <img alt="mon studious" style={{ width: "100%", height: "152px", marginTop: "27px" }} src={item.image} />
+                  </Grid>
+
+                  : null}
+                <div style={{ width: "100%", textAlign: "end" }}>{item.more !== false ? <a onClick={() => handleButtonClick(i)}>View less</a> : null}<Button variant='contained' onClick={() => handleButtonClick(i)}>{item.more ? "Apply" : "view more"}</Button></div>
+
+
+
               </Grid>
 
-              : null}
-            <div style={{ width: "100%", textAlign: "end" }}>{item.more !== false ? <a onClick={() => handleButtonClick(i)}>View less</a> : null}<Button variant='contained' onClick={() => handleButtonClick(i)}>{item.more ? "Apply" : "view more"}</Button></div>
 
+            </Grid>
 
-
-          </Grid>
-
-
-        </Grid>
-
-      )}
-
+          )}
+        </>}
     </Grid>
+
 
 
 

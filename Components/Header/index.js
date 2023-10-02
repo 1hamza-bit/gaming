@@ -141,7 +141,7 @@ const classes = useStyles();
 </button>
                             <Typography className={` fantasy ${styles.logo}`} variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                 {/* Mob Studios */}
-                                <Image 
+                                <Image alt="mon studious" 
                                 src={logof}
                                 // width={220}
                                 onClick={handleHomeClick}

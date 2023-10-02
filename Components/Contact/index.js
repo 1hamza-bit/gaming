@@ -91,7 +91,7 @@ function Contacts() {
 
         <Typography >{data && data[0].description}</Typography>
 
-        <img
+        <img alt="mon studious"
           src={data && data[0].image}
           className={styles.imageContainer}
           width={300}
@@ -102,12 +102,12 @@ function Contacts() {
     
         <div className={styles.div}>
           <div className={styles.computer}>
-        <Image
+        <Image alt="mon studious"
             src={contact1}
             className={styles.cm1}
            
           />
-          <Image
+          <Image alt="mon studious"
             src={contact2}
             className={styles.cm2}
            
@@ -115,12 +115,12 @@ function Contacts() {
           </div>
        
           <div className={styles.letter}>
-          <Image
+          <Image alt="mon studious"
             src={letterclosed}
             className={styles.letter1}
             width={120}
           />
-          <Image
+          <Image alt="mon studious"
             src={opened}
             className={styles.letter2}
             width={120}
@@ -153,30 +153,30 @@ function Contacts() {
 
         <div className={styles.div}>
             <div className={styles.comp}>
-        <Image
+        <Image alt="mon studious"
             src={contact5}
             className={styles.cm5}
            
           />
-          <Image
+          <Image alt="mon studious"
             src={contact6}
             className={styles.cm6}
            
           />
-           <Image
+           <Image alt="mon studious"
             src={contact9}
             className={styles.cm9}
            
-          /> <Image
+          /> <Image alt="mon studious"
           src={contact3}
           className={styles.cm3}
          
         />
-         <Image
+         <Image alt="mon studious"
             src={contact8}
             className={styles.cm8}
            
-          /> <Image
+          /> <Image alt="mon studious"
           src={contact4}
           className={styles.cm4}
          
@@ -184,7 +184,7 @@ function Contacts() {
         
        
         
-          <Image
+          <Image alt="mon studious"
             src={contact7}
             className={styles.cm7}
             width={120}
@@ -197,7 +197,7 @@ function Contacts() {
         
 
 {/* <div style={{alignContent:"end", display: "flex", justifyContent: "end", width: "90%", marginTop: "5%", marginBottom: "3%"}}>
-        <Image
+        <Image alt="mon studious"
           src={asset}
         className={styles.icon}
           width={100}

@@ -175,7 +175,7 @@ const TopAssets = () => {
           <>
          
             <div key={index} className={`${styles["product-item"]} ${index === currentIndex ? styles.first : ""}`} b>
-              <img src={product.image} alt={product.name} />
+              <img alt="mon studious" src={product.image} alt={product.name} />
 
               <h3> <span> {product.image_by_title}</span> <ArrowOutwardIcon className={styles.arrow} /></h3>
               <p>{product.description}</p>
@@ -183,7 +183,7 @@ const TopAssets = () => {
 
 
             {/* <div key={index} className="product-item">
-              <Image src={robot} alt={product.name} width={200} />
+              <Image alt="mon studious" src={robot} alt={product.name} width={200} />
 
               <h3>{product.name}</h3>
               <p>{product.description}</p>

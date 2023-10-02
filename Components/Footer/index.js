@@ -98,9 +98,9 @@ function Footer() {
     <div className={`fade-in ${styles.bfcontainer}`}>
       {router.pathname !== '/contact' ?
         <Button className={styles.getintouch} onClick={handleContactClick}>Get in touch
-          <Image src={button1} className={styles.img1} />
-          <Image src={button2} className={styles.img2} />
-          <Image src={button3} className={styles.img3} />
+          <Image alt="mon studious" src={button1} className={styles.img1} />
+          <Image alt="mon studious" src={button2} className={styles.img2} />
+          <Image alt="mon studious" src={button3} className={styles.img3} />
         </Button>
         : null
       }
@@ -162,8 +162,8 @@ function Footer() {
           </ListItem>
           <ListItem className={styles.item}>
             <ListItemIcon className={styles.icond}>
-            <Image className={styles.white} src={discordwhite} width={25} color="primary" />
-            <Image className={styles.yel} src={discord} width={25} color="primary" />
+            <Image alt="mon studious" className={styles.white} src={discordwhite} width={25} color="primary" />
+            <Image alt="mon studious" className={styles.yel} src={discord} width={25} color="primary" />
 
             
              {/* <BsDiscord /> */}
@@ -183,11 +183,11 @@ function Footer() {
     </Grid>
 
     <div className={` ${styles.footeranimate}`}>
-      <Image
+      <Image alt="mon studious"
         src={footer2}
         className="fade-in movable-image"
       />
-      <Image
+      <Image alt="mon studious"
         src={footer1}
         className="fade-in movable-image"
 

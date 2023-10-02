@@ -70,18 +70,18 @@ const Brands = () => {
   }, []);
   // Simulated list of brands
   const allBrands = [
-    { icon: <Image src={game} style={{width: "35px", height: "24px !important"}} />, name: "Game Art" }, { icon: <Image src={game} style={{width: "35px", height: "24px !important"}}/>, name: "AAA" },
-    { icon: <Image src={gamedevelopment}/>, name: "Game development" }, { icon: <Image src={modeling}/>, name: "3D Modelling" },
-    { icon: <Image src={animations}/>, name: "3D Animations" }, { icon: <Image src={mobilegame}/>, name: "Mobile Games" },
-    { icon: <Image src={gameprops}/>, name: "Game Props" }, { icon: <Image src={multiplayergames}/>, name: "Multiplayer Games" },
-    { icon: <Image src={gameshader}/>, name: "Game Shaders" }, { icon: <Image src={trailer}/>, name: "Teaser Trailer" }
+    { icon: <Image alt="mon studious" src={game} style={{width: "35px", height: "24px !important"}} />, name: "Game Art" }, { icon: <Image alt="mon studious" src={game} style={{width: "35px", height: "24px !important"}}/>, name: "AAA" },
+    { icon: <Image alt="mon studious" src={gamedevelopment}/>, name: "Game development" }, { icon: <Image alt="mon studious" src={modeling}/>, name: "3D Modelling" },
+    { icon: <Image alt="mon studious" src={animations}/>, name: "3D Animations" }, { icon: <Image alt="mon studious" src={mobilegame}/>, name: "Mobile Games" },
+    { icon: <Image alt="mon studious" src={gameprops}/>, name: "Game Props" }, { icon: <Image alt="mon studious" src={multiplayergames}/>, name: "Multiplayer Games" },
+    { icon: <Image alt="mon studious" src={gameshader}/>, name: "Game Shaders" }, { icon: <Image alt="mon studious" src={trailer}/>, name: "Teaser Trailer" }
   ];
 
   const allBrands2 = [
-    { icon: <Image src={unity}/>, name: "Unity" }, { icon: <Image src={blender}/>, name: "Blender3D" },
-    { icon: <Image src={maya}/>, name: "MAYA" }, { icon: <Image src={max}/>, name: "3D Max" },
-    { icon: <Image src={substance}/>, name: "Substance Painter" }, { icon: <Image src={mixamo}/>, name: "Mixamo " },
-    { icon: <Image src={unreal}/>, name: "Unreal" },
+    { icon: <Image alt="mon studious" src={unity}/>, name: "Unity" }, { icon: <Image alt="mon studious" src={blender}/>, name: "Blender3D" },
+    { icon: <Image alt="mon studious" src={maya}/>, name: "MAYA" }, { icon: <Image alt="mon studious" src={max}/>, name: "3D Max" },
+    { icon: <Image alt="mon studious" src={substance}/>, name: "Substance Painter" }, { icon: <Image alt="mon studious" src={mixamo}/>, name: "Mixamo " },
+    { icon: <Image alt="mon studious" src={unreal}/>, name: "Unreal" },
   ];
 
   const PrevArrow = (props) => {

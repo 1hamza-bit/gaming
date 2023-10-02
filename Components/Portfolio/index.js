@@ -95,7 +95,7 @@ const Projects = () => {
          >
           <div key={index} className={styles['project-card']}>
             <div className={styles['project-image']}>
-              <img src={project.image} alt={project.title} />
+              <img alt="mon studious" src={project.image} alt={project.title} />
             </div>
             <div className={styles['project-details']}>
               <h3>{project.portfolio_title}</h3>

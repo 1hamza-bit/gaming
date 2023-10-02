@@ -79,11 +79,11 @@ const items = [
 
 function Careers() {
   const allBrands = [
-    { icon: <Image src={game} />, name: "Game Art" }, { icon: <Image src={game} />, name: "AAA" },
-    { icon: <Image src={gamedevelopment} />, name: "Game development" }, { icon: <Image src={modeling} />, name: "3D Modelling" },
-    { icon: <Image src={animations} />, name: "3D Animations" }, { icon: <Image src={mobilegame} />, name: "Mobile Games" },
-    { icon: <Image src={gameprops} />, name: "Game Props" }, { icon: <Image src={multiplayergames} />, name: "Multiplayer Games" },
-    { icon: <Image src={gameshader} />, name: "Game Shaders" }, { icon: <Image src={trailer} />, name: "Teaser Trailer" }
+    { icon: <Image alt="mon studious" src={game} />, name: "Game Art" }, { icon: <Image alt="mon studious" src={game} />, name: "AAA" },
+    { icon: <Image alt="mon studious" src={gamedevelopment} />, name: "Game development" }, { icon: <Image alt="mon studious" src={modeling} />, name: "3D Modelling" },
+    { icon: <Image alt="mon studious" src={animations} />, name: "3D Animations" }, { icon: <Image alt="mon studious" src={mobilegame} />, name: "Mobile Games" },
+    { icon: <Image alt="mon studious" src={gameprops} />, name: "Game Props" }, { icon: <Image alt="mon studious" src={multiplayergames} />, name: "Multiplayer Games" },
+    { icon: <Image alt="mon studious" src={gameshader} />, name: "Game Shaders" }, { icon: <Image alt="mon studious" src={trailer} />, name: "Teaser Trailer" }
   ];
   const [data, setData] = useState(null);
   const [jobs, setJobs] = useState(null);
@@ -185,7 +185,7 @@ function Careers() {
         </motion.div>
       </Grid>
       <Grid item lg={5} md={6} sm={11}>
-        <img
+        <img alt="mon studious"
           src={data && data[0].image}
           className={styles.imageContainer}
         // width={700}
@@ -234,7 +234,7 @@ function Careers() {
             </Grid>
             {item.image ?
               <Grid item lg={4} >
-                <img style={{ width: "100%", height: "152px", marginTop: "27px" }} src={item.image} />
+                <img alt="mon studious" style={{ width: "100%", height: "152px", marginTop: "27px" }} src={item.image} />
               </Grid>
 
               : null}

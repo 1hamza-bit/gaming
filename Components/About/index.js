@@ -153,7 +153,7 @@ function Abouts() {
           variants={gridItemVariantsimg}
           transition={{ duration: 0.9, delay: 0.9 }}
         > 
-      <img
+      <img alt="mon studious"
           src={data && data[0].image}
           className={styles.imageContainer}
           width={600}
@@ -179,7 +179,7 @@ function Abouts() {
       transition={{ duration: 0.5 }}
     >
       <div className={styles.container}>
-        <img
+        <img alt="mon studious"
           src={selected.image}
           className={styles.imageContainer}
           width={300}
@@ -242,7 +242,7 @@ function Abouts() {
             <Grid className="fade-in"  container spacing={4}>
               {why?.map((item, index) => (
                 <Grid item xs={4}>
-                  <img src={item.image} />
+                  <img alt="mon studious" src={item.image} />
                   <Button
                     key={index}
                     button
@@ -260,7 +260,7 @@ function Abouts() {
       </Grid>
     </Grid>
     {/* <div className="fade-in"  style={{alignContent:"end", display: "flex", justifyContent: "start", width: "90%", marginLeft: "0%", marginTop: "-9%", marginBottom: "4%"}}>
-        <Image
+        <Image alt="mon studious"
           src={asset}
           // className={styles.imageContainer}
           width={170}

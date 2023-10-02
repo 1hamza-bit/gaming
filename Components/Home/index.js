@@ -142,7 +142,7 @@ function Hero() {
           variants={gridItemVariantsimg}
           transition={{ duration: 0.9, delay: 0.9 }}
         > 
-         {/* {!imageLoaded ? <p>loading </p>: <img
+         {/* {!imageLoaded ? <p>loading </p>: <img alt="mon studious"
           src={data && data[0].image}
           className={styles.imageContainer}
           onLoad={handleImageLoad}
@@ -151,25 +151,25 @@ function Hero() {
         />
          } */}
          <div className={`df ${styles.images}`}>
-         <Image
+         <Image alt="mon studious"
          src={home4}
          className={styles.imageContainer}
           // onLoad={handleImageLoad}
          />
          <div className={styles.smallimages}>
-         <Image
+         <Image alt="mon studious"
          src={home5}
          className={styles.imageContainer2}
           // onLoad={handleImageLoad}
-         /><Image
+         /><Image alt="mon studious"
          src={home1}
          className={styles.imageContainer3}
           // onLoad={handleImageLoad}
-         /><Image
+         /><Image alt="mon studious"
          src={home2}
          className={styles.imageContainer4}
           // onLoad={handleImageLoad}
-         /><Image
+         /><Image alt="mon studious"
          src={home3}
          className={styles.imageContainer5}
           // onLoad={handleImageLoad}

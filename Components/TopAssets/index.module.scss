@@ -283,7 +283,7 @@ display: none;
   
 }
   .buttonassets{
-    display: none;
+    display: none !important;
   }
   .buttonassetsm{
     display: flex !important;
@@ -294,6 +294,7 @@ display: none;
     height: 22vw; /* Custom height for this breakpoint */
     h3{
     top: 58%; 
+    border-radius: 10vw;
   }
 }
 }

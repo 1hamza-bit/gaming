@@ -149,6 +149,7 @@
       .left{
        width: 100%;
        h1{
+        font-size: 35px;
         span{
           color: rgb(238, 102, 102);
 
@@ -165,8 +166,8 @@
       width: 100%;
       order: 2;
       h1{
-        font-size: 35px;
-        
+        font-size: 35px !important;
+        margin-top: 2% !important;
     }
     p{
        font-size: 14px;
@@ -181,15 +182,22 @@
         // margin-top: 5% !important;
             width: 90% !important;
             margin: 4% !important;
-    animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
-          
+    // animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
+          height: auto !important;
+          margin-top: 10% !important;
+      }
+      .listmenu{
+        span{
+          font-size: 18px !important;
+        }
       }
   }
 
 .chooseleft{
   padding: 5%;
   h1{
-    font-size: 35px;
+    font-size: 23px !important;
+    margin-left: 20px !important;
   }
 
   p{

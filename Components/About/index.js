@@ -167,7 +167,7 @@ function Abouts() {
     <Grid container spacing={2} className={styles.services}>
 
 
-      <Grid   item lg={6} md={6} sm={11} className={` jc ${styles.left}` }>
+      <Grid   item lg={6} md={6} sm={10} className={` jc ${styles.left}` }>
       <h1 style={{marginLeft: "20px"}}>Our <span>Assets</span></h1>
       <AnimatePresence mode="wait">
   {selected && (
@@ -179,7 +179,7 @@ function Abouts() {
       transition={{ duration: 0.5 }}
     >
       <div className={styles.container}>
-        <img alt="mon studious"
+        <img 
           src={selected.image}
           className={styles.imageContainer}
           width={300}
@@ -199,7 +199,7 @@ function Abouts() {
 
       </Grid>
 
-      <Grid   item lg={6} md={6} sm={11}  xs={12}>
+      <Grid   item lg={6} md={6} sm={11}  xs={11}>
       
 
         <List className={`fade-in ${styles.listmenu}`}>
@@ -226,7 +226,7 @@ function Abouts() {
     <Grid container spacing={2} className={styles.choose}>
       {/* Left Grid: Image description */}
       <Grid item lg={6} md={6} sm={11} className={` ${styles.chooseleft}`}>
-      <h1 className="fade-in"  style={{marginLeft: "60px", marginBottom: "15px", marginTop: "10%", fontSize: "41px"}}>Why choose <span>Mob studios</span></h1>
+      <h1 className="fade-in"  style={{marginLeft: "60px", marginBottom: "15px", marginTop: "10%", fontSize: "41px"}}>Why choose <span>Mobstudios</span></h1>
         
         <div className=' fade-in pl5p'>
           {/* <h1>{selectedItem.title}</h1> */}
@@ -236,7 +236,7 @@ function Abouts() {
       </Grid>
 
       {/* Right Grid: List of items */}
-      <Grid item lg={6} md={6} sm={11}>
+      <Grid item lg={6} md={6} sm={10} xs={10}>
         <Grid container spacing={4} className={styles.blockscontainer}>
           <Grid  item lg={9} md={9} sm={10} style={{marginBottom: "5% !important"}}>
             <Grid className="fade-in"  container spacing={4}>

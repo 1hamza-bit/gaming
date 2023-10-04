@@ -226,7 +226,7 @@ function Abouts() {
     <Grid container spacing={2} className={styles.choose}>
       {/* Left Grid: Image description */}
       <Grid item lg={6} md={6} sm={11} className={` ${styles.chooseleft}`}>
-      <h1 className="fade-in"  style={{marginLeft: "60px", marginBottom: "15px", marginTop: "10%", fontSize: "41px"}}>Why choose <span>Mobstudios</span></h1>
+      <h1 className="fade-in"  style={{marginBottom: "15px", marginTop: "10%",}}>Why choose <span>Mobstudios</span></h1>
         
         <div className=' fade-in pl5p'>
           {/* <h1>{selectedItem.title}</h1> */}
@@ -236,10 +236,10 @@ function Abouts() {
       </Grid>
 
       {/* Right Grid: List of items */}
-      <Grid item lg={6} md={6} sm={10} xs={10}>
+      <Grid   item lg={6} md={6} sm={12} xs={12}>
         <Grid container spacing={4} className={styles.blockscontainer}>
-          <Grid  item lg={9} md={9} sm={10} style={{marginBottom: "5% !important"}}>
-            <Grid className="fade-in"  container spacing={4}>
+          <Grid  item lg={9} md={9} sm={9} xs={11} style={{marginBottom: "5% !important"}}>
+            <Grid  container spacing={2}>
               {why?.map((item, index) => (
                 <Grid item xs={4}>
                   <img alt="mon studious" src={item.image} />

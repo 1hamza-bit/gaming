@@ -279,3 +279,56 @@ li:hover{
     width: 200px !important;
     height: auto;
   }
+
+  @media screen and (max-width:800px) {
+    .bannerc .computer .cm1 {
+        display: block;
+        /* height: 80% !important; */
+        margin-left: 119%;
+        position: absolute;
+        margin-top: -131%;
+        transform: rotateY(189deg);
+        width: 45%;
+        height: auto;
+    }
+    .computer  .cm2{
+        display: none !important;
+    }
+
+    .heroc{
+        p{
+            font-size: 14px !important;
+        }
+        h1{
+             
+            font-size: 40px;
+            span{
+            font-size: 40px;
+    
+            }
+        }
+    }
+
+    .listmenu{
+      
+        .item {
+        width: 95% !important;
+        padding: 2% 5%;
+            p{
+                font-size: 14px !important;
+            }
+            span{
+                font-size: 16px !important;
+            }
+        }}
+
+        .heroc{
+            img{
+                display: none;
+            }
+        }
+        .letter{
+            display: none;
+        }
+
+  }

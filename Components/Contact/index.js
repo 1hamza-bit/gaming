@@ -85,7 +85,7 @@ function Contacts() {
     <Header />
     <Grid container spacing={2} className={styles.bannerc}>
   
-      <Grid item lg={5} md={6} sm={11}  className={`m7 ${styles.heroc}`}>
+      <Grid item lg={5} md={6} sm={9} xs={9}  className={`m7 ${styles.heroc}`}>
         <h1>Get in Touch with   <span> Mobstudios</span></h1>
         <h3>{data && data[0].title}</h3>
 
@@ -98,7 +98,7 @@ function Contacts() {
         />
 
       </Grid>
-      <Grid  item lg={6} md={6} sm={11}>
+      <Grid  item lg={6} md={6} sm={11} xs={12}>
     
         <div className={styles.div}>
           <div className={styles.computer}>

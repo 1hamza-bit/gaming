@@ -99,7 +99,10 @@ function Contacts() {
 
       </Grid>
       <Grid  item lg={6} md={6} sm={11} xs={12}>
+
+      <Grid container spacing={2} className={styles.bannerc}>
     
+      <Grid  item lg={12} md={12} sm={11} xs={12}>
         <div className={styles.div}>
           <div className={styles.computer}>
         <Image alt="mon studious"
@@ -151,6 +154,9 @@ function Contacts() {
       
         </List>
 
+        </Grid>
+        <Grid  item lg={12} md={12} sm={11} xs={12}>
+    
         <div className={styles.div}>
             <div className={styles.comp}>
         <Image alt="mon studious"
@@ -194,6 +200,8 @@ function Contacts() {
         </div>
         
         </div>
+      </Grid>
+        </Grid>
         
 
 {/* <div style={{alignContent:"end", display: "flex", justifyContent: "end", width: "90%", marginTop: "5%", marginBottom: "3%"}}>

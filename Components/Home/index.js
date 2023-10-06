@@ -123,7 +123,7 @@ function Hero() {
     <Header />
     <Grid container spacing={2} className={styles.banner}>
 
-      <Grid item lg={6} md={6} sm={11}  className={` ${styles.hero}`}>
+      <Grid item lg={6} md={6} sm={11} xs={11}  className={` ${styles.hero}`}>
         <motion.div
           initial="hidden"
           animate="visible"

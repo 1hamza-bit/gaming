@@ -193,11 +193,14 @@ function Careers() {
         // width={700}
         />
       </Grid>
+
+      <Grid item lg={12} md={12} sm={12} className={styles.animated}>
       <div className={styles.brands}>
         {extendedBrands.map((brand, index) => (
           <div className={styles.brandItem} key={index}>{brand.icon} &nbsp;  {brand.name}</div>
         ))}
       </div>
+      </Grid>
 
     </Grid>
     <h1 className={styles.jobheading}>Careers  </h1>

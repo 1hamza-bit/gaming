@@ -280,16 +280,81 @@ li:hover{
     height: auto;
   }
 
+  @media screen and (max-width:400px) {
+    .comp{
+        height: 189px !important;
+        margin-left: 2% !important;
+
+    } 
+    .comp:hover{
+        .cm5{
+            transform: translateX(-10px)  !important;
+        }
+    }  
+}
+
   @media screen and (max-width:800px) {
+    .comp{
+      
+        margin-right: 2% !important;
+        img{
+            width: 15%;
+            height: auto !important;
+            position: absolute;
+        }
+    .cm3{
+        right: 24% !important;
+        top: 4%;
+
+    }    .cm4{
+        right: 23% !important;
+        top: 37% !important;
+        
+    
+    
+    }    .cm5{
+        width: 12% !important;
+        height: 151px !important;
+        left: 10% !important;
+    
+    }    .cm6{
+        left: 30% !important;
+        bottom: 28% !important;
+        width: 15% !important;
+    
+    
+    }
+    .cm7{
+    right: 0% !important;
+    }
+    .cm8{
+        display: block;
+        right: 30%;
+        top: 56%;
+    
+        // transform: rotate(172deg);
+    
+    }
+        .cm9{
+            right: 48% !important;
+            width: 28% !important;
+        
+        }
+    } 
+    .comp:hover{
+        .cm7{
+            transform: translateX(5px) rotate(-5deg) !important;
+        }
+    }   
     .bannerc .computer .cm1 {
         display: block;
         /* height: 80% !important; */
-        margin-left: 119%;
+        margin-left: 115%;
         position: absolute;
-        margin-top: -131%;
+        margin-top: -175%;
         transform: rotateY(189deg);
         width: 45%;
-        height: auto;
+        height: auto !important;
     }
     .computer  .cm2{
         display: none !important;

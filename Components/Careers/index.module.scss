@@ -84,17 +84,27 @@
     margin-top: 14%;
   }
 
-  @media screen and (max-width:700px) {
-
+  @media screen and (max-width:800px) {
+    .animated{
+      order: 3;
+      .brands{
+        padding-bottom: 1% !important;
+      }
+    }
     .banner{
       overflow: hidden;
       padding-top: 15%;
+      img{
+        width: 80% !important;
+        margin: 6%;
+       }
     }
     .hero{
       width: 100%;
+      order: 2;
       h1{
-        font-size: 44px;
-        
+        font-size: 38px;
+        margin-top: 2% !important;
     }
     p{
        font-size: 15px;
@@ -109,7 +119,7 @@
         
             width: 100% !important;
             
-    animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
+    // animation: floatLeftRightmb 5s linear infinite; /* Customize the animation duration and timing here */
           
       }
   }
@@ -203,14 +213,14 @@
   }
   .brandItem {
     background-color: #fff;
-    border-radius: 1vw;
+    border-radius: 5vw;
     align-items: center;
     padding: 0.5vw 2vw;
     display: flex;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 19px rgba(142, 151, 158, .85);
-    min-width: 150px;
+    min-width: 196px;
     margin: 15px;
     width: auto;
     max-width: auto;

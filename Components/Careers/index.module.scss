@@ -85,11 +85,16 @@
   }
 
   @media screen and (max-width:800px) {
+    .jobheading{
+      margin-top: 5% !important;
+      margin-bottom: 10% !important;
+    }
     .jobcard{
       padding-left: 0%;
       padding: 6px 6px !important;
-      width: 91%;
+      width: 93% !important;
     margin: 0% 4%;
+    margin-left: 0% !important;
     margin-bottom: 10% !important;
     img{
       height: auto !important;

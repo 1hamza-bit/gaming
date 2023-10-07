@@ -214,7 +214,7 @@ function Careers() {
         </div> :
         < >
           {jobs?.map((item, i) =>
-            <Grid  item lg={5} md={6} sm={11} xs={11} >
+            <Grid  item lg={5} md={6} sm={11} xs={12} className={styles.pt0} >
               <Grid container spacing={3} className={styles.jobcard}>
                 <Grid item lg={item.image ? 7 : 11} md={item.image ? 7 : 11} sm={item.image ? 7 : 11} xs={item.image ? 7 : 11} className={styles.padding}>
 

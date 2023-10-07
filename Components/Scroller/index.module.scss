@@ -187,7 +187,10 @@
 
 @media (max-width: 800px) {
  
-
+.slick2{
+  height: 450px !important;
+    overflow-y: clip !important;
+}
 .container{
   border-radius: 10vw;
  b{
@@ -201,7 +204,7 @@ h1{
 }
 
 .provide{
-  margin-top: 25% !important;
+  margin-top: 10% !important;
   h1{
   margin-top: 20% !important;
 
@@ -220,12 +223,12 @@ h1{
 }
 
 .buttoncontainerleft {
-top: 82%;
+top: 71%;
 }
 
 .buttoncontainerright {
 
-  top: 82%;
+  top: 71%;
  
 }
 .brandItem{

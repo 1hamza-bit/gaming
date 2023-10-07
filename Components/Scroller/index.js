@@ -188,7 +188,7 @@ const Brands = () => {
       </div>
       <h1>Testimonials</h1>
 
-      <Slider className="fade-in" {...settings}>
+      <Slider className={` ${styles.slick2}`} {...settings}>
         {data ?
           data.map((product, index) => (
 
@@ -211,6 +211,7 @@ const Brands = () => {
           <p>There are not Top assets at this while.</p>
         }
       </Slider>
+      
 
 
       <h1 className={styles.provide}>Provide you when <b>needed</b></h1>

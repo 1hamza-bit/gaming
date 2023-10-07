@@ -85,6 +85,24 @@
   }
 
   @media screen and (max-width:800px) {
+    .jobcard{
+      padding-left: 0%;
+      padding: 6px 6px !important;
+      width: 91%;
+    margin: 0% 4%;
+    margin-bottom: 10% !important;
+    img{
+      height: auto !important;
+    }
+    button{
+      font-size: 10px !important;
+    }
+    .padding{
+      padding-top: 10px !important;
+      padding-left: 10px !important;
+    }
+}
+    
     .animated{
       order: 3;
       .brands{

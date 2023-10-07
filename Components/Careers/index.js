@@ -212,11 +212,11 @@ function Careers() {
         <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
           <Image src={career}  />
         </div> :
-        <>
+        < >
           {jobs?.map((item, i) =>
-            <Grid className='fade-in' item lg={5} md={6} sm={11} >
+            <Grid  item lg={5} md={6} sm={11} xs={11} >
               <Grid container spacing={3} className={styles.jobcard}>
-                <Grid item lg={item.image ? 7 : 11} >
+                <Grid item lg={item.image ? 7 : 11} md={item.image ? 7 : 11} sm={item.image ? 7 : 11} xs={item.image ? 7 : 11} className={styles.padding}>
 
                   <div >
                     <h2>{item.title}</h2>
@@ -244,7 +244,7 @@ function Careers() {
                   </div>
                 </Grid>
                 {item.image ?
-                  <Grid item lg={4} >
+                  <Grid item lg={4} md={4} sm={4} xs={4}>
                     <img alt="mon studious" style={{ width: "100%", height: "152px", marginTop: "27px" }} src={item.image} />
                   </Grid>
 

@@ -95,7 +95,7 @@ function Footer() {
 
 
   return <>
-    <div className={`fade-in ${styles.bfcontainer}`}>
+    <div className={`${styles.bfcontainer}`}>
       {router.pathname !== '/contact' ?
         <Button className={styles.getintouch} onClick={handleContactClick}>Get in touch
           <Image alt="mon studious" src={button1} className={styles.img1} />

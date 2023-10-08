@@ -228,7 +228,7 @@ function Abouts() {
       <Grid item lg={6} md={6} sm={11} className={` ${styles.chooseleft}`}>
       <h1 className="fade-in"  style={{marginBottom: "15px", marginTop: "10%",}}>Why choose <span>Mobstudios</span></h1>
         
-        <div className=' fade-in pl5p'>
+        <div className='  pl5p'>
           {/* <h1>{selectedItem.title}</h1> */}
           {/* <Typography variant="subtitle1">{selectedItem}</Typography> */}
           <p>{selectedItem.description}</p>

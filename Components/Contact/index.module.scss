@@ -345,15 +345,15 @@ li:hover{
         }
     } 
     .comp:hover{
-        .cm7{
-            transform: translateX(5px) rotate(-5deg) !important;
+        .cm1, .cm2 , .cm3, .cm4, .cm5, .cm6, .cm7, .cm8, .cm9{
+            transform: translateX(0px)  !important;
         }
     }   
     .bannerc .computer .cm1 {
         display: block;
         /* height: 80% !important; */
         margin-left: 115%;
-        position: absolute;
+        position: absolute; 
         margin-top: -175%;
         transform: rotateY(189deg);
         width: 45%;

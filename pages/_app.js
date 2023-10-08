@@ -28,6 +28,7 @@ export default function App({ Component, pageProps }) {
     // Function to handle the scroll event
     const handleScroll = () => {
       // Get all the elements with the "fade-in" class
+      requestAnimationFrame(() => {
       const elements = document.querySelectorAll('.fade-in');
 
       elements.forEach((element) => {
@@ -35,13 +36,16 @@ export default function App({ Component, pageProps }) {
           element.classList.add('fade-in-visible');
         }
       });
+    });
     };
 
     // Add the scroll event listener when the component mounts
+    window.addEventListener('touchmove', handleScroll);
     window.addEventListener('scroll', handleScroll);
 
     // Clean up the listener when the component unmounts
     return () => {
+      window.addEventListener('touchmove', handleScroll);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);

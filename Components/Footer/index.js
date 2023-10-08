@@ -106,7 +106,7 @@ function Footer() {
       }
     </div>
     <Grid container spacing={2} className={` ${styles.footer}`}>
-      <Grid item lg={4} md={6} sm={11} xs={10} className='m4 fade-in'>
+      <Grid item lg={4} md={6} sm={11} xs={10} className='m4'>
         <h1>Mobstudios </h1>
         <p>Develop and Design all types of games and art for your IOS and Android stores with all of the features involved
           and lunch it in the real world and make your games with your full control, customization, and Art
@@ -153,7 +153,7 @@ function Footer() {
         </List>
 
       </Grid>
-      <Grid item lg={2} md={6} sm={11} className={`fade-in m2 ${styles.menu}`}>
+      {/* <Grid item lg={2} md={6} sm={11} className={`fade-in m2 ${styles.menu}`}>
         <List className={styles.listmenu}>
           <ListItem className={styles.item}>
             <ListItemIcon className={styles.icon}>
@@ -168,7 +168,7 @@ function Footer() {
             
              {/* <BsDiscord /> */}
 
-            </ListItemIcon>
+            {/* </ListItemIcon>
           </ListItem>
           <ListItem className={styles.item}>
             <ListItemIcon className={styles.icon}>
@@ -179,10 +179,10 @@ function Footer() {
         </List>
 
 
-      </Grid>
+      </Grid> */} 
     </Grid>
 
-    <div className={` ${styles.footeranimate}`}>
+    {/* <div className={` ${styles.footeranimate}`}>
       <Image alt="mon studious"
         src={footer2}
         className="fade-in movable-image"
@@ -193,7 +193,7 @@ function Footer() {
 
       />
 
-    </div>
+    </div> */}
 
   </>
 }
